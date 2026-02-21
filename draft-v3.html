@@ -195,13 +195,9 @@
 
     .logo-icon {
       width: 40px; height: 40px;
-      background: var(--accent);
       border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900;
-      color: var(--navy);
-      font-size: 16px;
-      letter-spacing: -1px;
+      display: block;
+      object-fit: cover;
     }
 
     .logo-text { color: var(--white); font-weight: 700; font-size: 18px; }
@@ -591,7 +587,7 @@
 <!-- NAV -->
 <nav role="navigation" aria-label="ניווט ראשי" data-i18n-aria="nav.aria">
   <a href="#" class="logo" aria-label="PlinerSpec – דף הבית">
-    <div class="logo-icon" aria-hidden="true">PS</div>
+    <img class="logo-icon" src="data:image/png;base64,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" alt="PlinerSpec" aria-hidden="true" />
     <span class="logo-text">Pliner<span>Spec</span></span>
   </a>
   <div class="nav-right">
