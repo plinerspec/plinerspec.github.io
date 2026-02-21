@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pliner Spec – סריקה מקצועית ודיגיטציה של מסמכים, תמונות ואלבומים. הופכים ניירת לארכיון דיגיטלי נגיש וניתן לחיפוש. אזור צפון ישראל." />
+  <meta name="keywords" content="סריקה מקצועית, דיגיטציה, OCR, ארכיון דיגיטלי, שימור תמונות, עפולה, ישראל, document scanning, digitization" />
+  <meta property="og:title" content="Pliner Spec | דיגיטציה מקצועית" />
+  <meta property="og:description" content="הופכים ניירת לארכיון דיגיטלי נגיש וניתן לחיפוש. סריקה מקצועית לעסקים ומשפחות." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://plinerspec.com" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://plinerspec.com" />
+  <title>Pliner Spec | דיגיטציה מקצועית – סריקה לעסקים ומשפחות</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f1e3c'/><text x='16' y='22' font-family='Arial' font-weight='900' font-size='14' fill='%23e8a020' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f1e3c;
+      --blue: #1a3a6e;
+      --accent: #e8a020;
+      --light: #f5f7fa;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --border: #e2e8f0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(15,30,60,0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 16px;
+      letter-spacing: -1px;
+    }
+
+    .logo-text {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .logo-text span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--navy) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #2a5298 100%);
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 80vw; height: 80vw;
+      background: radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 620px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,160,32,0.15);
+      border: 1px solid rgba(232,160,32,0.3);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 36px;
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--navy);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232,160,32,0.4);
+    }
+
+    .btn-ghost {
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.2s;
+    }
+
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .stat span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* SECTIONS */
+    section { padding: 80px 5%; }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    /* SERVICES */
+    #services { background: var(--light); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(15,30,60,0.1);
+    }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-icon svg { display: block; }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* HOW IT WORKS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+      counter-reset: step;
+    }
+
+    .step {
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--accent);
+      color: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .step p { font-size: 14px; color: var(--muted); }
+
+    /* WHY US */
+    #why { background: var(--navy); }
+    #why .section-title { color: var(--white); }
+    #why .section-sub { color: rgba(255,255,255,0.6); }
+    #why .section-label { color: var(--accent); }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .reason {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .reason-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .reason-icon svg { display: block; }
+
+    .reason h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .reason p { font-size: 14px; color: rgba(255,255,255,0.55); }
+
+    /* CONTACT */
+    #contact { background: var(--light); }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .contact-item-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg { display: block; }
+
+    .contact-item strong { display: block; font-size: 14px; color: var(--muted); margin-bottom: 2px; }
+    .contact-item a { color: var(--navy); text-decoration: none; font-weight: 600; }
+    .contact-item a:hover { color: var(--accent); }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      transition: border-color 0.2s;
+      background: var(--light);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: var(--white);
+    }
+
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Heebo', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: var(--blue); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 5%;
+      font-size: 14px;
+    }
+
+    footer span { color: var(--accent); }
+
+    /* ENGLISH SECTION */
+    .lang-divider {
+      border: none;
+      border-top: 2px dashed var(--border);
+      margin: 80px 0 0;
+    }
+
+    .en-section {
+      direction: ltr;
+      padding: 80px 5%;
+      background: var(--white);
+    }
+
+    .en-section .section-title,
+    .en-section .section-sub {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 100px 5% 60px; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">PS</div>
+    <span class="logo-text">Pliner<span>Spec</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">שירותים</a></li>
+    <li><a href="#how">איך זה עובד</a></li>
+    <li><a href="#why">למה אנחנו</a></li>
+    <li><a href="#contact" class="nav-cta">צרו קשר</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">דיגיטציה מקצועית לעסקים ומשפחות</div>
+    <h1>ניירת הופכת ל<span>ארכיון דיגיטלי</span> נגיש</h1>
+    <p>סורקים, ממירים ומארגנים את כל המסמכים, התמונות והאלבומים שלכם — לקבצים ניתנים לחיפוש שתמצאו בשניות.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">צרו קשר עכשיו</a>
+      <a href="#services" class="btn-ghost">← גלו את השירותים</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>בר-חיפוש</strong><span>כל מסמך ניתן לחיפוש</span></div>
+      <div class="stat"><strong>מהיר</strong><span>ניפוק מהיר ומקצועי</span></div>
+      <div class="stat"><strong>מקומי</strong><span>צפון ישראל</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <span class="section-label">מה אנחנו מציעים</span>
+  <h2 class="section-title">שירותי הסריקה שלנו</h2>
+  <p class="section-sub">פתרון מקצועי לכל סוגי המסמכים — ממשפחות שרוצות לשמר זיכרונות ועד עסקים שצריכים סדר בניירת.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <h3>שימור זיכרונות משפחתיים</h3>
+      <p>תמונות ישנות, אלבומים, מכתבים ומסמכים משפחתיים — הופכים לארכיון דיגיטלי שישמר לדורות.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <h3>סריקת מסמכי עסקים</h3>
+      <p>חוזים, תיקי לקוחות, חשבוניות — כל ניירת עסקית הופכת לקבצים מסודרים וניתנים לחיפוש.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+          <line x1="8" y1="8" x2="13" y2="8"/>
+        </svg>
+      </div>
+      <h3>OCR – מסמכים ניתנים לחיפוש</h3>
+      <p>הטכנולוגיה שלנו הופכת כל סריקה לבר-חיפוש — מצאו כל מסמך בחיפוש מילה אחת.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+          <polyline points="2 17 12 22 22 17"/>
+          <polyline points="2 12 12 17 22 12"/>
+        </svg>
+      </div>
+      <h3>פרויקטים בהיקף גדול</h3>
+      <p>ארגזים, תיקיות ומאות מסמכים — מטפלים בכמויות גדולות ביעילות ובאיכות גבוהה.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <span class="section-label">התהליך</span>
+  <h2 class="section-title">איך זה עובד?</h2>
+  <p class="section-sub">שלושה שלבים פשוטים — ואתם מקבלים ארכיון דיגיטלי מסודר.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>יצירת קשר</h3>
+      <p>שלחו לנו הודעה, תארו את הצורך שלכם, ונקבע מועד איסוף נוח.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>סריקה מקצועית</h3>
+      <p>אנחנו סורקים את כל החומר בציוד מקצועי, כולל המרה ל-OCR ניתן לחיפוש.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>קבלת הארכיון</h3>
+      <p>מקבלים קבצים מסודרים — לפי תיקיות, שנים, או קטגוריות — על פי הצרכים שלכם.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <span class="section-label">למה PlinerSpec?</span>
+  <h2 class="section-title">היתרון שלנו</h2>
+  <p class="section-sub">אנחנו לא סתם סורקים — אנחנו הופכים ניירת לנכס דיגיטלי.</p>
+
+  <div class="reasons-grid">
+    <div class="reason">
+      <div class="reason-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+      <div>
+        <h4>כל מסמך ניתן לחיפוש</h4>
+        <p>טכנולוגיית OCR מתקדמת — מצאו כל קובץ בשניות, בלי לחפש בתיקיות.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <div>
+        <h4>מהיר ומדויק</h4>
+        <p>ציוד סריקה מקצועי בנפח גבוה — ניפוק מהיר מבלי להתפשר על איכות.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <div>
+        <h4>שירות מקומי ואישי</h4>
+        <p>שירות אישי ונגיש לכל תושבי הצפון.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <div>
+        <h4>מטפלים בחומר בזהירות</h4>
+        <p>מסמכים ותמונות משפחתיות — מטפלים בהם כאילו הם שלנו.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-label">בואו נדבר!</span>
+  <h2 class="section-title">צרו קשר</h2>
+  <p class="section-sub">יש לכם שאלות? רוצים הצעת מחיר? שלחו לנו הודעה ונחזור אליכם בהקדם.</p>
+
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>פרטי התקשרות</h3>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <strong>אימייל</strong>
+          <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <strong>אזור שירות</strong>
+          <span style="color:var(--navy);font-weight:600;">צפון הארץ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>השאירו פרטים</h3>
+      <form id="contact-form" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>שם מלא</label>
+          <input type="text" id="cf-name" name="name" placeholder="ישראל ישראלי" required />
+        </div>
+        <div class="form-group">
+          <label>טלפון</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="050-000-0000" />
+        </div>
+        <div class="form-group">
+          <label>פרטו את הצורך שלכם</label>
+          <textarea id="cf-msg" name="message" placeholder="תארו את הפרויקט שלכם בקצרה — מסמכים עסקיים, תמונות משפחתיות, ארכיון גדול..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">שליחה</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  var name = document.getElementById('cf-name').value.trim();
+  var phone = document.getElementById('cf-phone').value.trim();
+  var msg = document.getElementById('cf-msg').value.trim();
+  var subject = 'פנייה חדשה דרך האתר – ' + name;
+  var body = 'שם: ' + name + (phone ? '\nטלפון: ' + phone : '') + '\n\nפרטים:\n' + msg;
+  window.location.href = 'mailto:contact@plinerspec.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+}
+</script>
+
+<!-- ENGLISH SECTION -->
+<hr class="lang-divider" />
+<section class="en-section" dir="ltr">
+  <span class="section-label" style="font-family:'Inter',sans-serif;">For English Speakers</span>
+  <h2 class="section-title">Professional Document Scanning & Digitization</h2>
+  <p class="section-sub">We turn your physical documents, photos and archives into organized, searchable digital files.</p>
+
+  <div class="services-grid">
+    <div class="service-card" style="text-align:left;">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <h3>Family Memory Preservation</h3>
+      <p>Old photos, albums, letters — digitized and organized for generations to come.</p>
+    </div>
+    <div class="service-card" style="text-align:left;">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <h3>Business Document Scanning</h3>
+      <p>Contracts, invoices, client files — fully scanned, organized and searchable.</p>
+    </div>
+    <div class="service-card" style="text-align:left;">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+          <line x1="8" y1="8" x2="13" y2="8"/>
+        </svg>
+      </div>
+      <h3>Searchable OCR Output</h3>
+      <p>Every document we scan becomes fully text-searchable. Find any file in seconds.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; padding:32px; background:var(--navy); border-radius:16px; color:white; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; direction:ltr;">
+    <div>
+      <h3 style="font-size:20px; margin-bottom:6px; font-family:'Inter',sans-serif;">Ready to go digital?</h3>
+      <p style="color:rgba(255,255,255,0.65); font-family:'Inter',sans-serif;">Send us a message and we'll get back to you promptly.</p>
+    </div>
+    <a href="mailto:contact@plinerspec.com" style="background:var(--accent); color:var(--navy); padding:14px 28px; border-radius:8px; font-weight:700; text-decoration:none; font-family:'Inter',sans-serif;">Contact Us →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Pliner Spec</span> · כל הזכויות שמורות · <a href="mailto:contact@plinerspec.com" style="color:var(--accent); text-decoration:none;">contact@plinerspec.com</a></p>
+</footer>
+
+</body>
+</html>
