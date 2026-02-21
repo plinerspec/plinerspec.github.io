@@ -618,12 +618,12 @@
   <h3 data-i18n="a11y.title">כלי נגישות</h3>
 
   <button class="a11y-btn" id="btn-font-inc" onclick="adjustFont(1)" aria-pressed="false">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><text x="2" y="18" font-size="16" font-weight="bold" fill="currentColor">A+</text></svg>
+    <span aria-hidden="true" style="font-weight:900;font-size:15px;min-width:20px;">A+</span>
     <span data-i18n="a11y.font.increase">הגדל גופן</span>
   </button>
 
   <button class="a11y-btn" id="btn-font-dec" onclick="adjustFont(-1)" aria-pressed="false">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><text x="2" y="18" font-size="12" fill="currentColor">A-</text></svg>
+    <span aria-hidden="true" style="font-weight:900;font-size:11px;min-width:20px;">A-</span>
     <span data-i18n="a11y.font.decrease">הקטן גופן</span>
   </button>
 
@@ -1047,8 +1047,8 @@ document.addEventListener('click', function(e) {
 let fontLevel = 0;
 function adjustFont(dir) {
   fontLevel = Math.max(-1, Math.min(2, fontLevel + dir));
-  const scales = { '-1': 0.9, 0: 1, 1: 1.2, 2: 1.4 };
-  document.documentElement.style.setProperty('--font-scale', scales[fontLevel]);
+  const zooms = { '-1': 0.9, 0: 1, 1: 1.15, 2: 1.3 };
+  document.getElementById('main-content').style.zoom = zooms[fontLevel];
   document.getElementById('btn-font-inc').classList.toggle('active', fontLevel > 0);
   document.getElementById('btn-font-dec').classList.toggle('active', fontLevel < 0);
 }
@@ -1069,7 +1069,7 @@ function resetA11y() {
     if (b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); }
   });
   fontLevel = 0;
-  document.documentElement.style.setProperty('--font-scale', 1);
+  document.getElementById('main-content').style.zoom = 1;
   document.getElementById('btn-font-inc').classList.remove('active');
   document.getElementById('btn-font-dec').classList.remove('active');
 }
