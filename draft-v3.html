@@ -1100,20 +1100,47 @@ function submitForm(e) {
   }
   if (!valid) return;
 
+  const btn = document.querySelector('.form-submit');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = currentLang === 'he' ? 'שולח...' : 'Sending...';
+
   const subject = currentLang === 'he'
-    ? 'פנייה חדשה דרך האתר – ' + name
-    : 'New inquiry from website – ' + name;
-  const body = (currentLang === 'he' ? 'שם' : 'Name') + ': ' + name +
-    (phone ? '\n' + (currentLang === 'he' ? 'טלפון' : 'Phone') + ': ' + phone : '') +
-    '\n\n' + msg;
+    ? 'פנייה חדשה דרך האתר - ' + name
+    : 'New inquiry from website - ' + name;
 
-  window.location.href = 'mailto:contact@plinerspec.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-  // Show success message
-  const success = document.getElementById('form-success');
-  success.style.display = 'block';
-  document.getElementById('contact-form').reset();
-  setTimeout(() => { success.style.display = 'none'; }, 6000);
+  fetch('https://formsubmit.co/ajax/contact@plinerspec.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      phone: phone || '-',
+      message: msg,
+      _subject: subject,
+      _template: 'table',
+      _captcha: 'false'
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success === 'true' || data.success === true) {
+      const success = document.getElementById('form-success');
+      success.style.display = 'block';
+      document.getElementById('contact-form').reset();
+      setTimeout(() => { success.style.display = 'none'; }, 8000);
+    } else {
+      throw new Error('Submission failed');
+    }
+  })
+  .catch(() => {
+    alert(currentLang === 'he'
+      ? 'שגיאה בשליחה, אנא נסו שוב או פנו אלינו ישירות למייל: contact@plinerspec.com'
+      : 'Submission error. Please try again or email us at contact@plinerspec.com');
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = originalText;
+  });
 }
 
 // =====================
