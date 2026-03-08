@@ -568,9 +568,33 @@
     footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
+    /* MOBILE MENU */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.9);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        inset-inline-start: 0;
+        inset-inline-end: 0;
+        background: rgba(15,30,60,0.98);
+        flex-direction: column;
+        padding: 16px 5%;
+        gap: 4px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; display: block; font-size: 16px; }
       .hero { padding: 100px 5% 60px; }
       .hero-stats { gap: 24px; flex-wrap: wrap; }
       .contact-wrap { grid-template-columns: 1fr; }
@@ -591,11 +615,14 @@
     <span class="logo-text">Pliner<span>Spec</span></span>
   </a>
   <div class="nav-right">
-    <ul class="nav-links" role="list">
-      <li><a href="#services" data-i18n="nav.services">שירותים</a></li>
-      <li><a href="#how" data-i18n="nav.how">איך זה עובד</a></li>
-      <li><a href="#why" data-i18n="nav.why">למה אנחנו</a></li>
-      <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">צרו קשר</a></li>
+    <button class="hamburger" id="hamburger" aria-label="תפריט" aria-expanded="false" onclick="document.querySelector('.nav-links').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#services" data-i18n="nav.services" onclick="document.querySelector('.nav-links').classList.remove('open')">שירותים</a></li>
+      <li><a href="#how" data-i18n="nav.how" onclick="document.querySelector('.nav-links').classList.remove('open')">איך זה עובד</a></li>
+      <li><a href="#why" data-i18n="nav.why" onclick="document.querySelector('.nav-links').classList.remove('open')">למה אנחנו</a></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav.contact" onclick="document.querySelector('.nav-links').classList.remove('open')">צרו קשר</a></li>
     </ul>
     <button class="lang-toggle" id="lang-toggle" aria-label="Switch to English" onclick="toggleLang()">EN</button>
   </div>
@@ -830,9 +857,9 @@
 <!-- FOOTER -->
 <footer role="contentinfo">
   <p>
-    © 2025 <span>PlinerSpec</span> · <span data-i18n="footer.rights">כל הזכויות שמורות</span> ·
-    <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a> ·
-    <a href="/accessibility" data-i18n="footer.accessibility">הצהרת נגישות</a>
+    © 2026 <span>PlinerSpec</span> · <span data-i18n="footer.rights">כל הזכויות שמורות</span> ·
+    <a href="/accessibility" data-i18n="footer.accessibility">הצהרת נגישות</a> ·
+    <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a>
   </p>
 </footer>
 

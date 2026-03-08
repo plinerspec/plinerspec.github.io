@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="הצהרת נגישות - PlinerSpec דיגיטציה מקצועית" />
+  <title>הצהרת נגישות | PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f1e3c'/><text x='16' y='22' font-family='Arial' font-weight='900' font-size='14' fill='%23e8a020' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f1e3c;
+      --blue: #1a3a6e;
+      --accent: #e8a020;
+      --light: #f5f7fa;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --muted: #555e70;
+      --border: #e2e8f0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    header {
+      background: var(--navy);
+      padding: 20px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .back-link {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 5% 64px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    p, li {
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-inline-start: 24px;
+      margin-bottom: 16px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    a { color: var(--blue); }
+    a:hover { color: var(--accent); }
+
+    .contact-box {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .contact-box h2 {
+      border-bottom: none;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
+    .update-date {
+      margin-top: 40px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 28px 5%;
+      font-size: 14px;
+    }
+
+    footer span { color: var(--accent); }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Pliner<span>Spec</span></a>
+  <a href="/" class="back-link">← חזרה לעמוד הראשי</a>
+</header>
+
+<main>
+  <h1>הצהרת נגישות</h1>
+  <p class="subtitle">PlinerSpec – דיגיטציה מקצועית של מסמכים</p>
+
+  <h2>מחויבות לנגישות</h2>
+  <p>PlinerSpec מחויבת להנגיש את אתר האינטרנט שלה לכלל האוכלוסייה, לרבות אנשים עם מוגבלויות, וזאת בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998, ולתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013.</p>
+
+  <h2>תקן הנגישות</h2>
+  <p>אנו פועלים להתאים את האתר לתקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.1 ברמה AA של ארגון W3C.</p>
+
+  <h2>פעולות שננקטו להנגשת האתר</h2>
+  <ul>
+    <li>ניווט מלא באמצעות מקלדת</li>
+    <li>תגיות ARIA ותפקידים סמנטיים לקוראי מסך</li>
+    <li>ניגודיות צבעים מספקת בין טקסט לרקע</li>
+    <li>אפשרות להגדלת טקסט</li>
+    <li>מצב ניגודיות גבוהה</li>
+    <li>מצב גווני אפור</li>
+    <li>אפשרות להדגשת קישורים בקו תחתון</li>
+    <li>כפתור "דלג לתוכן" לניווט מהיר</li>
+    <li>טפסים עם תוויות נגישות והודעות שגיאה ברורות</li>
+    <li>מבנה כותרות היררכי תקין</li>
+    <li>תמיכה בשפה העברית עם כיוון RTL מלא</li>
+  </ul>
+
+  <h2>טכנולוגיות</h2>
+  <p>האתר נבנה באמצעות HTML5 סמנטי, CSS3, ו-JavaScript. האתר תומך בדפדפנים מודרניים ובטכנולוגיות מסייעות כגון קוראי מסך.</p>
+
+  <h2>הסדרי נגישות במשרד</h2>
+  <p>שירותי PlinerSpec ניתנים בעיקר בביקורי שטח אצל הלקוח או מרחוק. ניתן לתאם מראש כל התאמת נגישות נדרשת.</p>
+
+  <h2>מגבלות ידועות</h2>
+  <p>אנו ממשיכים לפעול לשיפור נגישות האתר באופן שוטף. אם נתקלתם בבעיית נגישות כלשהי, נשמח לשמוע מכם ולטפל בכך בהקדם.</p>
+
+  <div class="contact-box">
+    <h2>פניות בנושא נגישות</h2>
+    <p>אם נתקלתם בבעיה בנגישות האתר, או שיש לכם הצעות לשיפור, אנא פנו אלינו:</p>
+    <ul>
+      <li>דוא"ל: <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></li>
+      <li>טלפון: <a href="tel:+972547888557" dir="ltr">054-788-8557</a></li>
+    </ul>
+    <p>אנו מתחייבים לטפל בפניות נגישות תוך 14 ימי עסקים.</p>
+  </div>
+
+  <p class="update-date">הצהרה זו עודכנה לאחרונה: מרץ 2026</p>
+</main>
+
+<footer>
+  <p>
+    © 2026 <span>PlinerSpec</span> ·
+    <a href="/">עמוד ראשי</a> ·
+    <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
