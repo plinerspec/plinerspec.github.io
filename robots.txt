@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://plinerspec.com/sitemap.xml
