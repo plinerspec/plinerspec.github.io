@@ -340,14 +340,17 @@
       letter-spacing: 2px; text-transform: uppercase;
       margin-bottom: 16px; display: block;
       font-family: 'JetBrains Mono', monospace;
+      text-align: start;
     }
     .section-title {
       font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900;
       margin-bottom: 18px; letter-spacing: -0.8px; line-height: 1.1;
+      text-align: start;
     }
     .section-sub {
       font-size: clamp(1rem, 1.4vw, 1.15rem); max-width: 540px;
-      margin-bottom: 56px; line-height: 1.75;
+      margin-bottom: 56px; line-height: 1.75; text-align: start;
+      margin-inline-start: 0;
     }
 
     /* =====================
@@ -822,13 +825,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "How long does the digitization process take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the project scope. A small family project can be completed within a few days. Large business projects are planned in advance with a timeline tailored to your needs."}},
     {"@type": "Question", "name": "What formats will I receive?", "acceptedAnswer": {"@type": "Answer", "text": "The standard format is searchable PDF with OCR layer. Depending on your needs, you can also receive high-quality image files, organized in folders."}},
     {"@type": "Question", "name": "Can you handle damaged or old documents?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We specialize in handling delicate documents - old photographs, worn letters, papers damaged by time. Our equipment is designed for scanning without damaging the material."}},
-    {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing depends on the project scope, type of material, and your specific needs. Send us a message with a brief description and we'll get back to you with a tailored quote."}},
+    {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "To celebrate our launch, we're offering limited-time pricing! Per page: 0.90 NIS. Standard filing box: 300 NIS. Or full day on-site: 1,700 NIS. For a custom quote, leave your details and we'll get back to you."}},
+    {"@type": "Question", "name": "Is my information kept confidential?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Every project comes with a clear agreement that defines exactly what happens with your data."}},
     {"@type": "Question", "name": "What is OCR and why does it matter?", "acceptedAnswer": {"@type": "Answer", "text": "OCR (Optical Character Recognition) converts a document image into searchable text. Instead of browsing through folders, simply search for a word and find the right document in seconds."}},
-    {"@type": "Question", "name": "Do you pick up and deliver?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We come to you to pick up the materials and return everything when done. No need to deal with shipping."}},
-    {"@type": "Question", "name": "What types of documents can you scan?", "acceptedAnswer": {"@type": "Answer", "text": "Almost everything: A4 documents, contracts, invoices, photos of any size, letters, business cards, maps, plans, and more."}}
+    {"@type": "Question", "name": "What types of documents can you scan?", "acceptedAnswer": {"@type": "Answer", "text": "Almost everything: A4 documents, contracts, invoices, photos of any size, letters, business cards, and more."}}
   ]
 }
 </script>
@@ -849,8 +851,9 @@
     </button>
     <ul class="nav-links" id="nav-links" role="list">
       <li><a href="#services" data-i18n="nav.services" onclick="document.querySelector('.nav-links').classList.remove('open')">שירותים</a></li>
-      <li><a href="#how" data-i18n="nav.how" onclick="document.querySelector('.nav-links').classList.remove('open')">איך זה עובד</a></li>
-      <li><a href="#why" data-i18n="nav.why" onclick="document.querySelector('.nav-links').classList.remove('open')">למה אנחנו</a></li>
+      <li><a href="#how" data-i18n="nav.how" onclick="document.querySelector('.nav-links').classList.remove('open')">איך זה עובד?</a></li>
+      <li><a href="#why" data-i18n="nav.why" onclick="document.querySelector('.nav-links').classList.remove('open')">למה אנחנו?</a></li>
+      <li><a href="#faq" data-i18n="nav.faq" onclick="document.querySelector('.nav-links').classList.remove('open')">שאלות נפוצות</a></li>
       <li><a href="#contact" class="nav-cta" data-i18n="nav.contact" onclick="document.querySelector('.nav-links').classList.remove('open')">הצעת מחיר</a></li>
     </ul>
     <button class="lang-toggle" id="lang-toggle" aria-label="Switch to English" onclick="toggleLang()">EN</button>
@@ -947,7 +950,7 @@
       <h3 data-i18n="services.s1.title">שימור זיכרונות משפחתיים</h3>
       <p data-i18n="services.s1.desc">תמונות ישנות, אלבומים, מכתבים ומסמכים משפחתיים - הופכים לארכיון דיגיטלי שישמר לדורות.</p>
       <div class="expand-hint"><span data-i18n="services.expand">למידע נוסף</span><span class="chevron">▾</span></div>
-      <div class="service-expand"><span data-i18n="services.s1.detail">סריקה ברזולוציה גבוהה (600 DPI) של תמונות, מכתבים ומסמכים משפחתיים. כל קובץ מקבל שם ומיון לפי תאריך, אירוע או משפחה. הארכיון הדיגיטלי נגיש מכל מכשיר.</span></div>
+      <div class="service-expand"><span data-i18n="services.s1.detail">סריקה ברזולוציה גבוהה (600 DPI) של תמונות, מכתבים ומסמכים משפחתיים. כל קובץ מקבל שם ומיון לפי תאריך, אירוע או משפחה.</span></div>
     </article>
     <article class="service-card reveal reveal-delay-1" tabindex="0">
       <div class="service-icon business" aria-hidden="true">
@@ -973,8 +976,6 @@
       </div>
       <h3 data-i18n="services.s4.title">פרויקטים בהיקף גדול</h3>
       <p data-i18n="services.s4.desc">ארגזים, תיקיות ומאות מסמכים - מטפלים בכמויות גדולות ביעילות ובאיכות גבוהה.</p>
-      <div class="expand-hint"><span data-i18n="services.expand">למידע נוסף</span><span class="chevron">▾</span></div>
-      <div class="service-expand"><span data-i18n="services.s4.detail">מיועד לארגונים ועסקים עם כמויות גדולות. אנחנו מגיעים, אוספים, סורקים ומחזירים. כולל דיווח שוטף על התקדמות הפרויקט.</span></div>
     </article>
   </div>
 </section>
@@ -989,7 +990,7 @@
     <li class="step">
       <div class="step-num" aria-hidden="true">1</div>
       <h3 data-i18n="how.s1.title">יצירת קשר</h3>
-      <p data-i18n="how.s1.desc">שלחו לנו הודעה, תארו את הצורך שלכם, ונקבע מועד איסוף נוח.</p>
+      <p data-i18n="how.s1.desc">שלחו לנו הודעה, תארו את הצורך שלכם ונשלח לכם הצעת מחיר מותאמת אישית.</p>
     </li>
     <li class="step">
       <div class="step-num" aria-hidden="true">2</div>
@@ -1065,7 +1066,7 @@
     <div class="security-card">
       <div class="security-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
       <h4 data-i18n="security.s2.title">אתם בשליטה</h4>
-      <p data-i18n="security.s2.desc">שום דבר לא קורה בלי ההסכמה המפורשת שלכם. אתם מחליטים מה נסרק, איך זה מאורגן, ובאיזה פורמט מקבלים את הקבצים.</p>
+      <p data-i18n="security.s2.desc">שום דבר לא קורה בלי ההסכמה המפורשת שלכם. אתם מחליטים מה נסרק ואיך זה מאורגן.</p>
     </div>
     <div class="security-card">
       <div class="security-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
@@ -1083,10 +1084,6 @@
 
   <div class="faq-list reveal">
     <div class="faq-item">
-      <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q1">כמה זמן לוקח תהליך הדיגיטציה?</span><span class="faq-toggle">+</span></button>
-      <div class="faq-answer" role="region"><div><p data-i18n="faq.a1">התהליך תלוי בהיקף הפרויקט. פרויקט משפחתי קטן יכול להסתיים תוך ימים ספורים. פרויקטים עסקיים גדולים מתוכננים מראש עם לוח זמנים שמותאם לצרכים שלכם - תמיד עם עדכונים שוטפים על ההתקדמות.</p></div></div>
-    </div>
-    <div class="faq-item">
       <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q2">באילו פורמטים אקבל את הקבצים?</span><span class="faq-toggle">+</span></button>
       <div class="faq-answer" role="region"><div><p data-i18n="faq.a2">הפורמט הסטנדרטי הוא PDF בר-חיפוש (עם שכבת OCR). בהתאם לצורך, אפשר לקבל גם קבצי תמונה באיכות גבוהה. הכל מאורגן בתיקיות לפי המבנה שמתאים לכם.</p></div></div>
     </div>
@@ -1096,23 +1093,19 @@
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q4">כמה זה עולה?</span><span class="faq-toggle">+</span></button>
-      <div class="faq-answer" role="region"><div><p data-i18n="faq.a4">המחיר נקבע לפי היקף הפרויקט, סוג החומר והצרכים הספציפיים שלכם. שלחו לנו הודעה עם תיאור קצר ונחזור אליכם עם הצעת מחיר מותאמת - בלי התחייבות.</p></div></div>
+      <div class="faq-answer" role="region"><div><p data-i18n="faq.a4">לרגל הפתיחה, השקנו מחירים לזמן מוגבל! מחיר לעמוד- 0.90 ש״ח מחיר לקלסר סטנדרטי- 300 ש״ח או- מחיר ליום עבודה באתר הלקוח- 1,700 ש״ח. להצעת מחיר מותאמת השאירו פרטים ונחזור אליכם</p></div></div>
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q5">האם המידע שלי נשמר בסודיות?</span><span class="faq-toggle">+</span></button>
-      <div class="faq-answer" role="region"><div><p data-i18n="faq.a5">בהחלט. כל פרויקט מלווה בהסכם ברור שמגדיר בדיוק מה קורה עם הנתונים שלכם. אנחנו עובדים בשקיפות מלאה - אתם תמיד יודעים מה קורה עם המסמכים שלכם.</p></div></div>
+      <div class="faq-answer" role="region"><div><p data-i18n="faq.a5">בהחלט. כל פרויקט מלווה בהסכם ברור שמגדיר בדיוק מה קורה עם הנתונים שלכם.</p></div></div>
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q6">מה זה OCR ולמה זה חשוב?</span><span class="faq-toggle">+</span></button>
       <div class="faq-answer" role="region"><div><p data-i18n="faq.a6">OCR (זיהוי תווים אופטי) הופך תמונה של מסמך לטקסט שניתן לחיפוש. במקום לדפדף בתיקיות, פשוט מחפשים מילה ומוצאים את המסמך הנכון תוך שניות. זה ההבדל בין ארכיון של תמונות לבין ארכיון דיגיטלי אמיתי.</p></div></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q7">יש איסוף והחזרה?</span><span class="faq-toggle">+</span></button>
-      <div class="faq-answer" role="region"><div><p data-i18n="faq.a7">כן. אנחנו מגיעים אליכם לאיסוף החומר ומחזירים הכל בסיום. לא צריך להתעסק עם משלוחים - אנחנו מטפלים בכל הלוגיסטיקה.</p></div></div>
-    </div>
-    <div class="faq-item">
       <button class="faq-question" aria-expanded="false"><span data-i18n="faq.q8">אילו סוגי מסמכים אפשר לסרוק?</span><span class="faq-toggle">+</span></button>
-      <div class="faq-answer" role="region"><div><p data-i18n="faq.a8">כמעט הכל: מסמכי A4, חוזים, חשבוניות, תמונות בכל גודל, מכתבים, כרטיסי ביקור, מפות, תוכניות, ועוד. אם אתם לא בטוחים - שלחו לנו תמונה ונגיד לכם בדיוק מה אפשר לעשות.</p></div></div>
+      <div class="faq-answer" role="region"><div><p data-i18n="faq.a8">כמעט הכל: מסמכי A4, חוזים, חשבוניות, תמונות בכל גודל, מכתבים, כרטיסי ביקור, ועוד.</p></div></div>
     </div>
   </div>
 </section>
@@ -1195,8 +1188,8 @@
 <script>
 const T = {
   he: {
-    'nav.aria': 'ניווט ראשי', 'nav.services': 'שירותים', 'nav.how': 'איך זה עובד',
-    'nav.why': 'למה אנחנו', 'nav.contact': 'הצעת מחיר',
+    'nav.aria': 'ניווט ראשי', 'nav.services': 'שירותים', 'nav.how': 'איך זה עובד?',
+    'nav.why': 'למה אנחנו?', 'nav.faq': 'שאלות נפוצות', 'nav.contact': 'הצעת מחיר',
     'lang.switch.label': 'Switch to English', 'lang.switch.text': 'EN',
     'skip.content': 'דלג לתוכן הראשי',
     'hero.badge': 'דיגיטציה מקצועית לעסקים ומשפחות',
@@ -1213,13 +1206,13 @@ const T = {
     'services.s3.title': 'OCR – מסמכים ניתנים לחיפוש', 'services.s3.desc': 'הטכנולוגיה שלנו הופכת כל סריקה לבר-חיפוש - מצאו כל מסמך בחיפוש מילה אחת.',
     'services.s4.title': 'פרויקטים בהיקף גדול', 'services.s4.desc': 'ארגזים, תיקיות ומאות מסמכים - מטפלים בכמויות גדולות ביעילות ובאיכות גבוהה.',
     'services.expand': 'למידע נוסף',
-    'services.s1.detail': 'סריקה ברזולוציה גבוהה (600 DPI) של תמונות, מכתבים ומסמכים משפחתיים. כל קובץ מקבל שם ומיון לפי תאריך, אירוע או משפחה. הארכיון הדיגיטלי נגיש מכל מכשיר.',
+    'services.s1.detail': 'סריקה ברזולוציה גבוהה (600 DPI) של תמונות, מכתבים ומסמכים משפחתיים. כל קובץ מקבל שם ומיון לפי תאריך, אירוע או משפחה.',
     'services.s2.detail': 'סריקה של חוזים, תיקי לקוחות, חשבוניות ומסמכי הנהלה. כל מסמך עובר OCR כך שניתן לחפש בו טקסט. אידיאלי למשרדי עורכי דין, רואי חשבון ועסקים.',
     'services.s3.detail': 'טכנולוגיית OCR מתקדמת הופכת כל סריקה ל-PDF בר-חיפוש. תומך בעברית ואנגלית. חפשו מילה ומצאו את המסמך הנכון תוך שניות, גם מתוך אלפי קבצים.',
-    'services.s4.detail': 'מיועד לארגונים ועסקים עם כמויות גדולות. אנחנו מגיעים, אוספים, סורקים ומחזירים. כולל דיווח שוטף על התקדמות הפרויקט.',
+    'services.s4.detail': '',
     'how.label': 'התהליך', 'how.title': 'איך זה עובד?',
     'how.sub': 'שלושה שלבים פשוטים - ואתם מקבלים ארכיון דיגיטלי מסודר.',
-    'how.s1.title': 'יצירת קשר', 'how.s1.desc': 'שלחו לנו הודעה, תארו את הצורך שלכם, ונקבע מועד איסוף נוח.',
+    'how.s1.title': 'יצירת קשר', 'how.s1.desc': 'שלחו לנו הודעה, תארו את הצורך שלכם ונשלח לכם הצעת מחיר מותאמת אישית.',
     'how.s2.title': 'סריקה מקצועית', 'how.s2.desc': 'אנחנו סורקים את כל החומר בציוד מקצועי, כולל המרה ל-OCR לקבצים ניתנים לחיפוש.',
     'how.s3.title': 'קבלת הארכיון', 'how.s3.desc': 'מקבלים קבצים מסודרים - לפי תיקיות, שנים, או קטגוריות - על פי הצרכים שלכם.',
     'why.label': 'למה PlinerSpec?', 'why.title': 'היתרון שלנו',
@@ -1271,31 +1264,27 @@ const T = {
     'security.label': 'אמינות ושקיפות', 'security.title': 'איך אנחנו מטפלים בנתונים שלכם',
     'security.sub': 'תהליך מובנה ושקוף - כדי שתדעו בדיוק מה קורה עם המסמכים שלכם בכל שלב.',
     'security.s1.title': 'שקיפות מלאה', 'security.s1.desc': 'הסכמים ברורים שמגדירים בדיוק מה קורה עם המסמכים שלכם בכל שלב של התהליך. בלי הפתעות, בלי אותיות קטנות.',
-    'security.s2.title': 'אתם בשליטה', 'security.s2.desc': 'שום דבר לא קורה בלי ההסכמה המפורשת שלכם. אתם מחליטים מה נסרק, איך זה מאורגן, ובאיזה פורמט מקבלים את הקבצים.',
+    'security.s2.title': 'אתם בשליטה', 'security.s2.desc': 'שום דבר לא קורה בלי ההסכמה המפורשת שלכם. אתם מחליטים מה נסרק ואיך זה מאורגן.',
     'security.s3.title': 'טיפול מקצועי', 'security.s3.desc': 'המסמכים הפיזיים שלכם מטופלים בזהירות לאורך כל התהליך ומוחזרים אליכם בשלמותם. ללא יוצא מן הכלל.',
     // FAQ
     'faq.label': 'שאלות נפוצות', 'faq.title': 'יש שאלות? יש תשובות',
     'faq.sub': 'ריכזנו את השאלות שאנחנו מקבלים הכי הרבה. לא מצאתם תשובה? שלחו לנו הודעה.',
-    'faq.q1': 'כמה זמן לוקח תהליך הדיגיטציה?',
-    'faq.a1': 'התהליך תלוי בהיקף הפרויקט. פרויקט משפחתי קטן יכול להסתיים תוך ימים ספורים. פרויקטים עסקיים גדולים מתוכננים מראש עם לוח זמנים שמותאם לצרכים שלכם - תמיד עם עדכונים שוטפים על ההתקדמות.',
     'faq.q2': 'באילו פורמטים אקבל את הקבצים?',
     'faq.a2': 'הפורמט הסטנדרטי הוא PDF בר-חיפוש (עם שכבת OCR). בהתאם לצורך, אפשר לקבל גם קבצי תמונה באיכות גבוהה. הכל מאורגן בתיקיות לפי המבנה שמתאים לכם.',
     'faq.q3': 'אפשר לסרוק מסמכים ישנים או פגומים?',
     'faq.a3': 'כן. אנחנו מתמחים בטיפול במסמכים עדינים - תמונות ישנות, מכתבים שבלו, ניירות שנפגעו מזמן. הציוד שלנו מותאם לסריקה בלי לפגוע בחומר, ואנחנו מטפלים בכל פריט בזהירות מרבית.',
     'faq.q4': 'כמה זה עולה?',
-    'faq.a4': 'המחיר נקבע לפי היקף הפרויקט, סוג החומר והצרכים הספציפיים שלכם. שלחו לנו הודעה עם תיאור קצר ונחזור אליכם עם הצעת מחיר מותאמת - בלי התחייבות.',
+    'faq.a4': 'לרגל הפתיחה, השקנו מחירים לזמן מוגבל! מחיר לעמוד- 0.90 ש״ח מחיר לקלסר סטנדרטי- 300 ש״ח או- מחיר ליום עבודה באתר הלקוח- 1,700 ש״ח. להצעת מחיר מותאמת השאירו פרטים ונחזור אליכם',
     'faq.q5': 'האם המידע שלי נשמר בסודיות?',
-    'faq.a5': 'בהחלט. כל פרויקט מלווה בהסכם ברור שמגדיר בדיוק מה קורה עם הנתונים שלכם. אנחנו עובדים בשקיפות מלאה - אתם תמיד יודעים מה קורה עם המסמכים שלכם.',
+    'faq.a5': 'בהחלט. כל פרויקט מלווה בהסכם ברור שמגדיר בדיוק מה קורה עם הנתונים שלכם.',
     'faq.q6': 'מה זה OCR ולמה זה חשוב?',
     'faq.a6': 'OCR (זיהוי תווים אופטי) הופך תמונה של מסמך לטקסט שניתן לחיפוש. במקום לדפדף בתיקיות, פשוט מחפשים מילה ומוצאים את המסמך הנכון תוך שניות. זה ההבדל בין ארכיון של תמונות לבין ארכיון דיגיטלי אמיתי.',
-    'faq.q7': 'יש איסוף והחזרה?',
-    'faq.a7': 'כן. אנחנו מגיעים אליכם לאיסוף החומר ומחזירים הכל בסיום. לא צריך להתעסק עם משלוחים - אנחנו מטפלים בכל הלוגיסטיקה.',
     'faq.q8': 'אילו סוגי מסמכים אפשר לסרוק?',
-    'faq.a8': 'כמעט הכל: מסמכי A4, חוזים, חשבוניות, תמונות בכל גודל, מכתבים, כרטיסי ביקור, מפות, תוכניות, ועוד. אם אתם לא בטוחים - שלחו לנו תמונה ונגיד לכם בדיוק מה אפשר לעשות.',
+    'faq.a8': 'כמעט הכל: מסמכי A4, חוזים, חשבוניות, תמונות בכל גודל, מכתבים, כרטיסי ביקור, ועוד.',
   },
   en: {
-    'nav.aria': 'Main navigation', 'nav.services': 'Services', 'nav.how': 'How It Works',
-    'nav.why': 'Why Us', 'nav.contact': 'Get a Quote',
+    'nav.aria': 'Main navigation', 'nav.services': 'Services', 'nav.how': 'How It Works?',
+    'nav.why': 'Why Us?', 'nav.faq': 'FAQ', 'nav.contact': 'Get a Quote',
     'lang.switch.label': 'עבור לעברית', 'lang.switch.text': 'עב',
     'skip.content': 'Skip to main content',
     'hero.badge': 'Professional Digitization for Businesses & Families',
@@ -1312,13 +1301,13 @@ const T = {
     'services.s3.title': 'OCR – Searchable Documents', 'services.s3.desc': 'Our technology makes every scan fully searchable - find any document by searching a single word.',
     'services.s4.title': 'Large-Scale Projects', 'services.s4.desc': 'Boxes, folders and hundreds of documents - we handle large volumes efficiently and with high quality.',
     'services.expand': 'Learn more',
-    'services.s1.detail': 'High-resolution scanning (600 DPI) of photos, letters and family documents. Every file is named and sorted by date, event or family. Your digital archive is accessible from any device.',
+    'services.s1.detail': 'High-resolution scanning (600 DPI) of photos, letters and family documents. Every file is named and sorted by date, event or family.',
     'services.s2.detail': 'Scanning contracts, client files, invoices and management documents. Every document goes through OCR so you can search text within it. Ideal for law firms, accountants and businesses.',
     'services.s3.detail': 'Advanced OCR technology converts every scan into a searchable PDF. Supports Hebrew and English. Search for a word and find the right document in seconds, even among thousands of files.',
-    'services.s4.detail': 'Designed for organizations and businesses with large document volumes. We pick up, scan and return everything. Includes regular progress reports on your project.',
+    'services.s4.detail': '',
     'how.label': 'The Process', 'how.title': 'How Does It Work?',
     'how.sub': 'Three simple steps - and you receive a fully organized digital archive.',
-    'how.s1.title': 'Get in Touch', 'how.s1.desc': 'Send us a message, describe your needs, and we\'ll arrange a convenient pickup time.',
+    'how.s1.title': 'Get in Touch', 'how.s1.desc': 'Send us a message, describe your needs, and we\'ll send you a personalized quote.',
     'how.s2.title': 'Professional Scanning', 'how.s2.desc': 'We scan all materials with professional equipment, including OCR conversion for full-text search.',
     'how.s3.title': 'Receive Your Archive', 'how.s3.desc': 'Get organized files - by folder, year, or category - tailored to your needs.',
     'why.label': 'Why PlinerSpec?', 'why.title': 'Our Advantage',
@@ -1370,27 +1359,23 @@ const T = {
     'security.label': 'Trust & Transparency', 'security.title': 'How We Handle Your Data',
     'security.sub': 'A structured, transparent process - so you know exactly what happens with your documents at every stage.',
     'security.s1.title': 'Full Transparency', 'security.s1.desc': 'Clear agreements that define exactly what happens with your documents at every stage of the process. No surprises, no fine print.',
-    'security.s2.title': 'You\'re In Control', 'security.s2.desc': 'Nothing happens without your explicit consent. You decide what gets scanned, how it\'s organized, and in what format you receive the files.',
+    'security.s2.title': 'You\'re In Control', 'security.s2.desc': 'Nothing happens without your explicit consent. You decide what gets scanned and how it\'s organized.',
     'security.s3.title': 'Professional Handling', 'security.s3.desc': 'Your physical documents are handled with care throughout the entire process and returned to you intact. No exceptions.',
     // FAQ
     'faq.label': 'FAQ', 'faq.title': 'Questions? We Have Answers',
     'faq.sub': 'We\'ve collected the questions we get asked most. Didn\'t find an answer? Send us a message.',
-    'faq.q1': 'How long does the digitization process take?',
-    'faq.a1': 'It depends on the project scope. A small family project can be completed within a few days. Large business projects are planned in advance with a timeline tailored to your needs - always with regular progress updates.',
     'faq.q2': 'What formats will I receive?',
     'faq.a2': 'The standard format is searchable PDF (with OCR layer). Depending on your needs, you can also receive high-quality image files. Everything is organized in folders according to a structure that works for you.',
     'faq.q3': 'Can you handle damaged or old documents?',
     'faq.a3': 'Yes. We specialize in handling delicate documents - old photographs, worn letters, papers damaged by time. Our equipment is designed for scanning without damaging the material, and we treat every item with the utmost care.',
     'faq.q4': 'How much does it cost?',
-    'faq.a4': 'Pricing depends on the project scope, type of material, and your specific needs. Send us a message with a brief description and we\'ll get back to you with a tailored quote - no obligation.',
+    'faq.a4': 'To celebrate our launch, we\'re offering limited-time pricing! Per page: 0.90 NIS. Standard filing box: 300 NIS. Or full day on-site: 1,700 NIS. For a custom quote, leave your details and we\'ll get back to you.',
     'faq.q5': 'Is my information kept confidential?',
-    'faq.a5': 'Absolutely. Every project comes with a clear agreement that defines exactly what happens with your data. We operate with full transparency - you always know what\'s happening with your documents.',
+    'faq.a5': 'Absolutely. Every project comes with a clear agreement that defines exactly what happens with your data.',
     'faq.q6': 'What is OCR and why does it matter?',
     'faq.a6': 'OCR (Optical Character Recognition) converts a document image into searchable text. Instead of browsing through folders, simply search for a word and find the right document in seconds. It\'s the difference between an image archive and a real digital archive.',
-    'faq.q7': 'Do you pick up and deliver?',
-    'faq.a7': 'Yes. We come to you to pick up the materials and return everything when done. No need to deal with shipping - we handle all the logistics.',
     'faq.q8': 'What types of documents can you scan?',
-    'faq.a8': 'Almost everything: A4 documents, contracts, invoices, photos of any size, letters, business cards, maps, plans, and more. If you\'re not sure - send us a photo and we\'ll tell you exactly what we can do.',
+    'faq.a8': 'Almost everything: A4 documents, contracts, invoices, photos of any size, letters, business cards, and more.',
   }
 };
 
