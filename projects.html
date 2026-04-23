@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PlinerSpec projects — four projects. Three principles. One purpose. Redaction, archive digitization, charity transparency, smart social card." />
+  <meta property="og:title" content="Projects — PlinerSpec" />
+  <meta property="og:description" content="Four projects. Three principles. One purpose." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://plinerspec.com/projects.html" />
+  <meta property="og:locale" content="he_IL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/projects.html" />
+  <link rel="alternate" hreflang="he" href="https://plinerspec.com/projects.html" />
+  <link rel="alternate" hreflang="en" href="https://plinerspec.com/projects.html" />
+  <title>פרויקטים — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+      --font-scale: 1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.7; font-size: calc(1.0625rem * var(--font-scale)); -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    .small-label { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
+    .small-label.accent { color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .page-hero { padding: clamp(80px, 14vw, 160px) 0 clamp(40px, 6vw, 60px); text-align: center; border-bottom: 1px solid var(--border); }
+    .page-hero .small-label { display: block; margin-bottom: 24px; }
+    .page-hero h1 { font-size: clamp(2.5rem, 5.5vw, 4rem); max-width: 18ch; margin: 0 auto 24px; }
+    .page-hero .lead { font-size: clamp(1.125rem, 1.5vw, 1.25rem); color: var(--ink-soft); max-width: 36em; margin: 0 auto; }
+
+    .projects-list { padding: clamp(60px, 10vw, 100px) 0; }
+    .project-item { padding: clamp(40px, 6vw, 64px) 0; border-bottom: 1px solid var(--border); }
+    .project-item:last-child { border-bottom: none; }
+    .project-item-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); display: grid; grid-template-columns: 160px 1fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
+    .project-number { font-family: var(--font-serif-display); font-size: 3rem; font-style: italic; color: var(--muted-light); line-height: 1; }
+    .project-pillar { display: block; margin-top: 8px; }
+    .project-body h3 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-bottom: 16px; }
+    html[lang="en"] .project-body h3 { font-family: var(--font-serif-display); }
+    .project-body p { font-size: 1.125rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 24px; max-width: 50em; }
+    .project-link { font-family: var(--font-serif-display); font-style: italic; font-size: 1.25rem; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+    html[lang="he"] .project-link { font-family: var(--font-heb); font-style: normal; font-weight: 500; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    .a11y-toolbar { position: fixed; bottom: 20px; inset-inline-start: 20px; background: var(--ink); border-radius: 24px; padding: 8px; display: flex; gap: 4px; z-index: 40; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .a11y-toolbar button { width: 36px; height: 36px; border: none; background: transparent; color: var(--bg); cursor: pointer; border-radius: 18px; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+    .a11y-toolbar button:hover, .a11y-toolbar button.active { background: var(--accent); }
+    body.hcm { background: #fff !important; color: #000 !important; }
+    body.hcm * { color: #000 !important; }
+    body.hcm a { color: #0000aa !important; }
+    body.hcm .site-footer { background: #000 !important; }
+    body.hcm .site-footer * { color: #fff !important; }
+    body.grayscale { filter: grayscale(100%); }
+
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--ink); color: var(--bg); padding: 8px 16px; z-index: 1000; font-family: var(--font-sans); font-size: 0.9rem; border-bottom: none; }
+    .skip-link:focus { top: 0; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .project-item-wrap { grid-template-columns: 1fr; gap: 16px; }
+      .project-number { font-size: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skipToMain">דלג לתוכן</a>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="index.html#pillars" data-i18n="navPillars">העקרונות</a></li>
+      <li><a href="index.html#manifesto" data-i18n="navAbout">אודות</a></li>
+      <li><a href="articles/" data-i18n="navArticles">מאמרים</a></li>
+      <li><a href="projects.html" data-i18n="navProjects">פרויקטים</a></li>
+      <li><a href="index.html#contact" data-i18n="navContact">צור קשר</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="small-label accent" data-i18n="eyebrow">פרויקטים</span>
+      <h1 data-i18n="title">ארבעה פרויקטים. שלושה עקרונות. מטרה אחת.</h1>
+      <p class="lead" data-i18n="lead">כל פרויקט הוא ביטוי של אחד העקרונות. כולם תמיד בפיתוח, אף אחד לא נגמר באמת.</p>
+    </div>
+  </section>
+
+  <section class="projects-list">
+
+    <article class="project-item">
+      <div class="project-item-wrap">
+        <div>
+          <span class="project-number">01</span>
+          <span class="small-label accent project-pillar" data-i18n="p1Pillar">פרטיות</span>
+        </div>
+        <div class="project-body">
+          <h3 data-i18n="p1Title">כלי הסרת מידע אישי</h3>
+          <p data-i18n="p1Body">טכנולוגיה שמזהה ומסירה אוטומטית מידע אישי ממסמכים סרוקים. רץ במלואו על המחשב המקומי, בלי שליחת מידע לאף שרת. פתרון אמיתי לעמידה בתיקון 13 ו-GDPR.</p>
+          <a href="projects/redaction.html" class="project-link" data-i18n="p1Link">קרא עוד ←</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-item">
+      <div class="project-item-wrap">
+        <div>
+          <span class="project-number">02</span>
+          <span class="small-label accent project-pillar" data-i18n="p2Pillar">אמת</span>
+        </div>
+        <div class="project-body">
+          <h3 data-i18n="p2Title">דיגיטציה של ארכיונים</h3>
+          <p data-i18n="p2Body">הפיכת מסמכים פיזיים לארכיון דיגיטלי שמיש, מאובטח, ועומד בדרישות החוק. משרת עסקים, משפחות, וארגונים שרוצים לשמר את מה שהיה בלי לחשוף את עצמם.</p>
+          <a href="projects/scanning.html" class="project-link" data-i18n="p2Link">קרא עוד ←</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-item">
+      <div class="project-item-wrap">
+        <div>
+          <span class="project-number">03</span>
+          <span class="small-label accent project-pillar" data-i18n="p3Pillar">צדק · אמת</span>
+        </div>
+        <div class="project-body">
+          <h3 data-i18n="p3Title">שקיפות בעמותות צדקה</h3>
+          <p data-i18n="p3Body">מחקר וניטור של עמותות — לאן הכסף באמת הולך, מי מנהל, מה השקיפות. מסייע לתורמים לבחור נכון.</p>
+          <a href="projects/charity.html" class="project-link" data-i18n="p3Link">קרא עוד ←</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-item">
+      <div class="project-item-wrap">
+        <div>
+          <span class="project-number">04</span>
+          <span class="small-label accent project-pillar" data-i18n="p4Pillar">צדק</span>
+        </div>
+        <div class="project-body">
+          <h3 data-i18n="p4Title">כרטיס אשראי חברתי חכם</h3>
+          <p data-i18n="p4Body">כרטיס לקצבאות וכרטיס לילדים שמגביל הוצאות לצרכים בסיסיים בלבד. מגן על הפגיעים מבחירות הרסניות, ללא פגיעה בכבוד.</p>
+          <a href="projects/social-card.html" class="project-link" data-i18n="p4Link">קרא עוד ←</a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand"><p data-i18n="footerTagline">צדק. אמת. פרטיות.</p></div>
+      <div class="footer-col">
+        <h4 data-i18n="footerProjects">פרויקטים</h4>
+        <a href="projects/redaction.html" data-i18n="footerProj1">הסרת מידע אישי</a>
+        <a href="projects/scanning.html" data-i18n="footerProj2">דיגיטציה של ארכיונים</a>
+        <a href="projects/charity.html" data-i18n="footerProj3">שקיפות בעמותות</a>
+        <a href="projects/social-card.html" data-i18n="footerProj4">כרטיס חברתי חכם</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerLegal">חוקי</h4>
+        <a href="privacy-policy.html" data-i18n="footerPrivacy">מדיניות פרטיות</a>
+        <a href="terms.html" data-i18n="footerTerms">תנאי שימוש</a>
+        <a href="compliance.html" data-i18n="footerCompliance">עמידה ברגולציה</a>
+        <a href="accessibility.html" data-i18n="footerAccessibility">נגישות</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footerCopy">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="a11y-toolbar" role="toolbar" aria-label="Accessibility tools">
+  <button id="a11yFontUp" aria-label="Increase font size">A+</button>
+  <button id="a11yFontDown" aria-label="Decrease font size">A-</button>
+  <button id="a11yContrast" aria-label="Toggle high contrast">◐</button>
+  <button id="a11yGrayscale" aria-label="Toggle grayscale">○</button>
+  <button id="a11yReset" aria-label="Reset">↺</button>
+</div>
+
+<script>
+const T = {
+  he: {
+    skipToMain: "דלג לתוכן",
+    navPillars: "העקרונות", navAbout: "אודות", navArticles: "מאמרים", navProjects: "פרויקטים", navContact: "צור קשר",
+    eyebrow: "פרויקטים",
+    title: "ארבעה פרויקטים. שלושה עקרונות. מטרה אחת.",
+    lead: "כל פרויקט הוא ביטוי של אחד העקרונות. כולם תמיד בפיתוח, אף אחד לא נגמר באמת.",
+    p1Pillar: "פרטיות", p1Title: "כלי הסרת מידע אישי", p1Body: "טכנולוגיה שמזהה ומסירה אוטומטית מידע אישי ממסמכים סרוקים. רץ במלואו על המחשב המקומי, בלי שליחת מידע לאף שרת. פתרון אמיתי לעמידה בתיקון 13 ו-GDPR.", p1Link: "קרא עוד ←",
+    p2Pillar: "אמת", p2Title: "דיגיטציה של ארכיונים", p2Body: "הפיכת מסמכים פיזיים לארכיון דיגיטלי שמיש, מאובטח, ועומד בדרישות החוק. משרת עסקים, משפחות, וארגונים שרוצים לשמר את מה שהיה בלי לחשוף את עצמם.", p2Link: "קרא עוד ←",
+    p3Pillar: "צדק · אמת", p3Title: "שקיפות בעמותות צדקה", p3Body: "מחקר וניטור של עמותות — לאן הכסף באמת הולך, מי מנהל, מה השקיפות. מסייע לתורמים לבחור נכון.", p3Link: "קרא עוד ←",
+    p4Pillar: "צדק", p4Title: "כרטיס אשראי חברתי חכם", p4Body: "כרטיס לקצבאות וכרטיס לילדים שמגביל הוצאות לצרכים בסיסיים בלבד. מגן על הפגיעים מבחירות הרסניות, ללא פגיעה בכבוד.", p4Link: "קרא עוד ←",
+    footerTagline: "צדק. אמת. פרטיות.", footerProjects: "פרויקטים", footerProj1: "הסרת מידע אישי", footerProj2: "דיגיטציה של ארכיונים", footerProj3: "שקיפות בעמותות", footerProj4: "כרטיס חברתי חכם",
+    footerLegal: "חוקי", footerPrivacy: "מדיניות פרטיות", footerTerms: "תנאי שימוש", footerCompliance: "עמידה ברגולציה", footerAccessibility: "נגישות",
+    footerCopy: "© 2026 PlinerSpec. כל הזכויות שמורות."
+  },
+  en: {
+    skipToMain: "Skip to main content",
+    navPillars: "Principles", navAbout: "About", navArticles: "Articles", navProjects: "Projects", navContact: "Contact",
+    eyebrow: "Projects",
+    title: "Four projects. Three principles. One purpose.",
+    lead: "Each project is an expression of one of the principles. All always developing, none ever really finished.",
+    p1Pillar: "Privacy", p1Title: "PII Redaction Tool", p1Body: "Technology that automatically identifies and removes personal data from scanned documents. Runs entirely on the local machine, no data sent to any server. A real solution for Amendment 13 and GDPR compliance.", p1Link: "Read more →",
+    p2Pillar: "Truth", p2Title: "Archive Digitization", p2Body: "Turning physical documents into a usable, secure digital archive that meets legal requirements. Serves businesses, families, and organizations that want to preserve what was without exposing themselves.", p2Link: "Read more →",
+    p3Pillar: "Justice · Truth", p3Title: "Charity Transparency", p3Body: "Research and monitoring of nonprofits — where the money really goes, who manages it, how transparent they are. Helps donors choose well.", p3Link: "Read more →",
+    p4Pillar: "Justice", p4Title: "Smart Social Card", p4Body: "A card for welfare recipients and children that limits spending to essentials only. Protects the vulnerable from harmful choices, without compromising dignity.", p4Link: "Read more →",
+    footerTagline: "Justice. Truth. Privacy.", footerProjects: "Projects", footerProj1: "Redaction Tool", footerProj2: "Archive Digitization", footerProj3: "Charity Transparency", footerProj4: "Smart Social Card",
+    footerLegal: "Legal", footerPrivacy: "Privacy Policy", footerTerms: "Terms of Use", footerCompliance: "Regulatory Compliance", footerAccessibility: "Accessibility",
+    footerCopy: "© 2026 PlinerSpec. All rights reserved."
+  }
+};
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; if (T[lang] && T[lang][k]) el.textContent = T[lang][k]; });
+  document.title = lang === 'he' ? 'פרויקטים — PlinerSpec' : 'Projects — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+
+// A11y toolbar
+let fontScale = parseFloat(localStorage.getItem('fontScale') || '1');
+document.documentElement.style.setProperty('--font-scale', fontScale);
+document.getElementById('a11yFontUp').addEventListener('click', () => { fontScale = Math.min(1.4, fontScale + 0.1); document.documentElement.style.setProperty('--font-scale', fontScale); localStorage.setItem('fontScale', fontScale); });
+document.getElementById('a11yFontDown').addEventListener('click', () => { fontScale = Math.max(0.8, fontScale - 0.1); document.documentElement.style.setProperty('--font-scale', fontScale); localStorage.setItem('fontScale', fontScale); });
+document.getElementById('a11yContrast').addEventListener('click', (e) => { document.body.classList.toggle('hcm'); e.target.classList.toggle('active'); localStorage.setItem('hcm', document.body.classList.contains('hcm')); });
+document.getElementById('a11yGrayscale').addEventListener('click', (e) => { document.body.classList.toggle('grayscale'); e.target.classList.toggle('active'); localStorage.setItem('grayscale', document.body.classList.contains('grayscale')); });
+document.getElementById('a11yReset').addEventListener('click', () => { fontScale = 1; document.documentElement.style.setProperty('--font-scale', fontScale); document.body.classList.remove('hcm', 'grayscale'); document.querySelectorAll('.a11y-toolbar button').forEach(b => b.classList.remove('active')); localStorage.removeItem('fontScale'); localStorage.removeItem('hcm'); localStorage.removeItem('grayscale'); });
+if (localStorage.getItem('hcm') === 'true') { document.body.classList.add('hcm'); document.getElementById('a11yContrast').classList.add('active'); }
+if (localStorage.getItem('grayscale') === 'true') { document.body.classList.add('grayscale'); document.getElementById('a11yGrayscale').classList.add('active'); }
+</script>
+
+</body>
+</html>

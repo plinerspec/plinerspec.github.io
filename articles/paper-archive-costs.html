@@ -11,6 +11,8 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <link rel="canonical" href="https://plinerspec.com/articles/paper-archive-costs.html" />
+  <link rel="alternate" hreflang="he" href="https://plinerspec.com/articles/paper-archive-costs.html" />
+  <link rel="alternate" hreflang="en" href="https://plinerspec.com/articles/paper-archive-costs.html" />
   <title>הארכיון שאוכל את התקציב שלכם. בשקט. — PlinerSpec</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,9 +108,23 @@
 
     .lang-content { display: none; }
     .lang-content.active { display: block; }
+
+.skip-link { position: absolute; top: -40px; left: 0; background: #1a1a1a; color: #f4f1ea; padding: 8px 16px; z-index: 1000; font-family: 'Inter', sans-serif; font-size: 0.9rem; border-bottom: none; }
+.skip-link:focus { top: 0; }
+
+.a11y-toolbar { position: fixed; bottom: 20px; inset-inline-start: 20px; background: #1a1a1a; border-radius: 24px; padding: 8px; display: flex; gap: 4px; z-index: 40; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.a11y-toolbar button { width: 36px; height: 36px; border: none; background: transparent; color: #f4f1ea; cursor: pointer; border-radius: 18px; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+.a11y-toolbar button:hover, .a11y-toolbar button.active { background: #8b3a2f; }
+body.hcm { background: #fff !important; color: #000 !important; }
+body.hcm * { color: #000 !important; }
+body.hcm a { color: #0000aa !important; }
+body.grayscale { filter: grayscale(100%); }
+body { font-size: calc(1.0625rem * var(--font-scale, 1)); }
   </style>
 </head>
 <body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <header class="site-header">
   <div class="nav-wrap">
@@ -124,7 +140,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <article>
     <!-- Hebrew -->
     <div class="lang-content active" data-lang="he">
@@ -378,6 +394,29 @@ function setLang(lang) {
 }
 document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
 setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+
+<div class="a11y-toolbar" role="toolbar" aria-label="Accessibility tools">
+  <button id="a11yFontUp" aria-label="Increase font size">A+</button>
+  <button id="a11yFontDown" aria-label="Decrease font size">A-</button>
+  <button id="a11yContrast" aria-label="Toggle high contrast">◐</button>
+  <button id="a11yGrayscale" aria-label="Toggle grayscale">○</button>
+  <button id="a11yReset" aria-label="Reset">↺</button>
+</div>
+<script>
+(function() {
+  let fontScale = parseFloat(localStorage.getItem('fontScale') || '1');
+  document.documentElement.style.setProperty('--font-scale', fontScale);
+  const b = id => document.getElementById(id);
+  if (b('a11yFontUp')) b('a11yFontUp').addEventListener('click', () => { fontScale = Math.min(1.4, fontScale + 0.1); document.documentElement.style.setProperty('--font-scale', fontScale); localStorage.setItem('fontScale', fontScale); });
+  if (b('a11yFontDown')) b('a11yFontDown').addEventListener('click', () => { fontScale = Math.max(0.8, fontScale - 0.1); document.documentElement.style.setProperty('--font-scale', fontScale); localStorage.setItem('fontScale', fontScale); });
+  if (b('a11yContrast')) b('a11yContrast').addEventListener('click', (e) => { document.body.classList.toggle('hcm'); e.target.classList.toggle('active'); localStorage.setItem('hcm', document.body.classList.contains('hcm')); });
+  if (b('a11yGrayscale')) b('a11yGrayscale').addEventListener('click', (e) => { document.body.classList.toggle('grayscale'); e.target.classList.toggle('active'); localStorage.setItem('grayscale', document.body.classList.contains('grayscale')); });
+  if (b('a11yReset')) b('a11yReset').addEventListener('click', () => { fontScale = 1; document.documentElement.style.setProperty('--font-scale', fontScale); document.body.classList.remove('hcm', 'grayscale'); document.querySelectorAll('.a11y-toolbar button').forEach(x => x.classList.remove('active')); localStorage.removeItem('fontScale'); localStorage.removeItem('hcm'); localStorage.removeItem('grayscale'); });
+  if (localStorage.getItem('hcm') === 'true' && b('a11yContrast')) { document.body.classList.add('hcm'); b('a11yContrast').classList.add('active'); }
+  if (localStorage.getItem('grayscale') === 'true' && b('a11yGrayscale')) { document.body.classList.add('grayscale'); b('a11yGrayscale').classList.add('active'); }
+})();
 </script>
 
 </body>
