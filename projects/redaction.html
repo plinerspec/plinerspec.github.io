@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="כלי הסרת מידע אישי — טכנולוגיה לזיהוי והסרה אוטומטית של PII ממסמכים סרוקים. רץ במלואו על המחשב המקומי." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/projects/redaction.html" />
+  <title>כלי הסרת מידע אישי — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', 'Source Serif 4', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.7; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 400; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 24px; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; }
+    p { margin-bottom: 1.2em; color: var(--ink-soft); }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .page-hero { padding: clamp(60px, 10vw, 100px) 0 clamp(40px, 6vw, 60px); border-bottom: 1px solid var(--border); }
+    .page-hero .small-label { display: block; margin-bottom: 16px; }
+    .page-hero h1 { max-width: 18ch; }
+    .page-hero .lead { font-size: 1.25rem; color: var(--ink-soft); max-width: 36em; margin-top: 16px; }
+    html[lang="en"] .page-hero .lead { font-family: var(--font-serif-body); font-style: italic; }
+
+    .content { padding-top: clamp(40px, 6vw, 60px); }
+    .content p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.8; }
+    html[lang="he"] .content p { font-family: var(--font-heb); }
+    .content h2 { font-family: var(--font-heb); font-weight: 500; }
+    html[lang="en"] .content h2 { font-family: var(--font-serif-display); font-weight: 500; font-style: italic; color: var(--accent); }
+
+    .principles-list { list-style: none; padding: 0; margin: 1.5em 0; }
+    .principles-list li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 16px; }
+    .principles-list li:last-child { border-bottom: none; }
+    .principles-list li strong { color: var(--ink); font-weight: 600; min-width: 120px; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+
+    .cta-box { background: var(--bg-elevated); padding: clamp(32px, 5vw, 48px); border-inline-start: 3px solid var(--accent); margin: 3em 0; }
+    .cta-box h3 { font-family: var(--font-serif-display); font-weight: 500; font-style: italic; color: var(--accent); margin-bottom: 12px; font-size: 1.5rem; }
+    html[lang="he"] .cta-box h3 { font-family: var(--font-heb); font-style: normal; }
+    .cta-box p { color: var(--ink-soft); margin-bottom: 16px; }
+    .cta-box a { font-family: var(--font-serif-display); font-style: italic; font-size: 1.125rem; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">PS</span>
+      <span>PlinerSpec</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html#pillars" data-i18n="navPillars">העקרונות</a></li>
+        <li><a href="../articles/" data-i18n="navArticles">מאמרים</a></li>
+        <li><a href="../index.html#projects" data-i18n="navProjects">פרויקטים</a></li>
+        <li><a href="../index.html#manifesto" data-i18n="navAbout">אודות</a></li>
+        <li><a href="../index.html#contact" data-i18n="navContact">צור קשר</a></li>
+      </ul>
+    </nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link" data-i18n="backLink">← חזרה לפרויקטים</a>
+      <span class="small-label" data-i18n="pillar" style="margin-top: 24px;">פרטיות · פרויקט 01</span>
+      <h1 data-i18n="title">כלי הסרת מידע אישי</h1>
+      <p class="lead" data-i18n="lead">טכנולוגיה שמזהה ומסירה אוטומטית מידע אישי ממסמכים סרוקים. רץ במלואו על המחשב המקומי, בלי שליחת מידע לאף שרת.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+
+      <h2 data-i18n="problemTitle">הבעיה</h2>
+      <p data-i18n="problem1">כל משרד עורכי דין, רואה חשבון, רופא, או מנהל משאבי אנוש מטפל מדי יום במאות מסמכים שמכילים מידע אישי רגיש. שמות, מספרי זהות, כתובות, פרטי בנק, מידע רפואי.</p>
+      <p data-i18n="problem2">כשצריך לשתף מסמך, להעביר אותו לצד שלישי, להעלות לפלטפורמה משפטית, או לשמור בארכיון לטווח ארוך — חלק מהמידע צריך להיעלם. זה תהליך שעובדים עושים ידנית. שעות של עבודה, וגם אז, פעמים רבות, נשכחים פרטים.</p>
+      <p data-i18n="problem3">הכלים הקיימים בשוק רובם מבוססי ענן. אתה מעלה מסמך, הוא נשלח לשרתים שלא בשליטתך. בדיוק המידע שאתה מנסה להגן עליו, נחשף לאחרים בדרך.</p>
+
+      <h2 data-i18n="solutionTitle">הפתרון</h2>
+      <p data-i18n="solution1">כלי שרץ במלואו על המחשב המקומי. לא ענן, לא שרת, לא חיבור לאינטרנט. המסמך לא יוצא מהמחשב שלך אף פעם.</p>
+      <p data-i18n="solution2">משתמש בבינה מלאכותית מתקדמת שמותקנת מקומית לזיהוי מידע אישי בכל שפה — עברית, אנגלית, ערבית, רוסית, ועוד. מזהה שמות, מספרי זהות, טלפונים, כתובות, תאריכי לידה, פרטי חשבון, ועוד.</p>
+      <p data-i18n="solution3">המשתמש שולט במה מוסר. אפשר לאשר, לדחות, להוסיף, או להסיר כל סימון לפני שהמסמך הסופי נוצר.</p>
+
+      <h2 data-i18n="howTitle">איך זה עובד</h2>
+      <ul class="principles-list">
+        <li><strong data-i18n="step1Title">קלט</strong><span data-i18n="step1Body">העלאת קבצי PDF או תמונות סרוקות.</span></li>
+        <li><strong data-i18n="step2Title">ניתוח</strong><span data-i18n="step2Body">בינה מלאכותית קוראת את המסמך, מזהה כל פיסת מידע אישי, ומסמנת אותה.</span></li>
+        <li><strong data-i18n="step3Title">סקירה</strong><span data-i18n="step3Body">המשתמש עובר על הסימונים. לחיצה אחת להסרה, לחיצה אחת להוספה.</span></li>
+        <li><strong data-i18n="step4Title">פלט</strong><span data-i18n="step4Body">קובץ סופי עם כל המידע האישי מוסתר. מוכן לשיתוף או לארכוב.</span></li>
+      </ul>
+
+      <h2 data-i18n="whyTitle">למה זה חשוב</h2>
+      <p data-i18n="why1">תיקון 13 לחוק הגנת הפרטיות בישראל, וה-GDPR באירופה, מטילים אחריות על כל מי שמטפל במידע אישי. דליפה, שיתוף לא מורשה, או טיפול רשלני יכולים לעלות בקנסות, תביעות, ופגיעה במוניטין.</p>
+      <p data-i18n="why2">הכלי לא רק עוזר לעמוד בחוק. הוא מאפשר לעבוד עם מסמכים בלי לפחד שהמידע יזלוג בדרך.</p>
+
+      <div class="cta-box">
+        <h3 data-i18n="ctaTitle">מעוניינים לדעת עוד?</h3>
+        <p data-i18n="ctaText">הכלי בפיתוח מתמיד. אם זה רלוונטי לעבודה שלך, או אם אתה רוצה לקבל עדכונים, צור קשר.</p>
+        <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p data-i18n="footerTagline">צדק. אמת. פרטיות.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerProjects">פרויקטים</h4>
+        <a href="redaction.html" data-i18n="footerProj1">הסרת מידע אישי</a>
+        <a href="scanning.html" data-i18n="footerProj2">דיגיטציה של ארכיונים</a>
+        <a href="charity.html" data-i18n="footerProj3">שקיפות בעמותות</a>
+        <a href="social-card.html" data-i18n="footerProj4">כרטיס חברתי חכם</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerLegal">חוקי</h4>
+        <a href="../privacy-policy.html" data-i18n="footerPrivacy">מדיניות פרטיות</a>
+        <a href="../terms.html" data-i18n="footerTerms">תנאי שימוש</a>
+        <a href="../compliance.html" data-i18n="footerCompliance">עמידה ברגולציה</a>
+        <a href="../accessibility.html" data-i18n="footerAccessibility">נגישות</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footerCopy">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  he: {
+    navPillars: "העקרונות", navProjects: "פרויקטים", navAbout: "אודות", navArticles: "מאמרים", navContact: "צור קשר",
+    backLink: "← חזרה לפרויקטים", pillar: "פרטיות · פרויקט 01",
+    title: "כלי הסרת מידע אישי",
+    lead: "טכנולוגיה שמזהה ומסירה אוטומטית מידע אישי ממסמכים סרוקים. רץ במלואו על המחשב המקומי, בלי שליחת מידע לאף שרת.",
+    problemTitle: "הבעיה",
+    problem1: "כל משרד עורכי דין, רואה חשבון, רופא, או מנהל משאבי אנוש מטפל מדי יום במאות מסמכים שמכילים מידע אישי רגיש. שמות, מספרי זהות, כתובות, פרטי בנק, מידע רפואי.",
+    problem2: "כשצריך לשתף מסמך, להעביר אותו לצד שלישי, להעלות לפלטפורמה משפטית, או לשמור בארכיון לטווח ארוך — חלק מהמידע צריך להיעלם. זה תהליך שעובדים עושים ידנית. שעות של עבודה, וגם אז, פעמים רבות, נשכחים פרטים.",
+    problem3: "הכלים הקיימים בשוק רובם מבוססי ענן. אתה מעלה מסמך, הוא נשלח לשרתים שלא בשליטתך. בדיוק המידע שאתה מנסה להגן עליו, נחשף לאחרים בדרך.",
+    solutionTitle: "הפתרון",
+    solution1: "כלי שרץ במלואו על המחשב המקומי. לא ענן, לא שרת, לא חיבור לאינטרנט. המסמך לא יוצא מהמחשב שלך אף פעם.",
+    solution2: "משתמש בבינה מלאכותית מתקדמת שמותקנת מקומית לזיהוי מידע אישי בכל שפה — עברית, אנגלית, ערבית, רוסית, ועוד. מזהה שמות, מספרי זהות, טלפונים, כתובות, תאריכי לידה, פרטי חשבון, ועוד.",
+    solution3: "המשתמש שולט במה מוסר. אפשר לאשר, לדחות, להוסיף, או להסיר כל סימון לפני שהמסמך הסופי נוצר.",
+    howTitle: "איך זה עובד",
+    step1Title: "קלט", step1Body: "העלאת קבצי PDF או תמונות סרוקות.",
+    step2Title: "ניתוח", step2Body: "בינה מלאכותית קוראת את המסמך, מזהה כל פיסת מידע אישי, ומסמנת אותה.",
+    step3Title: "סקירה", step3Body: "המשתמש עובר על הסימונים. לחיצה אחת להסרה, לחיצה אחת להוספה.",
+    step4Title: "פלט", step4Body: "קובץ סופי עם כל המידע האישי מוסתר. מוכן לשיתוף או לארכוב.",
+    whyTitle: "למה זה חשוב",
+    why1: "תיקון 13 לחוק הגנת הפרטיות בישראל, וה-GDPR באירופה, מטילים אחריות על כל מי שמטפל במידע אישי. דליפה, שיתוף לא מורשה, או טיפול רשלני יכולים לעלות בקנסות, תביעות, ופגיעה במוניטין.",
+    why2: "הכלי לא רק עוזר לעמוד בחוק. הוא מאפשר לעבוד עם מסמכים בלי לפחד שהמידע יזלוג בדרך.",
+    ctaTitle: "מעוניינים לדעת עוד?",
+    ctaText: "הכלי בפיתוח מתמיד. אם זה רלוונטי לעבודה שלך, או אם אתה רוצה לקבל עדכונים, צור קשר.",
+    footerTagline: "צדק. אמת. פרטיות.", footerProjects: "פרויקטים",
+    footerProj1: "הסרת מידע אישי", footerProj2: "דיגיטציה של ארכיונים", footerProj3: "שקיפות בעמותות", footerProj4: "כרטיס חברתי חכם",
+    footerLegal: "חוקי", footerPrivacy: "מדיניות פרטיות", footerTerms: "תנאי שימוש", footerCompliance: "עמידה ברגולציה", footerAccessibility: "נגישות",
+    footerCopy: "© 2026 PlinerSpec. כל הזכויות שמורות."
+  },
+  en: {
+    navPillars: "Principles", navProjects: "Projects", navAbout: "About", navArticles: "Articles", navContact: "Contact",
+    backLink: "← Back to projects", pillar: "Privacy · Project 01",
+    title: "PII Redaction Tool",
+    lead: "Technology that automatically identifies and removes personal data from scanned documents. Runs entirely on the local machine, no data sent to any server.",
+    problemTitle: "The Problem",
+    problem1: "Every law firm, accountant, doctor, or HR manager handles hundreds of documents daily containing sensitive personal data. Names, IDs, addresses, banking details, medical records.",
+    problem2: "When a document needs to be shared, sent to a third party, uploaded to a legal platform, or kept in long-term archives — some of the data needs to disappear. It's a process people do manually. Hours of work, and even then, details are often missed.",
+    problem3: "Most existing tools are cloud-based. You upload a document, it goes to servers you don't control. The very data you're trying to protect gets exposed along the way.",
+    solutionTitle: "The Solution",
+    solution1: "A tool that runs entirely on the local machine. No cloud, no server, no internet connection required. The document never leaves your computer.",
+    solution2: "Uses advanced AI installed locally to identify personal data in any language — Hebrew, English, Arabic, Russian, and more. Detects names, ID numbers, phones, addresses, dates of birth, account details, and more.",
+    solution3: "The user controls what gets removed. You can approve, reject, add, or remove any marking before the final document is created.",
+    howTitle: "How It Works",
+    step1Title: "Input", step1Body: "Upload PDF files or scanned images.",
+    step2Title: "Analysis", step2Body: "AI reads the document, identifies every piece of personal data, and marks it.",
+    step3Title: "Review", step3Body: "User reviews the markings. One click to remove, one click to add.",
+    step4Title: "Output", step4Body: "Final file with all personal data hidden. Ready for sharing or archiving.",
+    whyTitle: "Why It Matters",
+    why1: "Israel's Amendment 13 to the Privacy Protection Law, and Europe's GDPR, place responsibility on anyone handling personal data. Leaks, unauthorized sharing, or negligent handling can lead to fines, lawsuits, and reputational damage.",
+    why2: "The tool doesn't just help with compliance. It lets you work with documents without fear that information will leak along the way.",
+    ctaTitle: "Want to know more?",
+    ctaText: "The tool is in continuous development. If this is relevant to your work, or if you'd like updates, get in touch.",
+    footerTagline: "Justice. Truth. Privacy.", footerProjects: "Projects",
+    footerProj1: "Redaction Tool", footerProj2: "Archive Digitization", footerProj3: "Charity Transparency", footerProj4: "Smart Social Card",
+    footerLegal: "Legal", footerPrivacy: "Privacy Policy", footerTerms: "Terms of Use", footerCompliance: "Regulatory Compliance", footerAccessibility: "Accessibility",
+    footerCopy: "© 2026 PlinerSpec. All rights reserved."
+  }
+};
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (T[lang] && T[lang][key]) el.textContent = T[lang][key];
+  });
+  document.title = lang === 'he' ? 'כלי הסרת מידע אישי — PlinerSpec' : 'PII Redaction Tool — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => {
+  setLang(document.documentElement.lang === 'he' ? 'en' : 'he');
+});
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

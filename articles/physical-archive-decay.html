@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="נייר מתפרק. דהוי, לחות, עובש, זמן. הארכיון הפיזי שלך מאבד ערך כל יום, ואתה לא רואה את זה." />
+  <meta property="og:title" content="המסמכים שלכם נרקבים. אתם פשוט לא רואים את זה. — PlinerSpec" />
+  <meta property="og:description" content="נייר מתפרק. דהוי, לחות, עובש, זמן. הארכיון הפיזי שלך מאבד ערך כל יום, ואתה לא רואה את זה." />
+  <meta property="og:type" content="article" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/physical-archive-decay.html" />
+  <title>המסמכים שלכם נרקבים. אתם פשוט לא רואים את זה. — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.75; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 32px; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; font-weight: 600; }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); margin: 2em 0 0.8em; }
+    p { margin-bottom: 1.3em; color: var(--ink-soft); }
+    p strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    ul, ol { margin: 1.2em 0; padding-inline-start: 1.5em; color: var(--ink-soft); }
+    li { margin-bottom: 0.5em; }
+    blockquote { font-family: var(--font-serif-display); font-style: italic; font-size: 1.5rem; color: var(--accent); border-inline-start: 3px solid var(--accent); padding-inline-start: 24px; margin: 2em 0; line-height: 1.4; }
+    html[lang="he"] blockquote { font-family: var(--font-heb); font-style: normal; }
+    table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    th, td { padding: 12px; text-align: start; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg-elevated); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-header { padding: clamp(60px, 10vw, 100px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--border); }
+    .article-meta { margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .article-header h1 { max-width: 22ch; margin-top: 16px; }
+
+    .article-body { padding: clamp(48px, 8vw, 80px) 0; }
+    .article-body .container { max-width: 680px; }
+    .article-body p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.85; }
+    html[lang="he"] .article-body p { font-family: var(--font-heb); font-size: 1.0625rem; }
+
+    .article-body h2, .article-body h3 { scroll-margin-top: 80px; }
+
+    .article-footer { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-elevated); text-align: center; }
+    .article-footer .small-label { display: block; margin-bottom: 16px; }
+    .article-footer h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
+    .article-footer p { max-width: 32em; margin: 0 auto 32px; color: var(--ink-soft); }
+    .article-footer .cta-email { display: inline-block; font-family: var(--font-serif-display); font-size: 1.375rem; font-style: italic; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    html[lang="he"] .article-footer .cta-email { font-family: var(--font-heb); font-style: normal; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" class="nav-he">העקרונות</a><a href="../index.html#pillars" class="nav-en" style="display:none;">Principles</a></li>
+      <li><a href="../index.html#manifesto" class="nav-he">אודות</a><a href="../index.html#manifesto" class="nav-en" style="display:none;">About</a></li>
+      <li><a href="index.html" class="nav-he">מאמרים</a><a href="index.html" class="nav-en" style="display:none;">Articles</a></li>
+      <li><a href="../projects.html" class="nav-he">פרויקטים</a><a href="../projects.html" class="nav-en" style="display:none;">Projects</a></li>
+      <li><a href="../index.html#contact" class="nav-he">צור קשר</a><a href="../index.html#contact" class="nav-en" style="display:none;">Contact</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <!-- Hebrew -->
+    <div class="lang-content active" data-lang="he">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← חזרה למאמרים</a>
+            <span class="small-label">אמת</span>
+          </div>
+          <h1>המסמכים שלכם נרקבים. אתם פשוט לא רואים את זה.</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>באוקטובר 2024 ירד על חופי ספרד כמות גשם של שנה שלמה תוך שעות בודדות. כשמי השיטפונות סחפו את הכפרים סביב ולנסיה, מתנדבים נכנסו לבוץ כדי להציל מה שאפשר. מנואל מריה ויאפסיין, תושב שנפגע מהשיטפון, חילץ את תמונות החתונה של הוריו מתוך ההריסות.</p>
+<p>"לא הייתי בחתונה של ההורים שלי," הוא סיפר לכתב. "אז אני מכיר אותה רק בזכות התמונות."</p>
+<p>התמונות האלה היו ההוכחה היחידה שלו שהרגע הזה קרה. בלעדיהן, חלק מהסיפור המשפחתי פשוט נמחק.</p>
+<p>רוב האנשים משוכנעים שהמסמכים שלהם בטוחים. הם במגירה, בארון תיוק, במחסן. שום דבר דרמטי לא קורה להם. אבל נייר לא צריך שיטפון כדי להיעלם. הוא נעלם עכשיו, לבד, בחושך.</p>
+<h2>הפרדוקס שאף אחד לא מדבר עליו</h2>
+<p>לפי ספריית הקונגרס האמריקאית, מסמך שנכתב לפני 500 שנה על נייר כותנה נמצא לעתים קרובות במצב פיזי טוב יותר ממסמך שהודפס לפני 50 שנה על נייר משרדי רגיל. זו לא סתם עובדה מוזרה. זו כימיה.</p>
+<p>לפני שנות ה-1850, נייר יוצר מסיבי כותנה ופשתן. חזק, ניטרלי, עמיד להפליא. אז הגיע התיעוש, והנייר התחיל להיות מיוצר מעיסת עץ. זול, זמין, ורווי חומצה.</p>
+<p>תוך שבועות מיום הייצור, נייר עיסת עץ מתחיל לייצר חומצות פורמית, אצטית, לקטית ואוקסלית. החומצות תוקפות את שרשראות התאית שמחזיקות את הנייר שלם. התהליך נקרא הידרוליזה חומצית, והמאפיין המרכזי שלו הוא שהוא מואץ עצמית. כל שרשרת שנשברת משחררת עוד חומצה, שמפרקת עוד שרשראות, שמשחררות עוד חומצה. הנייר אוכל את עצמו מבפנים.</p>
+<p>נייר חומצי סטנדרטי, מהסוג שממלא ארונות תיוק ומחסנים בכל העולם, הופך שביר ולא שמיש תוך 50 עד 100 שנה. לא מאות שנים. עשרות שנים. המסמכים שהעסק שלכם תייק בשנות ה-80 כבר בעיצומו של החלון הזה.</p>
+<p>ורוב האנשים לא יודעים את זה: חלק מהתגובות הכימיות שמופעלות על ידי חשיפה לאור יכולות להמשיך גם אחרי שהמסמכים מוחזרים לאחסון. הנזק כבר הופעל. כיבוי האור מאט את התהליך, אבל לא מבטל את מה שכבר התחיל.</p>
+<h2>לילה אחד רע</h2>
+<p>ב-12 ביולי 1973 פרצה שריפה במרכז הרישומים הלאומי בסנט לואיס, מיזורי. בבניין לא היו מערכת התרעה ולא ספרינקלרים. הוא היה גדול יותר מכמה רחובות ביחד.</p>
+<p>השריפה בערה ללא שליטה 22 שעות. 42 תחנות כיבוי הגיעו למקום. משאית שאיבה אחת התמוטטה אחרי 40 שעות פעולה רצופה. כשהכל נגמר, בין 16 ל-18 מיליון תיקי שירות צבאי נהרסו. 80 אחוז מתיקי צבא היבשה של אנשים ששוחררו בין 1912 ל-1960. 75 אחוז מתיקי חיל האוויר מ-1947 עד 1964, כשהנפגעים העיקריים היו בעלי שמות משפחה מהמחצית השנייה של הא"ב.</p>
+<p>לא היו עותקים. לא מיקרופילם. לא אינדקסים.</p>
+<p>מיליוני ותיקים איבדו את היכולת להוכיח שהם בכלל שירתו. גמלאות, פנסיות, תביעות רפואיות, הכל תלוי בתיקים שלא קיימים יותר. מאז, המרכז שחזר פרטי שירות למעלה מ-5.5 מיליון פעמים. מקרים רבים לא נפתרו לעולם.</p>
+<p>זו עדיין אובדן הרשומות הגדול ביותר בהיסטוריה של ממשלת ארצות הברית. והוא קרה כי בניין מלא נייר בלתי ניתן להחלפה היה בלי מערכת כיבוי אש.</p>
+<p>ב-2 בספטמבר 2018, המוזיאון הלאומי של ברזיל, בן 200 שנה, עלה באש. הסיבה: מזגן תקול. לא הצתה. לא מתקפה. תחזוקה שנדחתה.</p>
+<p>תקציב התחזוקה של המוזיאון נחתך ב-90 אחוז בשנים שלפני השריפה. ההחלטה הזו הייתה קטלנית. 92 אחוז מ-20 מיליון הפריטים נהרסו בלילה אחד. המאובן האנושי העתיק ביותר שנמצא בברזיל. אוסף מצרי בן אלף שנה. שני מאות שנים של תיעוד אתנוגרפי של תרבויות ילידיות. נעלם. עד פברואר 2019 התאוששו רק כ-2,000 פריטים מתוך ההריסות.</p>
+<p>מאתיים שנות איסוף, שנהרסו בגלל מכונה אחת שלא טופלה.</p>
+<p>ואז קלן. ב-3 במרץ 2009, הארכיון ההיסטורי בן שש הקומות של קלן, אחד הארכיונים העירוניים החשובים באירופה, קרס לתוך האדמה. חלל של 60 סנטימטר בקיר מנהרת רכבת תחתית סמוכה אפשר נדידת קרקע בלתי נשלטת מתחת ליסודות הבניין. הארכיון צנח, וגרר איתו שני בנייני מגורים סמוכים. שני אנשים נהרגו.</p>
+<p>בתוך הבניין: 26 קילומטר של רשומות מהמאה ה-10. מסמכים אישיים של חתן פרס נובל היינריך בל. תיעוד הקשור לקרל מרקס, הגל, וקנצלר גרמניה הראשון קונרד אדנאואר. 90 אחוז מהחומר נקבר.</p>
+<p>הנזק המוערך: 1.2 מיליארד אירו. זמן השחזור המשוער: 30 שנה. וגם אחרי שלושה עשורים של עבודה, לא הכל יהיה ניתן להצלה.</p>
+<p>שריפה במיזורי. מזגן שבור בריו. מנהרת רכבת בקלן. שלוש סיבות שונות לחלוטין. אותה תוצאה: אובדן בלתי הפיך.</p>
+<h2>כמה זה עולה עוד לפני האסון?</h2>
+<p>אסונות עושים כותרות, אבל הדימום האיטי של אחסון מסמכים פיזי הורס עסקים באותה מידה. רק בשקט יותר.</p>
+<p>לפי הערכות תעשייתיות נפוצות, ארון תיוק סטנדרטי עם ארבע מגירות עולה כ-25,000 דולר למילוי וכ-2,100 דולר בשנה לתחזוקה. כל מסמך שמתויק עולה כ-20 דולר בעבודה. למצוא מסמך שתויק במקום הלא נכון: 120 דולר. למצוא מסמך שאבד: 220 דולר. אם ארונות תיוק תופסים 60 אחוז ממשרד של אלף מטר רבוע, עלות הנדל"ן השנתית של אחסון נייר מגיעה לכ-180,000 דולר.</p>
+<p>אחסון פיזי יקר פי 2.8 מאחסון דיגיטלי. ושום שקל מההוצאה הזו לא מגן מפני שריפה, הצפה, עובש, או נייר שמתפורר מזקנה.</p>
+<p>בינתיים, לפי נתוני התאוששות מאסונות שמצוטטים לעתים קרובות, 40 אחוז מהעסקים שעוברים אסון לא פותחים מחדש לעולם. עוד 25 אחוז נסגרים תוך שנה. מבין עסקים קטנים שלא מצליחים לחדש פעילות תוך חמישה ימים, 90 אחוז נסגרים לצמיתות.</p>
+<p>רק 54 אחוז מהארגונים מחזיקים תוכנית התאוששות מאסון מתועדת.</p>
+<h2>המצב השקט</h2>
+<p>המקרים הדרמטיים מקבלים את תשומת הלב. שריפת NPRC, המוזיאון בברזיל, קלן. אבל המציאות הנפוצה יותר איטית ופחות נראית. מחסן בבניין מסחרי שהמיזוג נכבה בו בלילה. מרתף שנרטב כל חורף. קרטון תמונות משפחתיות בעליית גג שמגיעה ל-45 מעלות כל קיץ.</p>
+<p>עובש מופיע כשלחות יחסית עולה מעל 65 אחוז, סף שנחצה בקלות באזורי חוף ועמקים בחודשים החמים. חום מאיץ הידרוליזה חומצית. לחות מספקת את המים שמאפשרים את התהליך. השילוב מזיק במיוחד.</p>
+<p>המסמכים בסיכון הגבוה ביותר הם אלה שתויקו בין שנות ה-60 לתחילת שנות ה-2000, מודפסים על הנייר הזול והחומצי ביותר שיוצר אי פעם בייצור המוני. רשומות מס, חוזים, תיקי כוח אדם, היסטוריות רפואיות, התכתבויות. הנייר היומיומי של חיי עסקים ומשפחה.</p>
+<p>המסמכים האלה לא מכריזים על ההתדרדרות שלהם. הקצוות מצהיבים. העמודים מתקשים. יום אחד שולפים תיק מהארון והוא נסדק לאורך הקיפול. עד אז, המידע כבר נפגע.</p>
+<h2>מה שנשאר</h2>
+<p>בבוץ מחוץ לולנסיה, מתנדבים הפרידו בזהירות תמונות ספוגות מים והניחו אותן בשמש להתייבש. אנה קררס, סטודנטית לצילום שהתנדבה בשטח, סיפרה שהיא נאלצה לעצור ולבכות בזמן שטיפלה בתמונות שמשתרעות על פני חיים שלמים: חתונות, ילדים שגדלים, חופשות משפחתיות. אלמנה שאיבדה את בעלה התמוטטה כשראתה את התמונות ששוחזרו.</p>
+<p>מרתה טקה, שאיבדה את ביתה בשריפה בניו המפשייר, תיארה את אובדן הפריטים שעוברים בין דורות כחלק הכואב ביותר. ציור שסבתה ציירה של אביה. בלתי ניתן להחלפה.</p>
+<p>אנחנו נוטים לחשוב על מסמכים כעניין אדמיניסטרטיבי. נייר. תיקים. רשומות. אבל מה שהם באמת מכילים זה הוכחה. הוכחה שמישהו שירת, שחוזה נחתם, שנישואין התקיימו, שילד נולד, שעסק היה קיים. כשהנייר מתפורר, ההוכחה הולכת איתו.</p>
+<p>השאלה היא לא אם המסמכים שלכם מתדרדרים. הם מתדרדרים. הכימיה של הנייר מבטיחה את זה.</p>
+<p>השאלה היא אם המידע שעליהם ישרוד אחרי שהנייר שהוא מודפס עליו לא.</p>
+<hr />
+<h2>מקורות</h2>
+<p>[1] The World, "Salvaging family photos after the Valencia floods," מרץ 2025. https://theworld.org/stories/2025/03/07/salvaging-family-photos-after-the-valencia-floods</p>
+<p>[2] Library of Congress, "The Deterioration and Preservation of Paper: Some Essential Facts." https://www.loc.gov/preservation/care/deterioratebrochure.html</p>
+<p>[3] U.S. National Archives, "The 1973 Fire, National Personnel Records Center." https://www.archives.gov/personnel-records-center/fire-1973</p>
+<p>[4] The National WWII Museum, "The St. Louis National Records Fire, July 12, 1973." https://www.nationalww2museum.org/war/articles/st-louis-national-records-fire-july-12-1973</p>
+<p>[5] Smithsonian Magazine, "Faulty Air-Conditioning Unit Sparked Devastating Brazil National Museum Fire," 2018. https://www.smithsonianmag.com/smart-news/faulty-air-conditioning-unit-sparked-devastating-brazil-national-museum-fire-180971903/</p>
+<p>[6] Wikipedia, "National Museum of Brazil fire." https://en.wikipedia.org/wiki/National_Museum_of_Brazil_fire</p>
+<p>[7] Wikipedia, "Historical Archive of the City of Cologne." https://en.wikipedia.org/wiki/Historical_Archive_of_the_City_of_Cologne</p>
+<p>[8] GeoEngineer.org, "Cologne Archive Collapse: How a 0.6m Void Led to Germany's Costliest Construction Failure." https://www.geoengineer.org/news/cologne-archive-collapse-how-a-06m-void-led-to-germanys-costliest-construction-failure</p>
+<p>[9] Access Corp, "Study: 40 Percent of Businesses Fail to Reopen After a Disaster." https://www.accesscorp.com/press-coverage/study-40-percent-businesses-fail-reopen-disaster/</p>
+<p>[10] Invenio IT, "Disaster Recovery Statistics." https://invenioit.com/continuity/disaster-recovery-statistics/</p>
+<p>[11] RecordsForce, "Document Scanning vs. Traditional Paper Storage: A Cost-Benefit Analysis." https://recordsforce.com/document-scanning-vs-traditional-paper-storage-a-cost-benefit-analysis/</p>
+<p>[12] Associated Press, "After losing homes to fire, families grieve for irreplaceable belongings," ינואר 2025.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div class="lang-content" data-lang="en">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← Back to articles</a>
+            <span class="small-label">Truth</span>
+          </div>
+          <h1>Your Paper Documents Are Dying. You Just Can't See It Yet.</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>In October 2024, nearly a year's worth of rainfall fell on coastal Spain in a matter of hours. When the floodwaters pulled back from the villages around Valencia, volunteers waded into the mud to salvage what they could. Manuel Maria Villapecellín, a flood survivor, pulled his parents' wedding photos from the wreckage.</p>
+<p>"I wasn't at my parents' wedding," he told a reporter. "So I know it because I've seen the photos."</p>
+<p>Those photos were his only proof that a moment had happened. Without them, a piece of his family's story simply ceases to exist.</p>
+<p>Most people assume their paper documents and photographs are safe. They're in a drawer, a cabinet, a storage room. Nothing dramatic is happening to them. But paper doesn't need a flood to disappear. It's disappearing right now, on its own, in the dark.</p>
+<h2>The paradox nobody talks about</h2>
+<p>According to the Library of Congress, a document written 500 years ago on cotton rag paper is often in better physical condition than a document printed 50 years ago on standard office paper. That isn't a quirk. It's chemistry.</p>
+<p>Before the 1850s, paper was made from cotton and linen fibers. Strong, pH-neutral, remarkably durable. Then industrialization brought wood-pulp paper, cheap and abundant, and loaded with acid.</p>
+<p>Within weeks of manufacture, wood-pulp paper begins producing formic, acetic, lactic, and oxalic acids. These acids attack the cellulose chains that hold the paper together. The process is called acid hydrolysis, and its defining feature is that it accelerates over time. Each broken chain releases more acid, which breaks more chains, which releases more acid. The paper is eating itself from the inside.</p>
+<p>Standard acidic paper, the kind filling offices and storage rooms around the world, becomes brittle and unusable within 50 to 100 years. Not centuries. Decades. The documents your company filed in the 1980s are already well into that window.</p>
+<p>Most people don't realize this about light damage: some chemical reactions triggered by light exposure continue even after documents are placed back in storage. The damage was already set in motion. Turning off the lights slows it, but doesn't undo what's already started.</p>
+<h2>One bad night</h2>
+<p>On July 12, 1973, a fire broke out at the National Personnel Records Center in St. Louis, Missouri. The building had no alarm system. No sprinkler system. It was larger than some city blocks.</p>
+<p>The fire burned uncontrolled for 22 hours. Forty-two fire districts responded. When it was finally over, 16 to 18 million military service records had been destroyed. Eighty percent of Army records for personnel discharged between 1912 and 1960. Seventy-five percent of Air Force records from 1947 to 1964, with surnames in the latter half of the alphabet hit hardest.</p>
+<p>No duplicate copies existed. No microfilm backups. No indexes.</p>
+<p>Millions of veterans lost the ability to prove they had served. Benefits, pensions, medical claims, all dependent on files that no longer existed. The NPRC has since reconstructed service details more than 5.5 million times. Many cases could never be resolved.</p>
+<p>It remains the largest single loss of records in U.S. government history. A preventable disaster on an unimaginable scale.</p>
+<p>On September 2, 2018, the 200-year-old National Museum of Brazil caught fire. The cause was a faulty air conditioning unit. Not arson. Not an attack. Deferred maintenance on a piece of climate equipment.</p>
+<p>The museum's maintenance budget had been slashed by 90 percent in the years prior. That decision proved fatal. Ninety-two percent of 20 million items were destroyed in a single night. The oldest human fossil found in Brazil. A thousand-year-old Egyptian collection. Two centuries of ethnographic records. Gone.</p>
+<p>Two hundred years of collecting, undone by one neglected machine.</p>
+<p>Then there's Cologne. On March 3, 2009, the six-story Historical Archive of the City of Cologne collapsed into the earth. A void in a nearby subway construction wall had allowed soil to migrate beneath the foundations. The archive dropped, taking two apartment buildings with it and killing two people.</p>
+<p>Inside: 26 kilometers of records dating to the 10th century. Personal papers of Nobel laureate Heinrich Boell. Documents connected to Karl Marx, Hegel, and Konrad Adenauer. Ninety percent buried.</p>
+<p>Estimated damage: 1.2 billion euros. Estimated restoration: 30 years. Even then, not everything will be recoverable.</p>
+<p>A fire in Missouri. A broken air conditioner in Rio. A subway tunnel in Cologne. Three completely different causes. The same result: irreversible loss.</p>
+<h2>What it costs before the disaster?</h2>
+<p>Catastrophic events make headlines, but the slow bleed of physical document storage is just as destructive to a business, only quieter.</p>
+<p>According to widely cited industry estimates, a standard four-drawer filing cabinet costs approximately $25,000 to fill and $2,100 per year to maintain. Every document filed costs about $20 in labor. Finding a misfiled document: $120. Finding a lost one: $220.</p>
+<p>Physical storage costs 2.8 times more than digital storage. And none of that spending protects against fire, flood, mold, or the paper simply falling apart from age.</p>
+<p>Meanwhile, according to frequently cited disaster recovery data, 40 percent of businesses that experience a disaster never reopen. Another 25 percent fail within one year. Among small businesses that can't resume operations within five days, 90 percent close permanently.</p>
+<p>Only 54 percent of organizations have any documented disaster recovery plan at all.</p>
+<h2>The quiet emergency</h2>
+<p>The dramatic cases get the attention. The NPRC fire, the Brazilian museum, Cologne. But the more common reality is slower and less visible. A storage room in a commercial building where the air conditioning cycles off at night. A basement that gets damp every winter. A cardboard box of family photos in an attic that reaches 45 degrees Celsius every summer.</p>
+<p>Mold appears when relative humidity exceeds 65 percent, a threshold easily crossed in coastal and valley regions during warm months. Heat accelerates acid hydrolysis. Humidity provides the moisture that makes it possible. The combination is particularly aggressive.</p>
+<p>The documents most at risk are the ones filed between the 1960s and the early 2000s, printed on the cheapest, most acidic paper ever mass-produced. Tax records, contracts, personnel files, medical histories, correspondence. The everyday paper of business and family life.</p>
+<p>These documents don't announce their deterioration. The edges yellow. The pages stiffen. One day you pull a file from a cabinet and it cracks along the fold. By then, the information is already compromised.</p>
+<h2>What remains</h2>
+<p>In the mud outside Valencia, volunteers carefully separated waterlogged photographs and laid them in the sun to dry. Ana Carreras, a photography student who volunteered at the site, described having to pause and cry while handling images that spanned entire lives: weddings, children growing up, family vacations. A widow who had lost her husband broke down when she saw her recovered photos.</p>
+<p>Martha Tecca, who lost her home in a New Hampshire fire, described the pain of losing generational items as the hardest part. A painting her grandmother had made of her father. Irreplaceable.</p>
+<p>We tend to think of documents as administrative. Paper. Files. Records. But what they actually hold is proof: proof that someone served, that a contract was signed, that a marriage happened, that a child was born, that a business existed. When the paper disintegrates, the proof goes with it.</p>
+<p>The question isn't whether your documents are deteriorating. They are. Paper chemistry guarantees it.</p>
+<p>The question is whether the information on them will outlast the paper it's printed on.</p>
+<hr />
+<h2>Sources</h2>
+<p>[1] The World, "Salvaging family photos after the Valencia floods," March 7, 2025. https://theworld.org/stories/2025/03/07/salvaging-family-photos-after-the-valencia-floods</p>
+<p>[2] Library of Congress, "The Deterioration and Preservation of Paper: Some Essential Facts." https://www.loc.gov/preservation/care/deterioratebrochure.html</p>
+<p>[3] U.S. National Archives, "The 1973 Fire, National Personnel Records Center." https://www.archives.gov/personnel-records-center/fire-1973</p>
+<p>[4] The National WWII Museum, "The St. Louis National Records Fire, July 12, 1973." https://www.nationalww2museum.org/war/articles/st-louis-national-records-fire-july-12-1973</p>
+<p>[5] Smithsonian Magazine, "Faulty Air-Conditioning Unit Sparked Devastating Brazil National Museum Fire," 2018. https://www.smithsonianmag.com/smart-news/faulty-air-conditioning-unit-sparked-devastating-brazil-national-museum-fire-180971903/</p>
+<p>[6] Wikipedia, "National Museum of Brazil fire." https://en.wikipedia.org/wiki/National_Museum_of_Brazil_fire</p>
+<p>[7] Wikipedia, "Historical Archive of the City of Cologne." https://en.wikipedia.org/wiki/Historical_Archive_of_the_City_of_Cologne</p>
+<p>[8] GeoEngineer.org, "Cologne Archive Collapse: How a 0.6m Void Led to Germany's Costliest Construction Failure." https://www.geoengineer.org/news/cologne-archive-collapse-how-a-06m-void-led-to-germanys-costliest-construction-failure</p>
+<p>[9] Access Corp, "Study: 40 Percent of Businesses Fail to Reopen After a Disaster." https://www.accesscorp.com/press-coverage/study-40-percent-businesses-fail-reopen-disaster/</p>
+<p>[10] Invenio IT, "Disaster Recovery Statistics." https://invenioit.com/continuity/disaster-recovery-statistics/</p>
+<p>[11] RecordsForce, "Document Scanning vs. Traditional Paper Storage: A Cost-Benefit Analysis." https://recordsforce.com/document-scanning-vs-traditional-paper-storage-a-cost-benefit-analysis/</p>
+<p>[12] Associated Press, "After losing homes to fire, families grieve for irreplaceable belongings," January 2025.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="article-footer">
+      <div class="container">
+        <span class="small-label">
+          <span class="lang-he">רוצה להמשיך לקרוא?</span>
+          <span class="lang-en" style="display:none;">Want to keep reading?</span>
+        </span>
+        <h2>
+          <span class="lang-he">יש עוד מאמרים.</span>
+          <span class="lang-en" style="display:none;">There are more articles.</span>
+        </h2>
+        <p>
+          <span class="lang-he">כל מאמר בוחן היבט אחר של אותה בעיה — איך אנחנו מגנים על מידע, שומרים על אמת, ובונים מערכות צודקות.</span>
+          <span class="lang-en" style="display:none;">Each article explores a different angle of the same problem — how we protect information, preserve truth, and build just systems.</span>
+        </p>
+        <a href="index.html" class="cta-email">
+          <span class="lang-he">לכל המאמרים →</span>
+          <span class="lang-en" style="display:none;">See all articles →</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p class="lang-he">צדק. אמת. פרטיות.</p>
+        <p class="lang-en" style="display:none;">Justice. Truth. Privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">פרויקטים</h4>
+        <h4 class="lang-en" style="display:none;">Projects</h4>
+        <a href="../projects/redaction.html" class="lang-he">הסרת מידע אישי</a>
+        <a href="../projects/redaction.html" class="lang-en" style="display:none;">Redaction Tool</a>
+        <a href="../projects/scanning.html" class="lang-he">דיגיטציה של ארכיונים</a>
+        <a href="../projects/scanning.html" class="lang-en" style="display:none;">Archive Digitization</a>
+        <a href="../projects/charity.html" class="lang-he">שקיפות בעמותות</a>
+        <a href="../projects/charity.html" class="lang-en" style="display:none;">Charity Transparency</a>
+        <a href="../projects/social-card.html" class="lang-he">כרטיס חברתי חכם</a>
+        <a href="../projects/social-card.html" class="lang-en" style="display:none;">Smart Social Card</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">חוקי</h4>
+        <h4 class="lang-en" style="display:none;">Legal</h4>
+        <a href="../privacy-policy.html" class="lang-he">מדיניות פרטיות</a>
+        <a href="../privacy-policy.html" class="lang-en" style="display:none;">Privacy Policy</a>
+        <a href="../terms.html" class="lang-he">תנאי שימוש</a>
+        <a href="../terms.html" class="lang-en" style="display:none;">Terms of Use</a>
+        <a href="../compliance.html" class="lang-he">עמידה ברגולציה</a>
+        <a href="../compliance.html" class="lang-en" style="display:none;">Regulatory Compliance</a>
+        <a href="../accessibility.html" class="lang-he">נגישות</a>
+        <a href="../accessibility.html" class="lang-en" style="display:none;">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span class="lang-en" style="display:none;">© 2026 PlinerSpec. All rights reserved.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-he').forEach(el => {
+    el.style.display = lang === 'he' ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.title = lang === 'he' ? 'המסמכים שלכם נרקבים. אתם פשוט לא רואים את זה. — PlinerSpec' : 'Your Paper Documents Are Dying. You Just Can't See It Yet. — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

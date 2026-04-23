@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="מאמרים על אבטחת מידע, דיגיטציה תקנית, ופרטיות בעולם הדיגיטלי. מחקר אמיתי, שפה ישירה, ללא שיווק." />
+  <meta property="og:title" content="מאמרים — PlinerSpec" />
+  <meta property="og:description" content="מאמרים על אבטחת מידע, דיגיטציה תקנית, ופרטיות בעולם הדיגיטלי." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/" />
+  <title>מאמרים — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.7; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 24px; line-height: 1.05; }
+    h2 { font-size: clamp(1.5rem, 2.5vw, 1.875rem); font-weight: 600; }
+    p { margin-bottom: 1.2em; color: var(--ink-soft); }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .page-hero { padding: clamp(80px, 12vw, 140px) 0 clamp(48px, 6vw, 72px); text-align: center; }
+    .page-hero .small-label { display: block; margin-bottom: 24px; }
+    .page-hero h1 { max-width: 18ch; margin: 0 auto 32px; }
+    .page-hero .lead { font-size: clamp(1.125rem, 1.4vw, 1.25rem); color: var(--ink-soft); max-width: 34em; margin: 0 auto; line-height: 1.65; }
+
+    .articles-list { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px) clamp(80px, 10vw, 120px); }
+    .article-card { display: block; padding: clamp(32px, 5vw, 48px) 0; border-bottom: 1px solid var(--border); border-inline-start: none; color: inherit; transition: padding 0.3s ease; }
+    .article-card:hover { padding-inline-start: 8px; color: inherit; border-bottom-color: var(--border); }
+    .article-card:last-of-type { border-bottom: none; }
+    .article-card .article-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .article-card .article-meta .pillar { color: var(--accent); font-weight: 500; }
+    .article-card .article-meta .article-number { color: var(--muted); font-family: var(--font-serif-display); font-size: 1rem; font-style: italic; letter-spacing: 0; text-transform: none; font-weight: 400; }
+    .article-card h2 { margin-bottom: 16px; max-width: 28ch; transition: color 0.2s ease; }
+    .article-card:hover h2 { color: var(--accent); }
+    .article-card p { max-width: 50em; margin: 0; color: var(--ink-soft); }
+    .article-card .read-more { display: inline-block; margin-top: 16px; font-family: var(--font-serif-display); font-size: 1rem; font-style: italic; color: var(--muted); }
+    html[lang="he"] .article-card .read-more { font-family: var(--font-heb); font-style: normal; font-weight: 500; }
+    .article-card:hover .read-more { color: var(--accent); }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-he, .lang-en { display: inline; }
+    html[lang="he"] .lang-en { display: none; }
+    html[lang="en"] .lang-he { display: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars"><span class="lang-he">העקרונות</span><span class="lang-en">Principles</span></a></li>
+      <li><a href="../index.html#manifesto"><span class="lang-he">אודות</span><span class="lang-en">About</span></a></li>
+      <li><a href="index.html"><span class="lang-he">מאמרים</span><span class="lang-en">Articles</span></a></li>
+      <li><a href="../projects.html"><span class="lang-he">פרויקטים</span><span class="lang-en">Projects</span></a></li>
+      <li><a href="../index.html#contact"><span class="lang-he">צור קשר</span><span class="lang-en">Contact</span></a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="small-label"><span class="lang-he">מאמרים</span><span class="lang-en">Articles</span></span>
+      <h1><span class="lang-he">מה שאנחנו חושבים עליו</span><span class="lang-en">What we're thinking about</span></h1>
+      <p class="lead">
+        <span class="lang-he">מחקר, תצפיות, ותהיות על אבטחת מידע, דיגיטציה תקנית, ופרטיות בעולם שהולך ומתחבר. ללא שיווק, ללא מניפולציה. רק מה שעובדים באמת צריכים לדעת.</span>
+        <span class="lang-en">Research, observations, and questions about data security, compliant digitization, and privacy in an increasingly connected world. No marketing, no manipulation. Just what people actually need to know.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="articles-list">
+
+    <a href="compliant-scanning.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">אמת</span><span class="lang-en">Truth</span></span>
+        <span class="article-number">01</span>
+      </div>
+      <h2>
+        <span class="lang-he">חוק שתי החתימות שאף אחד לא מכיר</span>
+        <span class="lang-en">The Two-Signature Rule Nobody Knows About</span>
+      </h2>
+      <p>
+        <span class="lang-he">רוב המסמכים הסרוקים של עסקים לא שווים כלום מבחינת החוק. למה, ומה צריך כדי שיהיו כשרים.</span>
+        <span class="lang-en">Most businesses' scanned documents have zero legal standing. Why, and what it takes to make them compliant.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="amendment-13-tax-compliance.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">אמת</span><span class="lang-en">Truth</span></span>
+        <span class="article-number">02</span>
+      </div>
+      <h2>
+        <span class="lang-he">אתם כנראה עוברים על החוק: מה עסקים מפספסים בסריקת מסמכים</span>
+        <span class="lang-en">You're Probably Breaking the Law: What Businesses Get Wrong About Document Scanning</span>
+      </h2>
+      <p>
+        <span class="lang-he">תיקון 2 לחוק מס הכנסה דורש תהליך ספציפי לסריקה של תיעוד חיצוני. רוב העסקים לא יודעים עליו.</span>
+        <span class="lang-en">Amendment 2 of the Income Tax Ordinance requires a specific process for scanning external documentation. Most businesses don't know about it.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="paper-archive-costs.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">אמת</span><span class="lang-en">Truth</span></span>
+        <span class="article-number">03</span>
+      </div>
+      <h2>
+        <span class="lang-he">הארכיון שאוכל את התקציב שלכם. בשקט.</span>
+        <span class="lang-en">The Paper Time Bomb: What Keeping Physical Archives Really Costs</span>
+      </h2>
+      <p>
+        <span class="lang-he">ארכיון נייר שאף אחד לא ניגש אליו. זמן שנבלע בחיפושים. שטח רצפה שעולה כסף. העלות הנסתרת של לא לעשות כלום.</span>
+        <span class="lang-en">A paper archive nobody accesses. Time swallowed by searches. Floor space costing money. The hidden cost of doing nothing.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="data-breach-small-business.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">פרטיות</span><span class="lang-en">Privacy</span></span>
+        <span class="article-number">04</span>
+      </div>
+      <h2>
+        <span class="lang-he">הארון שלכם הוא פצצה מתקתקת. וזה לא משנה כמה אתם קטנים.</span>
+        <span class="lang-en">Your Filing Cabinet Is a Liability</span>
+      </h2>
+      <p>
+        <span class="lang-he">פריצת נתונים היא לא רק בעיה של חברות גדולות. לעסק קטן, היא יכולה להיות קטלנית.</span>
+        <span class="lang-en">A data breach isn't just a big company's problem. For a small business, it can be fatal.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="cloud-ai-document-risk.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">פרטיות</span><span class="lang-en">Privacy</span></span>
+        <span class="article-number">05</span>
+      </div>
+      <h2>
+        <span class="lang-he">המסמכים שלכם כבר נמצאים על שרת של מישהו אחר</span>
+        <span class="lang-en">Your Documents Are Already on Someone Else's Server</span>
+      </h2>
+      <p>
+        <span class="lang-he">93% מעובדי המשרד מעלים מידע חסוי לכלי AI מקוונים. ברוב המקרים, בלי לדעת מה באמת קורה למידע הזה.</span>
+        <span class="lang-en">93% of office workers upload confidential information to online AI tools. Most of them don't know what really happens to it.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="online-converters-risk.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">פרטיות</span><span class="lang-en">Privacy</span></span>
+        <span class="article-number">06</span>
+      </div>
+      <h2>
+        <span class="lang-he">77 מיליון רשומות נגנבו. הכלי? ממיר PDF באינטרנט.</span>
+        <span class="lang-en">77 Million Records Stolen. The Tool? A PDF Converter.</span>
+      </h2>
+      <p>
+        <span class="lang-he">77 מיליון רשומות נגנבו בפריצה אחת. הכלי שגרם לזה היה ממיר PDF שכולם השתמשו בו.</span>
+        <span class="lang-en">77 million records stolen in one breach. The tool that caused it was a PDF converter everyone used.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="physical-archive-decay.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">אמת</span><span class="lang-en">Truth</span></span>
+        <span class="article-number">07</span>
+      </div>
+      <h2>
+        <span class="lang-he">המסמכים שלכם נרקבים. אתם פשוט לא רואים את זה.</span>
+        <span class="lang-en">Your Paper Documents Are Dying. You Just Can't See It Yet.</span>
+      </h2>
+      <p>
+        <span class="lang-he">נייר מתפרק. דהוי, לחות, עובש, זמן. הארכיון הפיזי שלך מאבד ערך כל יום, ואתה לא רואה את זה.</span>
+        <span class="lang-en">Paper decays. Fade, humidity, mold, time. Your physical archive loses value every day, and you don't see it.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+    <a href="family-archive-preservation.html" class="article-card">
+      <div class="article-meta">
+        <span class="pillar"><span class="lang-he">אמת</span><span class="lang-en">Truth</span></span>
+        <span class="article-number">08</span>
+      </div>
+      <h2>
+        <span class="lang-he">התמונות בקרטון: למה לזיכרונות של המשפחה שלך יש תאריך תפוגה</span>
+        <span class="lang-en">The Photos in the Box: Why Your Family's History Has an Expiration Date</span>
+      </h2>
+      <p>
+        <span class="lang-he">תמונות ומכתבים ישנים של המשפחה יושבים בקרטון. זיכרונות של דורות. יש להם תאריך תפוגה שכבר התחיל לרוץ.</span>
+        <span class="lang-en">Old family photos and letters sit in a box. Memories of generations. They have an expiration date that has already started.</span>
+      </p>
+      <span class="read-more"><span class="lang-he">קרא את המאמר →</span><span class="lang-en">Read article →</span></span>
+    </a>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p><span class="lang-he">צדק. אמת. פרטיות.</span><span class="lang-en">Justice. Truth. Privacy.</span></p>
+      </div>
+      <div class="footer-col">
+        <h4><span class="lang-he">פרויקטים</span><span class="lang-en">Projects</span></h4>
+        <a href="../projects/redaction.html"><span class="lang-he">הסרת מידע אישי</span><span class="lang-en">Redaction Tool</span></a>
+        <a href="../projects/scanning.html"><span class="lang-he">דיגיטציה של ארכיונים</span><span class="lang-en">Archive Digitization</span></a>
+        <a href="../projects/charity.html"><span class="lang-he">שקיפות בעמותות</span><span class="lang-en">Charity Transparency</span></a>
+        <a href="../projects/social-card.html"><span class="lang-he">כרטיס חברתי חכם</span><span class="lang-en">Smart Social Card</span></a>
+      </div>
+      <div class="footer-col">
+        <h4><span class="lang-he">חוקי</span><span class="lang-en">Legal</span></h4>
+        <a href="../privacy-policy.html"><span class="lang-he">מדיניות פרטיות</span><span class="lang-en">Privacy Policy</span></a>
+        <a href="../terms.html"><span class="lang-he">תנאי שימוש</span><span class="lang-en">Terms of Use</span></a>
+        <a href="../compliance.html"><span class="lang-he">עמידה ברגולציה</span><span class="lang-en">Regulatory Compliance</span></a>
+        <a href="../accessibility.html"><span class="lang-he">נגישות</span><span class="lang-en">Accessibility</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span><span class="lang-en">© 2026 PlinerSpec. All rights reserved.</span></span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.title = lang === 'he' ? 'מאמרים — PlinerSpec' : 'Articles — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

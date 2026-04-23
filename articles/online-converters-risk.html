@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="77 מיליון רשומות נגנבו בפריצה אחת. הכלי שגרם לזה היה ממיר PDF שכולם השתמשו בו." />
+  <meta property="og:title" content="77 מיליון רשומות נגנבו. הכלי? ממיר PDF באינטרנט. — PlinerSpec" />
+  <meta property="og:description" content="77 מיליון רשומות נגנבו בפריצה אחת. הכלי שגרם לזה היה ממיר PDF שכולם השתמשו בו." />
+  <meta property="og:type" content="article" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/online-converters-risk.html" />
+  <title>77 מיליון רשומות נגנבו. הכלי? ממיר PDF באינטרנט. — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.75; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 32px; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; font-weight: 600; }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); margin: 2em 0 0.8em; }
+    p { margin-bottom: 1.3em; color: var(--ink-soft); }
+    p strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    ul, ol { margin: 1.2em 0; padding-inline-start: 1.5em; color: var(--ink-soft); }
+    li { margin-bottom: 0.5em; }
+    blockquote { font-family: var(--font-serif-display); font-style: italic; font-size: 1.5rem; color: var(--accent); border-inline-start: 3px solid var(--accent); padding-inline-start: 24px; margin: 2em 0; line-height: 1.4; }
+    html[lang="he"] blockquote { font-family: var(--font-heb); font-style: normal; }
+    table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    th, td { padding: 12px; text-align: start; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg-elevated); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-header { padding: clamp(60px, 10vw, 100px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--border); }
+    .article-meta { margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .article-header h1 { max-width: 22ch; margin-top: 16px; }
+
+    .article-body { padding: clamp(48px, 8vw, 80px) 0; }
+    .article-body .container { max-width: 680px; }
+    .article-body p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.85; }
+    html[lang="he"] .article-body p { font-family: var(--font-heb); font-size: 1.0625rem; }
+
+    .article-body h2, .article-body h3 { scroll-margin-top: 80px; }
+
+    .article-footer { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-elevated); text-align: center; }
+    .article-footer .small-label { display: block; margin-bottom: 16px; }
+    .article-footer h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
+    .article-footer p { max-width: 32em; margin: 0 auto 32px; color: var(--ink-soft); }
+    .article-footer .cta-email { display: inline-block; font-family: var(--font-serif-display); font-size: 1.375rem; font-style: italic; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    html[lang="he"] .article-footer .cta-email { font-family: var(--font-heb); font-style: normal; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" class="nav-he">העקרונות</a><a href="../index.html#pillars" class="nav-en" style="display:none;">Principles</a></li>
+      <li><a href="../index.html#manifesto" class="nav-he">אודות</a><a href="../index.html#manifesto" class="nav-en" style="display:none;">About</a></li>
+      <li><a href="index.html" class="nav-he">מאמרים</a><a href="index.html" class="nav-en" style="display:none;">Articles</a></li>
+      <li><a href="../projects.html" class="nav-he">פרויקטים</a><a href="../projects.html" class="nav-en" style="display:none;">Projects</a></li>
+      <li><a href="../index.html#contact" class="nav-he">צור קשר</a><a href="../index.html#contact" class="nav-en" style="display:none;">Contact</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <!-- Hebrew -->
+    <div class="lang-content active" data-lang="he">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← חזרה למאמרים</a>
+            <span class="small-label">פרטיות</span>
+          </div>
+          <h1>77 מיליון רשומות נגנבו. הכלי? ממיר PDF באינטרנט.</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>עובדים בגוגל, אפל ומיקרוסופט היו צריכים להמיר מסמכים. הם השתמשו ב-Nitro PDF, פלטפורמה לגיטימית ומוכרת. מיליוני אנשי מקצוע סמכו עליה מדי יום.</p>
+<p>Nitro היא חבילת PDF מקצועית מלאה, לא ממיר אינטרנטי פשוט. אבל העיקרון זהה: המסמכים שלכם ישבו על השרתים של מישהו אחר.</p>
+<p>ואז, בספטמבר 2020, Nitro נפרצה.</p>
+<p>77 מיליון רשומות משתמשים הגיעו לשווקים ברשת האפלה. יותר מ-3,600 חשבונות של עובדי גוגל נחשפו, כולל 32,000 מסמכים פנימיים. 584 חשבונות של עובדי אפל עם 6,405 קבצים. 3,330 חשבונות של עובדי מיקרוסופט עם 2,390 מסמכים. הצעות מיזוג. דוחות כספיים. אסטרטגיות השקה של מוצרים. הכל הועלה למכירה פומבית עם מחיר פתיחה של 80,000 דולר. בסוף, המידע הודלף לרשת בחינם.</p>
+<p>אלה לא היו אנשים רשלניים. הם עבדו בשלוש מהחברות הכי מאובטחות בעולם. זה לא עזר.</p>
+<h2>רשויות אכיפה מזהירות מזה</h2>
+<p>במרץ 2025, ה-FBI פרסם אזהרה שתיארה את האיום של ממירי קבצים מזויפים באינטרנט כ"מגפה". תוך שבועיים, אישרו אירוע ממשי באזור דנוור.</p>
+<p>הערכות האיום של יורופול מזהות בעקביות הנדסה חברתית באמצעות קבצים זדוניים כווקטור תקיפה צומח. זו לא רק בעיה אמריקאית.</p>
+<p>האזהרות מתייחסות לאתרים שעולים כשמחפשים בגוגל "המרת PDF ל-Word" או "מיזוג קבצי PDF בחינם." חלק מהם מקודמים דרך מודעות גוגל, כלומר הם מופיעים <em>מעל</em> התוצאות האמיתיות. הלינק הראשון שלוחצים עליו יכול להיות המלכודת.</p>
+<p>מה שהופך את ההונאה ליעילה: הממיר עובד. מעלים קובץ, מקבלים את הקובץ המומר בחזרה, וממשיכים הלאה. אין סיבה לחשוד כי קיבלנו בדיוק את מה שביקשנו.</p>
+<p>ברקע, הקובץ שהועלה נסרק לחילוץ מספרי זהות, פרטי חשבונות בנק, סיסמאות, תאריכי לידה ונתוני ארנקי קריפטו. והקובץ שהורדנו בחזרה עלול להכיל נוזקה שנותנת לתוקפים גישה מתמשכת למחשב.</p>
+<h2>כך נראית מתקפה דרך ממיר מזויף</h2>
+<p>חוקרי אבטחה ב-CloudSEK תיעדו בדיוק איך אחת מהמתקפות האלה פועלת. תוקפים בנו שכפולים משכנעים של PDFCandy, כלי המרה פופולרי, בדומיינים כמו <code>candyxpdf[.]com</code> ו-<code>candyconverterpdf[.]com</code>. האתרים המזויפים היו כמעט זהים למקור.</p>
+<p>ככה זה עובד. נכנסים לאתר. מעלים מסמך. אנימציית עיבוד ריאליסטית רצה. ואז צץ CAPTCHA שמבקש לאמת שאתם בני אדם. נשמע רגיל, לא?</p>
+<p>רק שה"אימות" מנחה אתכם להריץ פקודה במחשב. הפקודה מתחברת לשרת מרוחק, מורידה קובץ ZIP שמתחזה למוצר של Adobe, ומתקינה ArechClient2, סוס טרויאני לגישה מרחוק שפעיל מאז 2019. ברגע שהוא מותקן, הוא גונב פרטי כניסה מהדפדפן, ארנקי קריפטו וכל דבר בעל ערך במערכת.</p>
+<p>חברת האבטחה Malwarebytes זיהתה לפחות 10 דומיינים ספציפיים של ממירים זדוניים, ביניהם <code>convertallfiles[.]com</code>, <code>freejpgtopdfconverter[.]com</code> ו-<code>convertpro[.]org</code>.</p>
+<p>בנפרד, חוקרי אבטחה תיעדו קמפיינים שהפיצו Gootloader, כלי להחדרת נוזקות שמקושר לקבוצות כופרה גדולות כמו REvil ו-BlackSuit, דרך אתרים כמו <code>docu-flex[.]com</code> ו-<code>pdfixers[.]com</code>.</p>
+<p>אלה לא חובבנים. מדובר בקמפיינים מתוחכמים ומתוקצבים היטב, שתוכננו להיראות בדיוק כמו הכלים שמיליוני אנשים משתמשים בהם כל שבוע.</p>
+<h2>הבעיה עם ממירים "לגיטימיים"</h2>
+<p>אתרים מזויפים זה איום אחד. אבל גם האמיתיים לא הרבה יותר טובים.</p>
+<p>גם שירותי ההמרה האמיתיים והלגיטימיים שומרים את הקבצים שלכם על השרתים שלהם. iLovePDF מחזיקה מסמכים שהועלו במשך שעתיים לפני מחיקה. SmallPDF מוחקת קבצים אחרי שעה, אלא אם יש לכם חשבון, ואז הקבצים עלולים להישמר ללא הגבלת זמן. FreeConvert מחזיקה קבצים שמונה שעות על שרתי Amazon Web Services באירלנד. CloudConvert שומרת קבצים עד 24 שעות.</p>
+<p>שעתיים לא נשמע הרבה. אבל תחשבו מה העליתם. דוח שנתי למס הכנסה. חוזה חתום. תוצאות בדיקה רפואית. תיקי לקוחות של משרד עורכי דין. טבלאות שכר. לאורך השעות האלה, המסמכים הכי רגישים שלכם יושבים על תשתית שאתם לא שולטים בה, לא יכולים לבדוק אותה, ואין לכם שום נראות לגביה.</p>
+<p>תנאי השימוש של Convertio כוללים כתב ויתור גורף: החברה "לא אחראית לכל נזק, כולל אובדן רווחים, אובדן נתונים, או נזק למערכת המחשב שלכם." אין הצפנת zero-knowledge. אתם סומכים על כך ששום דבר לא ישתבש, על סמך הבטחה בתנאי פרטיות שאף אחד לא קורא.</p>
+<p>כפי שאמר חאבייר רודריגז, ראש מודיעין הסייבר בחברת האבטחה Tarlogic: "קבצים שמועלים לממיר המקוון יישארו בענן, בתוך הפלטפורמה. כל תקיפה שהיא עלולה לספוג יכולה לגרום לנזק עצום."</p>
+<p>הוא דיבר על Nitro. אבל אותו הדבר נכון לכל ממיר מקוון שהשתמשתם בו אי פעם.</p>
+<h2>המסמכים שלכם עשויים לשמש לאימון תוכנה</h2>
+<p>יש עוד שכבה לעניין הזה שכמעט לא מדברים עליה.</p>
+<p>הרבה כלי PDF ומסמכים מודרניים מעבדים קבצים על שרתים מרוחקים באמצעות מערכות אוטומטיות שמנתחות תוכן. תנאי השימוש של הפלטפורמות האלה לפעמים כוללים סעיפים שמעניקים זכויות להשתמש בתוכן שהועלה לצורכי שיפור המוצר. אפשרויות ביטול הסכמה, כשהן בכלל קיימות, קבורות עמוק בהגדרות שרוב המשתמשים אף פעם לא מגיעים אליהן.</p>
+<p>המשמעות: הצעה עסקית סודית, כתב טענות משפטי, או תחזית פיננסית שהעליתם להמרה מהירה עלולים להישמר ולהיות מנותחים בדרכים שמעולם לא הסכמתם להן. לעסקים שכפופים ל-GDPR, HIPAA או רגולציות אחרות, זו הפרת ציות שאף תיבת סימון של מדיניות פרטיות לא יכולה לתקן.</p>
+<h2>ארגונים אוסרים את הכלים האלה</h2>
+<p>צוות אבטחת IT ב-MIT הוציא הנחיה מפורשת לסגל ולעובדים: "אל תשתמשו באתרי המרת קבצים מקוונים." האזהרה שלהם קובעת שפלטפורמות אלו "הן או הפכו לפלטפורמות להפצת נוזקות" ומדגישה ששום דפדפן או מערכת הפעלה לא מספקים הגנה.</p>
+<p>הם לא לבד. אוניברסיטאות, גופים ממשלתיים וחברות ברחבי העולם מוסיפים ממירים מקוונים לרשימת הכלים האסורים. כשארגונים עם המומחיות הטכנית הגבוהה ביותר אומרים לאנשים שלהם להפסיק להשתמש בשירותים האלה, כדאי לשים לב.</p>
+<h2>מה אפשר לעשות במקום?</h2>
+<p>כל מערכת הפעלה מרכזית כוללת כלי המרה בסיסיים שלא מעלים את הקבצים שלכם לשום מקום. Preview ב-Mac יכול לייצא ל-PDF. הפונקציה המובנית "הדפס ל-PDF" של מיקרוסופט עובדת מכל אפליקציה. LibreOffice מבצעת המרות פורמט מקומית.</p>
+<p>לכל דבר מורכב יותר, תוכנה שולחנית שמעבדת קבצים על המחשב שלכם היא הגישה היחידה ששומרת על המסמכים שלכם תחת השליטה שלכם.</p>
+<p>הנוחות של לגרור קובץ לחלון דפדפן ולקבל גרסה מומרת תוך שניות היא אמיתית. אבל גם הסיכון. כל מסמך שמעלים לממיר מקוון עובר דרך שרתים שאינם שלכם, תחת תנאים שלא קראתם, ובהגנה שאין לכם שום דרך לאמת.</p>
+<p>בפעם הבאה שתצטרכו להמיר קובץ, שאלו את עצמכם שלוש שאלות. לאן המסמך הזה הולך? למי יש גישה אליו בזמן שהוא שם? והאם לחסוך שתי דקות שווה את מה שעלול לקרות אם התשובה לשאלות האלה היא "אני לא יודע"?</p>
+<hr />
+<h2>מקורות</h2>
+<p>[1] FBI Denver Field Office, "FBI Denver Warns of Online File Converter Scam," מרץ 2025. https://www.fbi.gov/contact-us/field-offices/denver/news/fbi-denver-warns-of-online-file-converter-scam</p>
+<p>[2] CloudSEK, "Byte Bandits: How Fake PDF Converters Are Stealing More Than Just Your Documents," 2025. https://www.cloudsek.com/blog/byte-bandits-how-fake-pdf-converters-are-stealing-more-than-just-your-documents</p>
+<p>[3] Tarlogic, "PDF Converters, Playing with Fire," 2020. https://www.tarlogic.com/blog/pdf-converters-playing-with-fire/</p>
+<p>[4] Malwarebytes, "Warning over free online file converters that actually install malware," מרץ 2025. https://www.malwarebytes.com/blog/news/2025/03/warning-over-free-online-file-converters-that-actually-install-malware</p>
+<p>[5] Moonlock, "FBI Warning: File Converters," 2025. https://moonlock.com/fbi-warning-file-converters</p>
+<p>[6] Bitdefender, "Free File Converter Malware Scam Rampant, Claims FBI," 2025. https://www.bitdefender.com/en-us/blog/hotforsecurity/free-file-converter-malware-scam-rampant-claims-fbi</p>
+<p>[7] MIT SHASS IT, "Do NOT Use Online File Conversion Websites," 2025. https://shassit.mit.edu/news/do-not-use-online-file-conversion-websites/</p>
+<p>[8] HackerNoon, "Are AI PDF Tools Putting Your Data at Risk? Here's a Safer Way to Merge PDFs," 2025. https://hackernoon.com/are-ai-pdf-tools-putting-your-data-at-risk-heres-a-safer-way-to-merge-pdfs</p>
+<p>[9] mconverter.eu, "Is iLovePDF Safe?" https://mconverter.eu/blog/is-ilovepdf-safe/</p>
+<p>[10] SmallPDF, "Is Smallpdf Safe?" https://smallpdf.com/blog/is-smallpdf-safe</p>
+<p>[11] Convertio, "Terms of Service." https://convertio.co/terms/</p>
+<p>[12] CloudConvert, "Terms of Service." https://cloudconvert.com/terms</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div class="lang-content" data-lang="en">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← Back to articles</a>
+            <span class="small-label">Privacy</span>
+          </div>
+          <h1>77 Million Records Stolen. The Tool? A PDF Converter.</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>When employees at Google, Apple, and Microsoft needed to convert documents, they used Nitro PDF. A legitimate, widely trusted platform. Millions of professionals relied on it daily.</p>
+<p>Nitro is a full PDF productivity suite, not a simple web converter. But the principle is the same: your documents lived on someone else's servers.</p>
+<p>Then Nitro got breached.</p>
+<p>77 million user records ended up on dark web markets. More than 3,600 Google employee accounts exposed, containing 32,000 internal documents. 584 Apple accounts with 6,405 files. 3,330 Microsoft accounts with 2,390 documents. Merger proposals. Financial reports. Product launch strategies. All of it put up for auction with a starting price of $80,000. It was later leaked publicly for free.</p>
+<p>These weren't careless people. They worked at three of the most security-conscious companies on the planet. It didn't matter.</p>
+<h2>Law Enforcement Agencies Are Warning About This</h2>
+<p>In March 2025, the FBI's Denver field office issued an alert describing the threat from malicious online file converters as "rampant." Within two weeks, they confirmed an actual incident in the Denver metro area.</p>
+<p>Europol's threat assessments have consistently identified social engineering via malicious files as a growing attack vector. This is not just an American problem.</p>
+<p>The warning applies to the sites that show up when you search "convert PDF to Word" or "merge PDF files free." Some are promoted through search ads, meaning they appear <em>above</em> legitimate results. The first link you click could be the attack.</p>
+<p>What makes these scams effective is simple. The converter works. You upload your file, you get your converted document back, and you move on. You never suspect anything because you got exactly what you asked for.</p>
+<p>Meanwhile, the uploaded file gets scraped for ID numbers, bank account details, passwords, dates of birth, and cryptocurrency wallet information. The file you downloaded back may contain malware that gives attackers persistent access to your machine.</p>
+<h2>Inside a Fake Converter Attack</h2>
+<p>Security researchers at CloudSEK documented exactly how one of these operations works. Attackers built convincing clones of PDFCandy, a popular conversion tool, using domains like <code>candyxpdf[.]com</code> and <code>candyconverterpdf[.]com</code>. The fake sites were nearly identical to the real thing.</p>
+<p>The attack is straightforward. You visit the site. Upload your document. A realistic processing animation plays. Then a CAPTCHA prompt appears, asking you to verify you're human. Normal enough.</p>
+<p>Except the "verification" instructs you to run a command on your computer. That command connects to a remote server, downloads a ZIP file disguised as an Adobe product, and installs ArechClient2, a remote access trojan that has been active since 2019. Once installed, it harvests browser credentials, crypto wallets, and anything else of value stored on your system.</p>
+<p>Malwarebytes identified at least 10 specific malicious converter domains, including <code>convertallfiles[.]com</code>, <code>freejpgtopdfconverter[.]com</code>, and <code>convertpro[.]org</code>.</p>
+<p>Separately, security researchers documented campaigns distributing Gootloader, a malware delivery tool linked to major ransomware operations like REvil and BlackSuit, through sites like <code>docu-flex[.]com</code> and <code>pdfixers[.]com</code>.</p>
+<p>These aren't amateur operations. They're sophisticated, well-funded campaigns designed to look exactly like the tools millions of people use every week.</p>
+<h2>The Problem With "Legitimate" Converters</h2>
+<p>Fake sites are one threat. But the real ones are not much better.</p>
+<p>Even the real, legitimate converter services store your files on their servers. iLovePDF keeps uploaded documents for two hours before deletion. SmallPDF removes files after one hour, unless you have an account, in which case your files may be stored indefinitely. FreeConvert holds files for eight hours on Amazon Web Services servers in Ireland. CloudConvert retains files for up to 24 hours.</p>
+<p>Two hours might not sound like much. But consider what you uploaded. A tax return. A signed contract. A medical report. Client records from your law practice. Salary spreadsheets. For those hours, your most sensitive documents exist on infrastructure you don't control, can't audit, and have no visibility into.</p>
+<p>Convertio's terms of service include a sweeping disclaimer: the company is "not liable for any damages, including lost profits, lost data, or damage to your computer system." There is no zero-knowledge encryption. You are trusting that nothing goes wrong based on a promise in a privacy policy that nobody reads.</p>
+<p>As Javier Rodriguez, head of Cyber Intelligence at security firm Tarlogic, put it: "Files uploaded to the online converter will remain in the cloud, within the platform. Any assault that it may suffer could end up generating very great damage."</p>
+<p>He was talking about Nitro. But the same applies to every online converter you've ever used.</p>
+<h2>Your Documents May Be Training Someone's Software</h2>
+<p>There is another layer to this that gets almost no attention.</p>
+<p>Many modern PDF and document tools now process files on remote servers using automated systems that analyze content. The terms of service for these platforms sometimes include clauses granting rights to use uploaded content for product improvement. Opt-out options, when they exist, are buried deep in settings that most users never find.</p>
+<p>This means a confidential business proposal, a legal brief, or a financial forecast you uploaded for a quick conversion might be retained and analyzed in ways you never agreed to. For businesses subject to GDPR, HIPAA, or other regulatory frameworks, this creates a compliance violation that no privacy policy checkbox can fix.</p>
+<h2>Institutions Are Banning These Tools</h2>
+<p>An IT security team at MIT issued an explicit directive to faculty and staff: "Do NOT use Online File Conversion Websites." Their warning states that these platforms "are or have become malware delivery platforms" and emphasizes that no browser choice or operating system provides protection.</p>
+<p>They are not alone. Universities, government agencies, and corporations across the world are adding online converters to their lists of prohibited tools. When the organizations with the most technical expertise are telling their own people to stop using these services, it is worth paying attention.</p>
+<h2>What You Can Do Instead?</h2>
+<p>Every major operating system includes basic conversion tools that never upload your files anywhere. Preview on Mac can export to PDF. Microsoft's built-in "Print to PDF" function works from any application. LibreOffice handles format conversions locally.</p>
+<p>For anything more complex, desktop software that processes files on your own machine is the only approach that keeps your documents under your control.</p>
+<p>The convenience of dragging a file into a browser window and getting a converted version back in seconds is real. But so is the risk. Every document you upload to an online converter passes through servers you don't own, under terms you didn't read, protected by security you can't verify.</p>
+<p>Next time you need to convert a file, ask yourself three questions. Where is this document going? Who can access it while it's there? And is saving two minutes worth what might happen if the answer to those questions is "I don't know"?</p>
+<hr />
+<h2>Sources</h2>
+<p>[1] FBI Denver Field Office, "FBI Denver Warns of Online File Converter Scam," March 2025. https://www.fbi.gov/contact-us/field-offices/denver/news/fbi-denver-warns-of-online-file-converter-scam</p>
+<p>[2] CloudSEK, "Byte Bandits: How Fake PDF Converters Are Stealing More Than Just Your Documents," 2025. https://www.cloudsek.com/blog/byte-bandits-how-fake-pdf-converters-are-stealing-more-than-just-your-documents</p>
+<p>[3] Tarlogic, "PDF Converters, Playing with Fire," 2020. https://www.tarlogic.com/blog/pdf-converters-playing-with-fire/</p>
+<p>[4] Malwarebytes, "Warning over free online file converters that actually install malware," March 2025. https://www.malwarebytes.com/blog/news/2025/03/warning-over-free-online-file-converters-that-actually-install-malware</p>
+<p>[5] Moonlock, "FBI Warning: File Converters," 2025. https://moonlock.com/fbi-warning-file-converters</p>
+<p>[6] Bitdefender, "Free File Converter Malware Scam Rampant, Claims FBI," 2025. https://www.bitdefender.com/en-us/blog/hotforsecurity/free-file-converter-malware-scam-rampant-claims-fbi</p>
+<p>[7] MIT SHASS IT, "Do NOT Use Online File Conversion Websites," 2025. https://shassit.mit.edu/news/do-not-use-online-file-conversion-websites/</p>
+<p>[8] HackerNoon, "Are AI PDF Tools Putting Your Data at Risk? Here's a Safer Way to Merge PDFs," 2025. https://hackernoon.com/are-ai-pdf-tools-putting-your-data-at-risk-heres-a-safer-way-to-merge-pdfs</p>
+<p>[9] mconverter.eu, "Is iLovePDF Safe?" https://mconverter.eu/blog/is-ilovepdf-safe/</p>
+<p>[10] SmallPDF, "Is Smallpdf Safe?" https://smallpdf.com/blog/is-smallpdf-safe</p>
+<p>[11] Convertio, "Terms of Service." https://convertio.co/terms/</p>
+<p>[12] CloudConvert, "Terms of Service." https://cloudconvert.com/terms</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="article-footer">
+      <div class="container">
+        <span class="small-label">
+          <span class="lang-he">רוצה להמשיך לקרוא?</span>
+          <span class="lang-en" style="display:none;">Want to keep reading?</span>
+        </span>
+        <h2>
+          <span class="lang-he">יש עוד מאמרים.</span>
+          <span class="lang-en" style="display:none;">There are more articles.</span>
+        </h2>
+        <p>
+          <span class="lang-he">כל מאמר בוחן היבט אחר של אותה בעיה — איך אנחנו מגנים על מידע, שומרים על אמת, ובונים מערכות צודקות.</span>
+          <span class="lang-en" style="display:none;">Each article explores a different angle of the same problem — how we protect information, preserve truth, and build just systems.</span>
+        </p>
+        <a href="index.html" class="cta-email">
+          <span class="lang-he">לכל המאמרים →</span>
+          <span class="lang-en" style="display:none;">See all articles →</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p class="lang-he">צדק. אמת. פרטיות.</p>
+        <p class="lang-en" style="display:none;">Justice. Truth. Privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">פרויקטים</h4>
+        <h4 class="lang-en" style="display:none;">Projects</h4>
+        <a href="../projects/redaction.html" class="lang-he">הסרת מידע אישי</a>
+        <a href="../projects/redaction.html" class="lang-en" style="display:none;">Redaction Tool</a>
+        <a href="../projects/scanning.html" class="lang-he">דיגיטציה של ארכיונים</a>
+        <a href="../projects/scanning.html" class="lang-en" style="display:none;">Archive Digitization</a>
+        <a href="../projects/charity.html" class="lang-he">שקיפות בעמותות</a>
+        <a href="../projects/charity.html" class="lang-en" style="display:none;">Charity Transparency</a>
+        <a href="../projects/social-card.html" class="lang-he">כרטיס חברתי חכם</a>
+        <a href="../projects/social-card.html" class="lang-en" style="display:none;">Smart Social Card</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">חוקי</h4>
+        <h4 class="lang-en" style="display:none;">Legal</h4>
+        <a href="../privacy-policy.html" class="lang-he">מדיניות פרטיות</a>
+        <a href="../privacy-policy.html" class="lang-en" style="display:none;">Privacy Policy</a>
+        <a href="../terms.html" class="lang-he">תנאי שימוש</a>
+        <a href="../terms.html" class="lang-en" style="display:none;">Terms of Use</a>
+        <a href="../compliance.html" class="lang-he">עמידה ברגולציה</a>
+        <a href="../compliance.html" class="lang-en" style="display:none;">Regulatory Compliance</a>
+        <a href="../accessibility.html" class="lang-he">נגישות</a>
+        <a href="../accessibility.html" class="lang-en" style="display:none;">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span class="lang-en" style="display:none;">© 2026 PlinerSpec. All rights reserved.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-he').forEach(el => {
+    el.style.display = lang === 'he' ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.title = lang === 'he' ? '77 מיליון רשומות נגנבו. הכלי? ממיר PDF באינטרנט. — PlinerSpec' : '77 Million Records Stolen. The Tool? A PDF Converter. — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

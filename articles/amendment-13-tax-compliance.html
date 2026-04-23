@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="תיקון 2 לחוק מס הכנסה דורש תהליך ספציפי לסריקה של תיעוד חיצוני. רוב העסקים לא יודעים עליו." />
+  <meta property="og:title" content="אתם כנראה עוברים על החוק: מה עסקים מפספסים בסריקת מסמכים — PlinerSpec" />
+  <meta property="og:description" content="תיקון 2 לחוק מס הכנסה דורש תהליך ספציפי לסריקה של תיעוד חיצוני. רוב העסקים לא יודעים עליו." />
+  <meta property="og:type" content="article" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/amendment-13-tax-compliance.html" />
+  <title>אתם כנראה עוברים על החוק: מה עסקים מפספסים בסריקת מסמכים — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.75; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 32px; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; font-weight: 600; }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); margin: 2em 0 0.8em; }
+    p { margin-bottom: 1.3em; color: var(--ink-soft); }
+    p strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    ul, ol { margin: 1.2em 0; padding-inline-start: 1.5em; color: var(--ink-soft); }
+    li { margin-bottom: 0.5em; }
+    blockquote { font-family: var(--font-serif-display); font-style: italic; font-size: 1.5rem; color: var(--accent); border-inline-start: 3px solid var(--accent); padding-inline-start: 24px; margin: 2em 0; line-height: 1.4; }
+    html[lang="he"] blockquote { font-family: var(--font-heb); font-style: normal; }
+    table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    th, td { padding: 12px; text-align: start; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg-elevated); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-header { padding: clamp(60px, 10vw, 100px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--border); }
+    .article-meta { margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .article-header h1 { max-width: 22ch; margin-top: 16px; }
+
+    .article-body { padding: clamp(48px, 8vw, 80px) 0; }
+    .article-body .container { max-width: 680px; }
+    .article-body p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.85; }
+    html[lang="he"] .article-body p { font-family: var(--font-heb); font-size: 1.0625rem; }
+
+    .article-body h2, .article-body h3 { scroll-margin-top: 80px; }
+
+    .article-footer { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-elevated); text-align: center; }
+    .article-footer .small-label { display: block; margin-bottom: 16px; }
+    .article-footer h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
+    .article-footer p { max-width: 32em; margin: 0 auto 32px; color: var(--ink-soft); }
+    .article-footer .cta-email { display: inline-block; font-family: var(--font-serif-display); font-size: 1.375rem; font-style: italic; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    html[lang="he"] .article-footer .cta-email { font-family: var(--font-heb); font-style: normal; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" class="nav-he">העקרונות</a><a href="../index.html#pillars" class="nav-en" style="display:none;">Principles</a></li>
+      <li><a href="../index.html#manifesto" class="nav-he">אודות</a><a href="../index.html#manifesto" class="nav-en" style="display:none;">About</a></li>
+      <li><a href="index.html" class="nav-he">מאמרים</a><a href="index.html" class="nav-en" style="display:none;">Articles</a></li>
+      <li><a href="../projects.html" class="nav-he">פרויקטים</a><a href="../projects.html" class="nav-en" style="display:none;">Projects</a></li>
+      <li><a href="../index.html#contact" class="nav-he">צור קשר</a><a href="../index.html#contact" class="nav-en" style="display:none;">Contact</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <!-- Hebrew -->
+    <div class="lang-content active" data-lang="he">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← חזרה למאמרים</a>
+            <span class="small-label">אמת</span>
+          </div>
+          <h1>אתם כנראה עוברים על החוק: מה עסקים מפספסים בסריקת מסמכים</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>כל עסק סורק מסמכים. חשבוניות מס, קבלות מספקים, תעודות משלוח. הסורק רץ, הקובץ נשמר בתיקייה, והנייר נזרק לפח. שולחן נקי, ראש שקט.</p>
+<p>חוץ מזה שזה לא שקט. לא מבחינת החוק.</p>
+<p>אם אתם סורקים מסמכים עסקיים ומשמידים את המקור בלי לעמוד בתנאים מאוד ספציפיים, הסריקות שלכם שוות אפס. מבחינת רשות המסים, המסמכים האלה לא קיימים. וכשמגיעה ביקורת, "סרקנו הכל" לא יציל אתכם.</p>
+<h2>החוק שרוב העסקים לא מכירים</h2>
+<p>בינואר 2013 נכנס לתוקף תיקון מס' 2 להוראות מס הכנסה בנושא ניהול פנקסי חשבונות. התיקון הגדיר לראשונה את התנאים המדויקים שבהם עסק יכול לסרוק תיעוד חיצוני ולהשמיד את הנייר המקורי באופן חוקי.</p>
+<p>תיעוד חיצוני, זה כל מה שמגיע מבחוץ: חשבוניות, חשבוניות מס, קבלות, תעודות משלוח, הודעות זיכוי, הזמנות רכש מספקים. מסמכים פנימיים זה קטגוריה נפרדת.</p>
+<p>התיקון הוסיף שני נספחים טכניים להוראות. נספח ו' עוסק בתהליך הסריקה עצמו. נספח ז' עוסק בדרישות הארכיון הדיגיטלי. צריך לעמוד בשניהם. אחד בלי השני לא שווה כלום.</p>
+<p>חוזר מס הכנסה 9/2013 פרסם הנחיות יישום נוספות. רוב רואי החשבון יודעים שהוא קיים. רוב הלקוחות שלהם מעולם לא שמעו עליו.</p>
+<h2>איך נראית סריקה תקינה באמת</h2>
+<p>כאן הפער בין מה שעסקים עושים לבין מה שהחוק דורש הופך למביך.</p>
+<p>סריקה תקינה זה לא "לשים את העמוד על הסורק וללחוץ על כפתור." התקנות דורשות שרשרת פעולות ספציפית, שכל אחת מהן מתועדת וחתומה. מדלגים על שלב אחד, והסריקה כולה מאבדת תוקף משפטי.</p>
+<p><strong>הסריקה חייבת להפיק עותק דיגיטלי קריא וזהה למקור.</strong> בסדר. רוב הסורקים מסתדרים עם זה. אבל זה שלב ראשון מתוך שישה.</p>
+<p><strong>כל קובץ סרוק חייב לשאת סימון "מסמך סרוק".</strong> הסימון צריך להופיע בצורה בולטת בקובץ הדיגיטלי. לא מוסתר בשם תיקייה. לא משתמע. מסומן במפורש.</p>
+<p><strong>חתימה דיגיטלית מאושרת חייבת להיות מוטבעת על ידי הנישום או נציג מורשה.</strong> לא סתם חתימה אלקטרונית. חתימה אלקטרונית מאושרת, שהונפקה על ידי אחת משתי רשויות אישור בלבד: קומסיין (Comsign) או פרסונל איי.די (PersonalID). אלה הגופים היחידים שמוסמכים לפי חוק חתימה אלקטרונית, התשס"א-2001, להנפיק חתימות עם תוקף משפטי מלא לצורכי מס.</p>
+<p><strong>אדם שני חייב לאמת באופן עצמאי שכל סריקה תואמת למקור, ולהטביע חתימה דיגיטלית מאושרת משלו.</strong> זה השלב שמפיל את רוב העסקים. אדם אחד סורק. אדם אחר בודק. שניהם חותמים דיגיטלית. על כל מסמך. בנפרד.</p>
+<p><strong>הקבצים החתומים חייבים להישמר בארכיון דיגיטלי העומד בתקני נספח ז'.</strong> מה זה אומר? חיפוש לפי מספר פרמטרים (סוג מסמך, תאריך, מספר זיהוי ספק). יכולות ייצוא. רישום אוטומטי עם מזהים ייחודיים. תיוג מטה-דאטה. לוגים של אירועים שלא ניתן למחוק, שעוקבים אחרי כל פעולה שנעשתה על כל קובץ. מערכות גיבוי ושחזור.</p>
+<p>תיקייה בכונן משותף לא עומדת בדרישות. תיקיית גוגל דרייב לא עומדת בדרישות. גם פתרון אחסון ענן מאורגן היטב לא עומד בדרישות, אלא אם יש לו את כל היכולות למעלה.</p>
+<p><strong>רק אחרי כל זה אפשר להשמיד את הנייר המקורי.</strong> וגם אז יש תנאים נוספים: הדוח השנתי לאותה שנת מס חייב כבר להיות מוגש (סעיף 131), טופס 856 (דיווח ניכויים) חייב להיות מוגש, ולנישום אסור שיהיו הרשעות בעבירות הונאה או הליכי פסילת ספרים תלויים.</p>
+<h2>שבע שנות חשיפה</h2>
+<p>עכשיו החלק שצריך להדיר שינה מהעיניים.</p>
+<p>חוק מס הכנסה מחייב עסקים לשמור רשומות שבע שנים מתום שנת המס, או שש שנים ממועד הגשת הדוח, לפי המאוחר. מסמכים תומכים כמו חוזים ומסמכים פנימיים נושאים מינימום של שלוש שנים.</p>
+<p>אם השמדתם מקורות בלי לבצע את כל תהליך הסריקה התקינה, אתם חשופים לכל תקופת השמירה הזו. ביקורת בשנה השישית יכולה להגיע למסמכים שגרסתם בשנה הראשונה. אם הסריקות לא עומדות בדרישות החוק, כל מסמך מאותה שנה נחשב למעשה כחסר.</p>
+<p>מסמכים חסרים בביקורת מס זה לא עניין בירוקרטי. זה טריגר למשהו הרבה יותר חמור.</p>
+<h2>פסילת ספרים: העונש שאף אחד לא מדבר עליו</h2>
+<p>כשרשות המסים קובעת שניהול הספרים שלכם לא עומד בתקנות, היא מפעילה הליך שנקרא פסילת ספרים. זה התרחיש הגרוע ביותר לכל בעל עסק.</p>
+<p>ההליך מתחיל בהודעה בכתב על ליקויים. מקבלים הזדמנות להגיב. אם זה לא עובד, יש 30 יום לערער לוועדת פסילת ספרים, פאנל של שלושה חברים שכולל רואי חשבון ויו"ר עם מומחיות חשבונאית.</p>
+<p>אם הספרים נפסלים, ההשלכות מתגלגלות כמו כדור שלג.</p>
+<p>שיעור מס ההכנסה על ההכנסה החייבת קופץ ל-31% כנקודת פתיחה. מעל זה, תוספת מס: 10% בשנה הראשונה אחרי הפסילה, 20% בשנה השנייה. מאבדים את האפשרות לקזז הפסדים משנים קודמות. ניכויי פחת נעלמים. זיכויי מס כבר לא חלים.</p>
+<p>פקיד השומה יכול גם לעבור לשומה לפי מיטב השפיטה. זה אומר שהוא מעריך כמה אתם חייבים לפי החישובים שלו, לא שלכם. מאבדים שליטה על המספרים של העסק שלכם.</p>
+<p>קנסות חודשיים מתחילים ב-1% ממחזור העסקאות, עם רצפה של 359 ש"ח לחודש. לעסק שמעבד מיליונים בחשבוניות בשנה, ה-1% הזה מצטבר מהר.</p>
+<p>גם מע"מ נפגע. מס תשומות שכבר דרשתם בהחזר עלול להישלל או להידרש בחזרה. כסף שחשבתם שסגור, נפתח מחדש.</p>
+<p>ובמקרים חמורים, יש אחריות פלילית. העבירה נושאת עד שנת מאסר, קנס כספי, או שניהם.</p>
+<p>כל זה בגלל סריקת מסמכים לא תקינה.</p>
+<h2>מי בסיכון</h2>
+<p>כל עסק שמקבל תיעוד חיצוני מספקים. זה בעצם כל מי שיש לו תיק מס.</p>
+<p>אבל יש מגזרים שבסיכון גבוה יותר. משרדי רואי חשבון שמנהלים ערימות של תיעוד לקוחות. משרדי עורכי דין עם שנים של תיקי תביעות. מרפאות עם רשומות מטופלים שנחצות עם חיוב. חברות בנייה עם הרים של חשבוניות קבלני משנה. עסקי יבוא/יצוא עם תיעוד מכס ומשלוחים.</p>
+<p>כל עסק שיושב על ארכיון פיזי גדול וחושב על דיגיטציה צריך לשאול שאלה אחת לפני הכל: האם תהליך הסריקה שלי עומד בדרישות החוק?</p>
+<p>אם התשובה היא "אני לא יודע," התשובה היא כמעט בוודאות לא.</p>
+<h2>הקשר לחשבוניות אלקטרוניות</h2>
+<p>החל מ-2024 ולאורך 2026, חובת החשבונית האלקטרונית מתרחבת ברחבי המשק. עד יוני 2026, הסף יורד לעסקאות מ-5,000 ש"ח ומעלה. כל תשתית ההנפקה עוברת לדיגיטלי, בין אם עסקים מוכנים ובין אם לא.</p>
+<p>חברות שלא הקימו סריקת מסמכים תקינה נמצאות עכשיו מאחור בשני חזיתות: הן לא יכולות לדגטל את הארכיונים הקיימים באופן חוקי, והן לא ערוכות לגל הבא של תיעוד אלקטרוני חובה.</p>
+<p>אלה לא בעיות נפרדות. זו אותה בעיה. והעסקים שיפתרו אותה עכשיו ישלמו הרבה פחות מאלה שייבהלו אחרי שיקבלו הודעה על ביקורת.</p>
+<h2>מה לעשות עכשיו</h2>
+<p>תתחילו עם רואה החשבון. תשאלו אותו ספציפית: האם תהליך סריקת המסמכים שלנו עומד בתיקון מס' 2 להוראות ניהול ספרים? יש לנו חתימות דיגיטליות מאושרות? מערכת הארכיון שלנו עומדת בדרישות נספח ז'?</p>
+<p>אם הוא נותן לכם כן ברור ובטוח עם תיעוד שמגבה את זה, אתם במקום טוב. רוב רואי החשבון לא ייתנו.</p>
+<p>התקנות בתוקף מ-2013. יותר מעשור. הכלים קיימים. המסגרת ברורה. הדבר היחיד שחסר, לרוב העסקים, הוא המודעות לכך שלסרוק מסמך ולעשות את זה חוקית זה שני דברים שונים לגמרי.</p>
+<hr />
+<h2>מקורות</h2>
+<p>[1] הוראות מס הכנסה (ניהול פנקסי חשבונות), תיקון מס' 2, נכנס לתוקף 1 בינואר 2013. פורסם ברשומות, 31 בדצמבר 2012.</p>
+<p>[2] חוזר מס הכנסה 9/2013, רשות המסים, 5 ביוני 2013. הנחיות יישום לתקנות סריקת מסמכים.</p>
+<p>[3] Goldpro רואי חשבון, "תקנות סריקת מסמכים ודרישות ארכיון דיגיטלי." https://goldpro.co.il</p>
+<p>[4] מקלר רואי חשבון, "תקופות שמירת רשומות לפי דיני המס." https://mekler.co.il</p>
+<p>[5] PwC ישראל, Tax Alert 27/2013, "תיקון מס' 2 להוראות ניהול ספרים."</p>
+<p>[6] PAYPER, "תקנות מס לסריקת מסמכים." https://payper.co.il</p>
+<p>[7] קומסיין, "חתימות אלקטרוניות מאושרות לסריקה תקינה." https://comsign.co.il</p>
+<p>[8] חוק חתימה אלקטרונית, התשס"א-2001. רשויות אישור: קומסיין ופרסונל איי.די (שני הגופים היחידים המוסמכים על ידי משרד המשפטים).</p>
+<p>[9] אפרתי רואי חשבון, "עונשי פסילת ספרים לפי פקודת מס הכנסה" — סעיף 121(ב)(2), סעיף 191, סעיף 145, סעיף 33. https://efraty.com</p>
+<p>[10] פקודת מס הכנסה, סעיף 216(5) — אחריות פלילית על אי-ניהול רשומות: עד שנת מאסר, קנס כספי, או שניהם.</p>
+<p>[11] פקודת מס הכנסה, סעיף 146(ב)(2) — הרכב ועדת פסילת ספרים ותקופת ערעור של 30 יום.</p>
+<p>[12] DDD Invoices, "לוח זמנים לחשבוניות אלקטרוניות בישראל 2024–2026." https://dddinvoices.com</p>
+<p>[13] EDICOM / Sovos / ClearTax / VATupdate — לוח ספי חשבוניות אלקטרוניות: 25,000 ש"ח (מאי 2024), 20,000 ש"ח (ינואר 2025), 10,000 ש"ח (ינואר 2026), 5,000 ש"ח (יוני 2026).</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div class="lang-content" data-lang="en">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← Back to articles</a>
+            <span class="small-label">Truth</span>
+          </div>
+          <h1>You're Probably Breaking the Law: What Businesses Get Wrong About Document Scanning</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>Every business scans documents. Tax invoices, supplier receipts, delivery certificates. The scanner runs, the PDF gets filed in a folder, and the paper goes in the shredder. Clean desk, clean conscience.</p>
+<p>Except it's not clean. Not legally.</p>
+<p>If you're scanning business documents and destroying the originals without following a very specific set of rules, your scans have zero legal standing. In the eyes of the Tax Authority, those documents don't exist. And when audit season comes around, "I scanned everything" won't save you.</p>
+<h2>The law most businesses don't know about</h2>
+<p>In January 2013, Amendment No. 2 to the Income Tax Bookkeeping Regulations came into effect. It laid out, for the first time, the exact conditions under which a business can scan external documents and legally destroy the paper originals.</p>
+<p>External documents means anything you receive from the outside: invoices, tax invoices, receipts, delivery certificates, credit memos, purchase orders from suppliers. Internal records are a different category.</p>
+<p>The amendment added two technical appendices to the regulations. Appendix 6 covers the scanning process itself. Appendix 7 covers digital archive requirements. Both must be followed. Doing one without the other gets you nowhere.</p>
+<p>Tax Authority Circular 9/2013 provided additional guidance on implementation. Most accountants are aware it exists. Most of their clients have never heard of it.</p>
+<h2>What compliant scanning actually looks like</h2>
+<p>This is where the gap between what businesses do and what the law requires becomes uncomfortable.</p>
+<p>A compliant scan is not "put the page on a flatbed and press the button." The regulations demand a specific chain of actions, each one documented and signed. Skip any step and the entire scan loses its legal validity.</p>
+<p><strong>The scan must produce a readable digital copy identical to the original.</strong> Fair enough. Most scanners handle this. But it's step one of six.</p>
+<p><strong>Every scanned file must be marked "scanned document."</strong> This designation needs to appear conspicuously in the digital file. Not buried in a folder name. Not implied. Marked explicitly.</p>
+<p><strong>A certified digital signature must be applied by the taxpayer or an authorized representative.</strong> Not just any electronic signature. A certified electronic signature, issued by one of only two approved Certification Authorities in the country: Comsign or PersonalID. These are the only providers authorized under the Electronic Signature Law of 2001 to issue signatures with full legal weight for tax purposes.</p>
+<p><strong>A second person must independently verify that each scan matches its original, and apply their own certified digital signature.</strong> This is the step that catches most businesses off guard. One person scans. A different person checks. Both sign digitally. Every document. Individually.</p>
+<p><strong>The signed files must be stored in a digital archive that meets Appendix 7 standards.</strong> That means search functionality across multiple parameters (document type, date, vendor ID). Export capabilities. Automatic registration with unique identifiers. Metadata tagging. Non-deletable event logs tracking every action taken on every file. Backup and recovery systems.</p>
+<p>A folder on a shared drive does not qualify. A box of USB sticks in a drawer does not qualify. Even a well-organized cloud storage setup does not qualify unless it has all the features above.</p>
+<p><strong>Only after all of this can you destroy the paper originals.</strong> And even then, there are additional conditions: the annual tax return for that year must already be filed (Section 131), Form 856 (withholding tax report) must be submitted, and the taxpayer must have no fraud convictions or pending book disqualification proceedings.</p>
+<h2>The seven-year exposure</h2>
+<p>Here's the part that should keep you up at night.</p>
+<p>Israeli tax law requires businesses to retain records for seven years from the end of the tax year, or six years from the filing date, whichever comes later. Supporting documents like contracts and internal memos have a separate three-year minimum.</p>
+<p>If you destroyed originals without following the full compliant scanning process, you're exposed for that entire retention period. An audit in year six can reach back to documents you shredded in year one. If those scans don't hold up legally, every document from that year is effectively missing.</p>
+<p>Missing documents during a tax audit is not a paperwork issue. It's a trigger for something much worse.</p>
+<h2>Book disqualification: the penalty nobody talks about</h2>
+<p>When the Tax Authority determines that your bookkeeping doesn't meet the regulations, they initiate a process called book disqualification. The Hebrew term is "psilat sfarim," and it's the nightmare scenario for any business owner.</p>
+<p>The process starts with a written notification of deficiencies. You get a chance to respond. If that fails, you have 30 days to appeal to the Books Disqualification Committee, a three-member panel that includes accountants and a legal chair.</p>
+<p>If your books are disqualified, the consequences cascade.</p>
+<p>Your income tax rate on taxable income jumps to 31% as a starting point. On top of that, there's a surtax: 10% in the first year after disqualification, 20% in the second. You lose the ability to carry forward losses from previous years. Depreciation deductions disappear. Tax credits no longer apply.</p>
+<p>The assessor can also shift to "best judgment" assessment, which means they estimate what you owe based on their own calculations, not yours. You lose control of your own numbers.</p>
+<p>Monthly fines kick in at 1% of transaction volume, with a floor of 359 NIS per month. For a business processing millions in invoices annually, that 1% adds up fast.</p>
+<p>VAT gets hit too. Input VAT that you've already claimed can be denied or clawed back. Money you thought was settled, reopened.</p>
+<p>And in serious cases, there's criminal liability. The offense carries up to one year of imprisonment, a financial fine, or both.</p>
+<p>All of this from scanning documents incorrectly.</p>
+<h2>Who's at risk</h2>
+<p>Every business that receives external documents from suppliers and vendors. That's essentially everyone with a tax file.</p>
+<p>But some sectors carry more risk than others. Accounting firms managing stacks of client documentation. Law offices with years of case files. Medical practices with patient records that intersect with billing. Construction companies with mountains of subcontractor invoices. Import/export businesses with customs and shipping documentation.</p>
+<p>Any business sitting on a large physical archive and thinking about going digital should be asking one question before anything else: does my scanning process meet the legal requirements?</p>
+<p>If the answer is "I don't know," the answer is almost certainly no.</p>
+<h2>The e-invoicing connection</h2>
+<p>Starting in 2024 and expanding through 2026, mandatory electronic invoicing is rolling out across the economy. By June 2026, the threshold drops to transactions of 5,000 NIS and above. The entire invoicing infrastructure is going digital whether businesses are ready or not.</p>
+<p>Companies that haven't set up compliant document scanning are now falling behind on two fronts: they can't legally digitize their existing archives, and they're not equipped for the incoming wave of mandatory electronic documentation.</p>
+<p>These aren't separate problems. They're the same problem. And the businesses that solve it now will spend far less than those who scramble after receiving an audit notice.</p>
+<h2>What to do next</h2>
+<p>Start with your accountant. Ask them specifically: does our document scanning process comply with Amendment No. 2 to the Bookkeeping Regulations? Do we have certified digital signatures? Is our archive system compliant with Appendix 7?</p>
+<p>If they give you a clear, confident yes with documentation to back it up, you're in good shape. Most won't.</p>
+<p>The regulations have been in effect since 2013. Over a decade. The tools exist. The framework is clear. The only thing missing, for most businesses, is the awareness that scanning a document and doing it legally are two completely different things.</p>
+<hr />
+<h2>Sources</h2>
+<p>[1] Income Tax (Management of Accounting Records) Regulations, Amendment No. 2, effective January 1, 2013. Published in Official Gazette, December 31, 2012.</p>
+<p>[2] Income Tax Circular 9/2013, Israel Tax Authority, June 5, 2013. Implementation guidelines for document scanning regulations.</p>
+<p>[3] Goldpro CPA, "Document Scanning Regulations and Digital Archive Requirements." https://goldpro.co.il</p>
+<p>[4] Mekler CPA, "Record Retention Periods Under Israeli Tax Law." https://mekler.co.il</p>
+<p>[5] PwC Israel, Tax Alert 27/2013, "Amendment No. 2 to Bookkeeping Regulations."</p>
+<p>[6] PAYPER, "Tax Regulations for Document Scanning" (Hebrew). https://payper.co.il</p>
+<p>[7] Comsign, "Certified Electronic Signatures for Tax-Compliant Scanning." https://comsign.co.il</p>
+<p>[8] Electronic Signature Law, 5761-2001. Certification Authorities: Comsign and PersonalID (the only two providers authorized by the Ministry of Justice).</p>
+<p>[9] Efraty CPA, "Book Disqualification Penalties Under the Income Tax Ordinance" — Section 121(b)(2), Section 191, Section 145, Section 33. https://efraty.com</p>
+<p>[10] Income Tax Ordinance, Section 216(5) — criminal liability for failure to maintain accounting records: up to one year imprisonment, financial fine, or both.</p>
+<p>[11] Income Tax Ordinance, Section 146(b)(2) — Books Disqualification Committee composition and 30-day appeal period.</p>
+<p>[12] DDD Invoices, "Israel E-Invoicing Timeline 2024–2026." https://dddinvoices.com</p>
+<p>[13] EDICOM / Sovos / ClearTax / VATupdate — e-invoicing threshold schedule: 25,000 NIS (May 2024), 20,000 NIS (Jan 2025), 10,000 NIS (Jan 2026), 5,000 NIS (June 2026).</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="article-footer">
+      <div class="container">
+        <span class="small-label">
+          <span class="lang-he">רוצה להמשיך לקרוא?</span>
+          <span class="lang-en" style="display:none;">Want to keep reading?</span>
+        </span>
+        <h2>
+          <span class="lang-he">יש עוד מאמרים.</span>
+          <span class="lang-en" style="display:none;">There are more articles.</span>
+        </h2>
+        <p>
+          <span class="lang-he">כל מאמר בוחן היבט אחר של אותה בעיה — איך אנחנו מגנים על מידע, שומרים על אמת, ובונים מערכות צודקות.</span>
+          <span class="lang-en" style="display:none;">Each article explores a different angle of the same problem — how we protect information, preserve truth, and build just systems.</span>
+        </p>
+        <a href="index.html" class="cta-email">
+          <span class="lang-he">לכל המאמרים →</span>
+          <span class="lang-en" style="display:none;">See all articles →</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p class="lang-he">צדק. אמת. פרטיות.</p>
+        <p class="lang-en" style="display:none;">Justice. Truth. Privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">פרויקטים</h4>
+        <h4 class="lang-en" style="display:none;">Projects</h4>
+        <a href="../projects/redaction.html" class="lang-he">הסרת מידע אישי</a>
+        <a href="../projects/redaction.html" class="lang-en" style="display:none;">Redaction Tool</a>
+        <a href="../projects/scanning.html" class="lang-he">דיגיטציה של ארכיונים</a>
+        <a href="../projects/scanning.html" class="lang-en" style="display:none;">Archive Digitization</a>
+        <a href="../projects/charity.html" class="lang-he">שקיפות בעמותות</a>
+        <a href="../projects/charity.html" class="lang-en" style="display:none;">Charity Transparency</a>
+        <a href="../projects/social-card.html" class="lang-he">כרטיס חברתי חכם</a>
+        <a href="../projects/social-card.html" class="lang-en" style="display:none;">Smart Social Card</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">חוקי</h4>
+        <h4 class="lang-en" style="display:none;">Legal</h4>
+        <a href="../privacy-policy.html" class="lang-he">מדיניות פרטיות</a>
+        <a href="../privacy-policy.html" class="lang-en" style="display:none;">Privacy Policy</a>
+        <a href="../terms.html" class="lang-he">תנאי שימוש</a>
+        <a href="../terms.html" class="lang-en" style="display:none;">Terms of Use</a>
+        <a href="../compliance.html" class="lang-he">עמידה ברגולציה</a>
+        <a href="../compliance.html" class="lang-en" style="display:none;">Regulatory Compliance</a>
+        <a href="../accessibility.html" class="lang-he">נגישות</a>
+        <a href="../accessibility.html" class="lang-en" style="display:none;">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span class="lang-en" style="display:none;">© 2026 PlinerSpec. All rights reserved.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-he').forEach(el => {
+    el.style.display = lang === 'he' ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.title = lang === 'he' ? 'אתם כנראה עוברים על החוק: מה עסקים מפספסים בסריקת מסמכים — PlinerSpec' : 'You're Probably Breaking the Law: What Businesses Get Wrong About Document Scanning — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

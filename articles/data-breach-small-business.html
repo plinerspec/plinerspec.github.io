@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="פריצת נתונים היא לא רק בעיה של חברות גדולות. לעסק קטן, היא יכולה להיות קטלנית." />
+  <meta property="og:title" content="הארון שלכם הוא פצצה מתקתקת. וזה לא משנה כמה אתם קטנים. — PlinerSpec" />
+  <meta property="og:description" content="פריצת נתונים היא לא רק בעיה של חברות גדולות. לעסק קטן, היא יכולה להיות קטלנית." />
+  <meta property="og:type" content="article" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/data-breach-small-business.html" />
+  <title>הארון שלכם הוא פצצה מתקתקת. וזה לא משנה כמה אתם קטנים. — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.75; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 32px; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; font-weight: 600; }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); margin: 2em 0 0.8em; }
+    p { margin-bottom: 1.3em; color: var(--ink-soft); }
+    p strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    ul, ol { margin: 1.2em 0; padding-inline-start: 1.5em; color: var(--ink-soft); }
+    li { margin-bottom: 0.5em; }
+    blockquote { font-family: var(--font-serif-display); font-style: italic; font-size: 1.5rem; color: var(--accent); border-inline-start: 3px solid var(--accent); padding-inline-start: 24px; margin: 2em 0; line-height: 1.4; }
+    html[lang="he"] blockquote { font-family: var(--font-heb); font-style: normal; }
+    table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    th, td { padding: 12px; text-align: start; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg-elevated); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-header { padding: clamp(60px, 10vw, 100px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--border); }
+    .article-meta { margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .article-header h1 { max-width: 22ch; margin-top: 16px; }
+
+    .article-body { padding: clamp(48px, 8vw, 80px) 0; }
+    .article-body .container { max-width: 680px; }
+    .article-body p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.85; }
+    html[lang="he"] .article-body p { font-family: var(--font-heb); font-size: 1.0625rem; }
+
+    .article-body h2, .article-body h3 { scroll-margin-top: 80px; }
+
+    .article-footer { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-elevated); text-align: center; }
+    .article-footer .small-label { display: block; margin-bottom: 16px; }
+    .article-footer h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
+    .article-footer p { max-width: 32em; margin: 0 auto 32px; color: var(--ink-soft); }
+    .article-footer .cta-email { display: inline-block; font-family: var(--font-serif-display); font-size: 1.375rem; font-style: italic; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    html[lang="he"] .article-footer .cta-email { font-family: var(--font-heb); font-style: normal; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" class="nav-he">העקרונות</a><a href="../index.html#pillars" class="nav-en" style="display:none;">Principles</a></li>
+      <li><a href="../index.html#manifesto" class="nav-he">אודות</a><a href="../index.html#manifesto" class="nav-en" style="display:none;">About</a></li>
+      <li><a href="index.html" class="nav-he">מאמרים</a><a href="index.html" class="nav-en" style="display:none;">Articles</a></li>
+      <li><a href="../projects.html" class="nav-he">פרויקטים</a><a href="../projects.html" class="nav-en" style="display:none;">Projects</a></li>
+      <li><a href="../index.html#contact" class="nav-he">צור קשר</a><a href="../index.html#contact" class="nav-en" style="display:none;">Contact</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <!-- Hebrew -->
+    <div class="lang-content active" data-lang="he">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← חזרה למאמרים</a>
+            <span class="small-label">פרטיות</span>
+          </div>
+          <h1>הארון שלכם הוא פצצה מתקתקת. וזה לא משנה כמה אתם קטנים.</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>בנובמבר 2020, האקרים פרצו לשירביט. הם לא גנבו כסף. הם גנבו מסמכים. סריקות של תעודות זהות ורישיונות נהיגה. תעודות נישואין. מסמכים פיננסיים ורפואיים. כתובות, מספרי טלפון, כתובות מייל. בדיוק סוג המידע שיושב בכל משרד רואה חשבון, עורך דין, או מחלקת משאבי אנוש.</p>
+<p>הרווחים השנתיים של שירביט צנחו ב-97%. ארבע תביעות ייצוגיות הצטברו לסכום כולל של 1.2 מיליארד שקל. בסוף החברה נרכשה על ידי הראל ביטוח. חברה שנבנתה במשך שנים, קרסה בגלל מסמכים גנובים.</p>
+<p>לשירביט היה צוות משפטי, תקציב אבטחת מידע, וביטוח. לרוב העסקים הקטנים אין שום דבר מזה.</p>
+<h2>המספרים שבעלי עסקים לא מכירים</h2>
+<p>בשנת 2025, מערך הסייבר הלאומי קיבל 26,500 דיווחים על תקריות סייבר. זו קפיצה של 55% לעומת 2024. ראש מערך הסייבר חשף שבשנים האחרונות נגנבו מאזרחי המדינה שני פטה-בייט של מידע, שווה ערך לכ-100 פעמים מהאוספים הדיגיטליים של הספרייה הלאומית.</p>
+<p>המדינה הזו מדורגת במקום הראשון בעולם מבחינת מתקפות סייבר בעלות מוטיבציה גיאו-פוליטית ב-2025, לפני אוקראינה וארצות הברית.</p>
+<p>ובכל זאת, 57% מבעלי עסקים קטנים מאמינים שלא יתקפו אותם.</p>
+<p>הם טועים. עסקים קטנים מהווים 43% מכלל פריצות המידע בעולם. לא בגלל שהמידע שלהם יותר יקר. בגלל שקל יותר לפרוץ אליהם.</p>
+<h2>כמה עולה פריצה בפועל?</h2>
+<p>לפי דוח IBM לשנת 2025, העלות הממוצעת של פריצת מידע באזור המזרח התיכון עומדת על 7.29 מיליון דולר. המספר הזה מוטה כלפי מעלה בגלל חברות נפט ובנקים גדולים, אז הוא לא ישיר לחלוטין למשרד עם 10 עובדים. אבל הפירוט מלמד.</p>
+<p>לפי דוח Coveware לרבעון הרביעי של 2024, תשלום הכופר החציוני ירד לכ-110,000 דולר, בערך 400,000 שקל. זה הכופר לבד, לפני שמחשבים עלויות משפטיות, חקירה פורנזית, הודעות ללקוחות, הפסד הכנסות ונזק למוניטין.</p>
+<p>IBM מצאו שכמעט מחצית מסך העלויות של פריצה נוצרים אחרי השנה הראשונה. המשבר הראשוני הוא רק ההתחלה. התביעות, הקנסות, הלקוחות שעוזבים, שיקום המערכות, כל זה נמשך שנים.</p>
+<p>חצי מהעסקים הקטנים שסופגים מתקפה לוקחים יותר מ-24 שעות רק כדי לחזור לעבוד. למשרד שמתפרנס לפי שעות, כל יום של השבתה הוא כסף שלא חוזר.</p>
+<h2>מה שירביט מלמדת כל עסק קטן?</h2>
+<p>שימו לב למה שבאמת נגנב משירביט. לא קוד מקור. לא סודות מסחריים. סריקות של תעודות זהות. תעודות נישואין. מסמכים פיננסיים. רשומות רפואיות.</p>
+<p>אלה בדיוק אותם מסמכים שיושבים בארונות תיוק, במגירות, ובתיקיות משותפות בכל משרד רואה חשבון, משרד עורכי דין, ומרפאה. ההבדל היחיד הוא הגודל. לשירביט היו מאות אלפי לקוחות. למשרד שלכם אולי כמה מאות. אבל לכל אחד מהלקוחות האלה, המידע האישי שלו חשוב בדיוק באותה מידה.</p>
+<p>מסמכים פיזיים הם החולשה השקופה. מערכת דיגיטלית יכולה לתעד מי ניגש לקובץ, מתי ומאיפה. ארון תיוק לא יכול. דיסק קשיח שנגנב מעורר התראות. תיקייה שנלקחת מהארון לא מעוררת כלום. אין הצפנה על נייר. אין בקרת גישה על מגירה.</p>
+<p>כשתוקפים פרצו למספר חברות פרטיות דרך ספקי שירות שלהן ב-2025, הדפוס היה ברור. זה לא רק האבטחה שלכם שחשובה. זה כל מי שנוגע במידע שלכם.</p>
+<h2>תיקון 13 שינה את הכל</h2>
+<p>ב-14 באוגוסט 2025 נכנס לתוקף תיקון 13 לחוק הגנת הפרטיות. זהו השינוי המשמעותי ביותר בחקיקת הגנת המידע מזה עשרות שנים, ורוב בעלי העסקים הקטנים לא שמעו עליו.</p>
+<p>החוק הכניס קנסות מנהליים שיכולים להגיע למאות אלפי שקלים, עם מכפילים על מידע רגיש. לעסקים קטנים יותר, התקרה השנתית היא 140,000 שקל בקנסות. גם זה לבד יכול להטביע עסק קטן.</p>
+<p>אבל הקנסות הם לא האיום האמיתי. האיום האמיתי הוא אחריות אזרחית. לפי תיקון 13, כל אדם יכול לתבוע פיצוי סטטוטורי של עד 100,000 שקל, בלי להוכיח שנגרם לו נזק כלשהו. מספיק להראות שהמידע לא טופל כמו שצריך.</p>
+<p>חשבו על זה. רואה חשבון עם 200 תיקי לקוחות בארון לא נעול. אם המידע הזה נחשף, גם חלקית, כל לקוח יכול לתבוע עד 100,000 שקל. בלי צורך להוכיח גניבת זהות. בלי צורך להוכיח נזק כספי. החשיפה הייתה שם. זה מספיק.</p>
+<p>תביעות ייצוגיות אפשריות כעת באופן מפורש לפי התיקון. רשות הגנת הפרטיות יכולה להוציא צווים מחייבים, להשעות מאגרי מידע, ולפרסם את שמות המפרים למשך ארבע שנים. חברת HOT כבר נקנסה ב-70,000 שקל באחת מפעולות האכיפה הראשונות. הרגולטור לא מחכה.</p>
+<h2>הפער שגדל</h2>
+<p>עסקים קטנים יושבים במרכז פער שהולך וגדל. מצד אחד, המתקפות מתגברות. פישינג לבדו אחראי ל-52% מכל התקריות המדווחות. תוקפים עוברים באופן מכוון ליעדים רכים יותר כי חברות גדולות חיזקו את ההגנות שלהן.</p>
+<p>מצד שני, ההשלכות המשפטיות של פריצה מעולם לא היו גבוהות יותר. תיקון 13 הפך את הגנת מידע הלקוחות מנוהג מומלץ לחובה חוקית עם עונשים אמיתיים.</p>
+<p>באמצע יושב העסק הקטן הממוצע. 23% לא משתמשים באבטחה כלל. 32% מסתמכים על כלים חינמיים. יותר מרבע אין להם תוכנית אבטחה מכל סוג.</p>
+<p>99.8% מכלל העסקים במדינה הזו הם קטנים ובינוניים. הם מייצרים 62% מהתוצר העסקי ומעסיקים כ-69% מעובדי המגזר הפרטי. הם הכלכלה. והם הכי פחות מוכנים.</p>
+<h2>מה זה אומר בפועל?</h2>
+<p>ארון התיוק בפינת המשרד הוא לא רק רהיט. הוא מאגר מידע לפי החוק. מסמכי הלקוחות שבתוכו, צילומי תעודות זהות, דוחות כספיים, חוזים, רשומות רפואיות, הם מידע מוגן. אם הם נגנבים, הולכים לאיבוד, או שמישהו לא מורשה ניגש אליהם, אתם חשופים.</p>
+<p>זה לא עניין של לקנות תוכנת אבטחה יקרה. זה עניין של היגיינת מסמכים בסיסית. לדעת איזה מידע אתם מחזיקים. לדעת איפה הוא נמצא. לשלוט מי ניגש אליו. לתעד את הגישה. להרחיק מסמכים רגישים מהאינטרנט הפתוח, מצרופות מייל לא מוצפנות ומכלי המרה חינמיים ברשת.</p>
+<p>לשירביט היו משאבים. הם שרדו, בקושי, דרך מכירה. למשרד רואה חשבון עם 5 עובדים בעיר קטנה אין את האופציה הזו. כשמידע של לקוחות יוצא מהדלת, העסק יוצא איתו.</p>
+<p>השאלה לבעלי עסקים קטנים היא לא מסובכת. היא פשוט לא נוחה: האם אתם יודעים עכשיו איפה כל מסמכי הלקוחות שלכם, ומי יכול לגשת אליהם?</p>
+<p>אם אתם לא יכולים לענות על זה בוודאות, הבעיה כבר קיימת.</p>
+<hr />
+<h2>מקורות</h2>
+<p>[1] Asero Consulting, "The Implications of the Cyber Breach Against Shirbit Insurance Company." https://asero.com/case-studies/the-implications-of-the-cyber-breach-against-shirbit-insurance-company/</p>
+<p>[2] Times of Israel, "Hackers breach Israeli insurance company, steal client data," נובמבר 2020. https://www.timesofisrael.com/hackers-breach-israeli-insurance-company-steal-client-data/</p>
+<p>[3] Calcalist, "ניתוח שירביט," 2020. https://www.calcalistech.com/ctech/articles/0,7340,L-3903077,00.html</p>
+<p>[4] מערך הסייבר הלאומי, סיכום שנתי 2025. https://www.israeldefense.co.il/en/node/67966</p>
+<p>[5] מערך הסייבר הלאומי, סיכום שנתי 2024. https://www.gov.il/en/pages/booklet_yearly_summary_2024</p>
+<p>[6] CyberExpress, "Israel Data Breach: INCD Head Reveals Two Petabytes of Data Stolen from Citizens." https://thecyberexpress.com/israel-data-breach-incd-head/</p>
+<p>[7] Times of Israel / Radware 2026 Global Threat Analysis Report, "Israel ranks #1 among countries targeted by geopolitical cyberattacks in 2025."</p>
+<p>[8] Verizon, "Small Business Cyber Security and Data Breaches." https://www.verizon.com/business/resources/articles/small-business-cyber-security-and-data-breaches/</p>
+<p>[9] IBM, "Cost of a Data Breach Report 2025." https://www.ibm.com/reports/data-breach</p>
+<p>[10] IBM, "Cost of a Data Breach Report 2024." https://newsroom.ibm.com/2024-07-30-ibm-report-escalating-data-breach-disruption-pushes-costs-to-new-highs</p>
+<p>[11] Coveware, "Quarterly Ransomware Report, Q4 2024." https://www.coveware.com/blog/2025/1/24/q4-2024-quarterly-ransomware-report</p>
+<p>[12] Jerusalem Post, "Iran and Russia-linked ransomware attacks targeting Israeli businesses," 2025. https://www.jpost.com/defense-and-tech/article-872075</p>
+<p>[13] Safetica, "Israel's Amendment 13: What the New Data Protection Law Means for Your Business." https://www.safetica.com/resources/guides/israel-s-amendment-13-what-the-new-data-protection-law-means-for-your-business</p>
+<p>[14] IAPP, "Israel Marks a New Era in Privacy Law: Amendment 13 Ushers in Sweeping Reform." https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform</p>
+<p>[15] BigID, "What Israel Amendment 13 Means for Businesses in 2025." https://bigid.com/blog/what-israel-amendment-13-means-for-businesses-in-2025/</p>
+<p>[16] כלכליסט, "99.8% מהעסקים בישראל הם קטנים ובינוניים." https://www.calcalist.co.il/articles/0,7340,L-3711954,00.html</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div class="lang-content" data-lang="en">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← Back to articles</a>
+            <span class="small-label">Privacy</span>
+          </div>
+          <h1>Your Filing Cabinet Is a Liability</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>In November 2020, hackers broke into Shirbit, one of the largest insurance companies in the country. They didn't steal money. They stole documents. Scanned ID cards. Marriage certificates. Financial records. Medical files. The kind of paperwork that sits in every accounting firm, law office, and HR department.</p>
+<p>Shirbit's annual profits dropped 97%. Four class-action lawsuits piled up, totaling NIS 1.2 billion. The company was eventually acquired by Harel Insurance. A business built over decades, brought to its knees by stolen paperwork.</p>
+<p>That was a company with a legal team, a cybersecurity budget, and insurance. Most small businesses have none of those.</p>
+<h2>The numbers nobody talks about</h2>
+<p>In 2025, the Israel National Cyber Directorate received 26,500 reports of cyber incidents. That's a 55% jump from the year before. The head of the Directorate disclosed that two petabytes of data have been stolen from citizens in recent years, roughly 100 times the digital holdings of the National Library.</p>
+<p>According to multiple international reports, this country ranked as the #1 most attacked in the world for geopolitically motivated cyberattacks in 2025, surpassing both Ukraine and the United States.</p>
+<p>And yet, 57% of small business owners believe they won't be targeted.</p>
+<p>They're wrong. Small businesses account for 43% of all data breaches globally. Not because they hold more valuable data than large corporations. Because they're easier to break into.</p>
+<h2>What a breach actually costs?</h2>
+<p>IBM's 2025 Cost of a Data Breach Report puts the Middle East regional average at $7.29 million per incident. That figure is skewed by oil companies and major banks, so it doesn't directly apply to a 10-person accounting firm. But the breakdown is instructive.</p>
+<p>According to Coveware's Q4 2024 report, the median ransom payment dropped to approximately $110,000, roughly NIS 400,000. That's the ransom alone, before you count legal fees, forensic investigation, client notification, lost business, and reputation damage.</p>
+<p>IBM found that nearly half of total breach costs are incurred more than a year after the incident. The initial crisis is just the beginning. The lawsuits, regulatory fines, client departures, and remediation drag on for years.</p>
+<p>Half of small businesses that suffer an attack take more than 24 hours just to get back online. For a firm that bills by the hour, every day offline is revenue that never comes back.</p>
+<h2>What Shirbit teaches every small business?</h2>
+<p>Look at what was actually stolen from Shirbit. Not source code. Not trade secrets. Scanned copies of ID cards. Marriage certificates. Financial documents. Medical records.</p>
+<p>These are the exact same documents that sit in filing cabinets, desk drawers, and shared folders at every small accounting firm, law practice, and medical clinic. The only difference is scale. Shirbit had hundreds of thousands of clients. Your firm might have a few hundred. But to each of those clients, their personal data matters just as much.</p>
+<p>Physical documents are the forgotten vulnerability. A digital system can log who accessed a file, when, and from where. A filing cabinet cannot. A stolen hard drive triggers alerts. A stolen file box triggers nothing. There's no encryption on paper. There's no access control on a drawer.</p>
+<p>When attackers breached multiple companies through their service providers in 2025, the pattern was clear. It's not just your own security that matters. It's everyone who touches your data.</p>
+<h2>Amendment 13 changed everything</h2>
+<p>On August 14, 2025, Amendment 13 to the Privacy Protection Act went into effect. This is the most significant change to data protection law in decades, and most small businesses haven't heard of it.</p>
+<p>The law introduced administrative fines that can reach hundreds of thousands of shekels, with multipliers for sensitive data. For smaller businesses, the annual cap is NIS 140,000 in fines. That alone could sink a small firm.</p>
+<p>But fines are not the real threat. The real threat is civil liability. Under Amendment 13, individuals can sue for statutory damages of up to NIS 100,000 per person, without needing to prove they suffered any actual harm. They just need to show their data was mishandled.</p>
+<p>Think about that. An accountant with 200 client files in an unsecured cabinet. If those records are compromised, even partially, each client can claim up to NIS 100,000. No need to prove financial loss. No need to prove identity theft. The exposure existed. That's enough.</p>
+<p>Class actions are now explicitly possible under the amendment. The Privacy Protection Authority can issue binding orders, suspend databases, and publish the names of violators for four years. HOT Telecom was already fined NIS 70,000 in one of the first enforcement actions. The regulator is not waiting.</p>
+<h2>The disconnect</h2>
+<p>Small businesses sit at the center of a growing gap. On one side, attacks are surging. Phishing alone accounts for 52% of all reported incidents. Attackers are actively shifting toward softer targets because large corporations have hardened their defenses.</p>
+<p>On the other side, the legal consequences of a breach have never been higher. Amendment 13 turned client data protection from a best practice into a legal obligation with real penalties.</p>
+<p>In the middle sits the average small business. 23% use no device security at all. 32% rely on free consumer-grade tools. More than a quarter have no security plan of any kind.</p>
+<p>99.8% of all businesses in this country are small or medium-sized. They generate 62% of economic output and employ nearly 69% of the private workforce. They are the economy. And they are the least prepared.</p>
+<h2>What this means in practice?</h2>
+<p>The filing cabinet in the corner of your office is not just furniture. It's a database under the law. The client documents inside it, ID copies, financial statements, contracts, medical records, are regulated data. If they're stolen, lost, or accessed by someone unauthorized, you're liable.</p>
+<p>This isn't about buying expensive security software. It's about basic document hygiene. Knowing what data you hold. Knowing where it lives. Controlling who can access it. Having a record of that access. Keeping sensitive documents off the open internet, away from unencrypted email attachments and free online conversion tools.</p>
+<p>Shirbit was a large company with resources. They survived, barely, through acquisition. A 5-person accounting firm in a regional town doesn't have that option. When client data walks out the door, the business walks out with it.</p>
+<p>The question for small business owners is not complicated. It's just uncomfortable: do you know where all your client documents are right now, and who has access to them?</p>
+<p>If you can't answer that with certainty, the problem already exists.</p>
+<hr />
+<h2>Sources</h2>
+<p>[1] Asero Consulting, "The Implications of the Cyber Breach Against Shirbit Insurance Company." https://asero.com/case-studies/the-implications-of-the-cyber-breach-against-shirbit-insurance-company/</p>
+<p>[2] Times of Israel, "Hackers breach Israeli insurance company, steal client data," November 2020. https://www.timesofisrael.com/hackers-breach-israeli-insurance-company-steal-client-data/</p>
+<p>[3] Calcalist, "Shirbit analysis," 2020. https://www.calcalistech.com/ctech/articles/0,7340,L-3903077,00.html</p>
+<p>[4] Israel National Cyber Directorate, "2025 Annual Summary." https://www.israeldefense.co.il/en/node/67966</p>
+<p>[5] Israel National Cyber Directorate, "2024 Annual Summary." https://www.gov.il/en/pages/booklet_yearly_summary_2024</p>
+<p>[6] CyberExpress, "Israel Data Breach: INCD Head Reveals Two Petabytes of Data Stolen from Citizens." https://thecyberexpress.com/israel-data-breach-incd-head/</p>
+<p>[7] Times of Israel / Radware 2026 Global Threat Analysis Report, "Israel ranks #1 among countries targeted by geopolitical cyberattacks in 2025."</p>
+<p>[8] Verizon, "Small Business Cyber Security and Data Breaches." https://www.verizon.com/business/resources/articles/small-business-cyber-security-and-data-breaches/</p>
+<p>[9] IBM, "Cost of a Data Breach Report 2025." https://www.ibm.com/reports/data-breach</p>
+<p>[10] IBM, "Cost of a Data Breach Report 2024." https://newsroom.ibm.com/2024-07-30-ibm-report-escalating-data-breach-disruption-pushes-costs-to-new-highs</p>
+<p>[11] Coveware, "Quarterly Ransomware Report, Q4 2024." https://www.coveware.com/blog/2025/1/24/q4-2024-quarterly-ransomware-report</p>
+<p>[12] Jerusalem Post, "Iran and Russia-linked ransomware attacks targeting Israeli businesses," 2025. https://www.jpost.com/defense-and-tech/article-872075</p>
+<p>[13] Safetica, "Israel's Amendment 13: What the New Data Protection Law Means for Your Business." https://www.safetica.com/resources/guides/israel-s-amendment-13-what-the-new-data-protection-law-means-for-your-business</p>
+<p>[14] IAPP, "Israel Marks a New Era in Privacy Law: Amendment 13 Ushers in Sweeping Reform." https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform</p>
+<p>[15] BigID, "What Israel Amendment 13 Means for Businesses in 2025." https://bigid.com/blog/what-israel-amendment-13-means-for-businesses-in-2025/</p>
+<p>[16] Calcalist, "SMBs comprise 99.8% of all businesses in Israel" (Hebrew). https://www.calcalist.co.il/articles/0,7340,L-3711954,00.html</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="article-footer">
+      <div class="container">
+        <span class="small-label">
+          <span class="lang-he">רוצה להמשיך לקרוא?</span>
+          <span class="lang-en" style="display:none;">Want to keep reading?</span>
+        </span>
+        <h2>
+          <span class="lang-he">יש עוד מאמרים.</span>
+          <span class="lang-en" style="display:none;">There are more articles.</span>
+        </h2>
+        <p>
+          <span class="lang-he">כל מאמר בוחן היבט אחר של אותה בעיה — איך אנחנו מגנים על מידע, שומרים על אמת, ובונים מערכות צודקות.</span>
+          <span class="lang-en" style="display:none;">Each article explores a different angle of the same problem — how we protect information, preserve truth, and build just systems.</span>
+        </p>
+        <a href="index.html" class="cta-email">
+          <span class="lang-he">לכל המאמרים →</span>
+          <span class="lang-en" style="display:none;">See all articles →</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p class="lang-he">צדק. אמת. פרטיות.</p>
+        <p class="lang-en" style="display:none;">Justice. Truth. Privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">פרויקטים</h4>
+        <h4 class="lang-en" style="display:none;">Projects</h4>
+        <a href="../projects/redaction.html" class="lang-he">הסרת מידע אישי</a>
+        <a href="../projects/redaction.html" class="lang-en" style="display:none;">Redaction Tool</a>
+        <a href="../projects/scanning.html" class="lang-he">דיגיטציה של ארכיונים</a>
+        <a href="../projects/scanning.html" class="lang-en" style="display:none;">Archive Digitization</a>
+        <a href="../projects/charity.html" class="lang-he">שקיפות בעמותות</a>
+        <a href="../projects/charity.html" class="lang-en" style="display:none;">Charity Transparency</a>
+        <a href="../projects/social-card.html" class="lang-he">כרטיס חברתי חכם</a>
+        <a href="../projects/social-card.html" class="lang-en" style="display:none;">Smart Social Card</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">חוקי</h4>
+        <h4 class="lang-en" style="display:none;">Legal</h4>
+        <a href="../privacy-policy.html" class="lang-he">מדיניות פרטיות</a>
+        <a href="../privacy-policy.html" class="lang-en" style="display:none;">Privacy Policy</a>
+        <a href="../terms.html" class="lang-he">תנאי שימוש</a>
+        <a href="../terms.html" class="lang-en" style="display:none;">Terms of Use</a>
+        <a href="../compliance.html" class="lang-he">עמידה ברגולציה</a>
+        <a href="../compliance.html" class="lang-en" style="display:none;">Regulatory Compliance</a>
+        <a href="../accessibility.html" class="lang-he">נגישות</a>
+        <a href="../accessibility.html" class="lang-en" style="display:none;">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span class="lang-en" style="display:none;">© 2026 PlinerSpec. All rights reserved.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-he').forEach(el => {
+    el.style.display = lang === 'he' ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.title = lang === 'he' ? 'הארון שלכם הוא פצצה מתקתקת. וזה לא משנה כמה אתם קטנים. — PlinerSpec' : 'Your Filing Cabinet Is a Liability — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

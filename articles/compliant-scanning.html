@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="רוב המסמכים הסרוקים של עסקים לא שווים כלום מבחינת החוק. למה, ומה צריך כדי שיהיו כשרים." />
+  <meta property="og:title" content="חוק שתי החתימות שאף אחד לא מכיר — PlinerSpec" />
+  <meta property="og:description" content="רוב המסמכים הסרוקים של עסקים לא שווים כלום מבחינת החוק. למה, ומה צריך כדי שיהיו כשרים." />
+  <meta property="og:type" content="article" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/compliant-scanning.html" />
+  <title>חוק שתי החתימות שאף אחד לא מכיר — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.75; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 32px; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; font-weight: 600; }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); margin: 2em 0 0.8em; }
+    p { margin-bottom: 1.3em; color: var(--ink-soft); }
+    p strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    ul, ol { margin: 1.2em 0; padding-inline-start: 1.5em; color: var(--ink-soft); }
+    li { margin-bottom: 0.5em; }
+    blockquote { font-family: var(--font-serif-display); font-style: italic; font-size: 1.5rem; color: var(--accent); border-inline-start: 3px solid var(--accent); padding-inline-start: 24px; margin: 2em 0; line-height: 1.4; }
+    html[lang="he"] blockquote { font-family: var(--font-heb); font-style: normal; }
+    table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    th, td { padding: 12px; text-align: start; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg-elevated); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-header { padding: clamp(60px, 10vw, 100px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--border); }
+    .article-meta { margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .article-header h1 { max-width: 22ch; margin-top: 16px; }
+
+    .article-body { padding: clamp(48px, 8vw, 80px) 0; }
+    .article-body .container { max-width: 680px; }
+    .article-body p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.85; }
+    html[lang="he"] .article-body p { font-family: var(--font-heb); font-size: 1.0625rem; }
+
+    .article-body h2, .article-body h3 { scroll-margin-top: 80px; }
+
+    .article-footer { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-elevated); text-align: center; }
+    .article-footer .small-label { display: block; margin-bottom: 16px; }
+    .article-footer h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
+    .article-footer p { max-width: 32em; margin: 0 auto 32px; color: var(--ink-soft); }
+    .article-footer .cta-email { display: inline-block; font-family: var(--font-serif-display); font-size: 1.375rem; font-style: italic; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    html[lang="he"] .article-footer .cta-email { font-family: var(--font-heb); font-style: normal; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" class="nav-he">העקרונות</a><a href="../index.html#pillars" class="nav-en" style="display:none;">Principles</a></li>
+      <li><a href="../index.html#manifesto" class="nav-he">אודות</a><a href="../index.html#manifesto" class="nav-en" style="display:none;">About</a></li>
+      <li><a href="index.html" class="nav-he">מאמרים</a><a href="index.html" class="nav-en" style="display:none;">Articles</a></li>
+      <li><a href="../projects.html" class="nav-he">פרויקטים</a><a href="../projects.html" class="nav-en" style="display:none;">Projects</a></li>
+      <li><a href="../index.html#contact" class="nav-he">צור קשר</a><a href="../index.html#contact" class="nav-en" style="display:none;">Contact</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <!-- Hebrew -->
+    <div class="lang-content active" data-lang="he">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← חזרה למאמרים</a>
+            <span class="small-label">אמת</span>
+          </div>
+          <h1>חוק שתי החתימות שאף אחד לא מכיר</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <h2>למה המסמכים הסרוקים שלכם כנראה לא שווים כלום מבחינת החוק?</h2>
+<p>סרקתם את החשבוניות. שמרתם אותן בתיקייה במחשב. אולי אפילו גרסתם את המקור כי הארון כבר לא נסגר. מרגישים מסודרים, דיגיטליים, בשליטה.</p>
+<p>כנראה שלא.</p>
+<p>מאז ינואר 2013, הוראות מס הכנסה מגדירות בדיוק מה זה סריקה ממוחשבת חוקית. הדרישות טכניות, ספציפיות, ומחמירות הרבה יותר ממה שרוב בעלי העסקים חושבים. הפער בין מה שעסקים עושים בפועל לבין מה שהחוק דורש הוא עצום. והמחיר של טעות יכול להיות כואב מאוד.</p>
+<h2>סריקה זה לא מסמך. זה צילום.</h2>
+<p>כשמניחים חשבונית על סורק שולחני או מעבירים אותה דרך סורק הזנה, מה שיוצא זה קובץ תמונה. תצלום של מסמך. בלי אימות, בלי חתימה, בלי שום הוכחה שמה שסרקתם זהה למה שקיבלתם.</p>
+<p>מבחינה משפטית, הקובץ הזה שווה בערך כמו צילום. אם המקור כבר לא קיים, אתם מחזיקים באוויר.</p>
+<p>התיקון להוראות מס הכנסה (ניהול פנקסי חשבונות) שנכנס לתוקף בינואר 2013 קבע כללים ברורים לסריקה ממוחשבת של תיעוד חוץ. תיעוד חוץ זה הנייר שמגיע מבחוץ: חשבוניות, חשבוניות מס, קבלות, תעודות משלוח, הודעות זיכוי, הזמנות רכש. התיקון יצר מסלול חוקי לסרוק את כל אלה, לשמור אותם בארכיב דיגיטלי, ובסופו של דבר להשמיד את המקור. אבל המסלול הזה כולל שש דרישות מפורשות, ודילוג על אחת מהן יכול לפסול את כל התהליך.</p>
+<h2>שש הדרישות</h2>
+<p>המסמך חייב להיות רשום במערכת הנהלת החשבונות לפני הסריקה. לא סורקים קודם ומזינים אחר כך.</p>
+<p>הסריקה חייבת להפיק תוצאה קריאה זהה למקור. סריקות מטושטשות, חתוכות בקצוות, עם טקסט לא קריא בגלל רזולוציה נמוכה, כל אלה נכשלות בדרישה הזו.</p>
+<p>הקובץ הסרוק חייב לשאת את הסימון "מסמך סרוק." זו לא המלצה. זו דרישה רגולטורית.</p>
+<p>הקובץ הסרוק חייב להיחתם בחתימה אלקטרונית מאושרת. לא חתימה אלקטרונית רגילה. לא הקלדת שם. לא לחיצה על "אני מאשר" באיזו מערכת. חתימה אלקטרונית מאושרת, מונפקת על ידי אחד משני גופים בלבד שמורשים על ידי משרד המשפטים: קומסיין או פרסונל איי.די. וכאן רוב העסקים נופלים. החתימה מבוססת על הצפנה א-סימטרית עם זוג מפתחות ציבורי ופרטי, צמודה לאדם ספציפי, ומזהה כל שינוי שנעשה בקובץ אחרי החתימה.</p>
+<p>אדם מורשה נוסף, שונה מהחותם הראשון, חייב לבדוק באופן עצמאי שהסריקה זהה למסמך המקורי. ואז לחתום גם הוא בחתימה אלקטרונית מאושרת משלו. שני אנשים. שתי חתימות. שני אישורים נפרדים. (בחלק מהיישומים אחת החתימות יכולה להיות אוטומטית, אבל הדרישה לשני גורמים מורשים נפרדים נשארת.)</p>
+<p>זו הדרישה שכמעט אף אחד לא מכיר. היא לא מוסתרת בהערות שוליים. היא כתובה מפורשות בהוראות. אבל תשאלו בעל עסק אם תהליך הסריקה שלו כולל שתי חתימות אלקטרוניות מאושרות מאנשים שונים, ותקבלו מבט ריק.</p>
+<p>הסריקה החתומה והמאומתת חייבת להישמר בארכיב דיגיטלי תקני. לא תיקייה בשולחן העבודה. לא דרייב משותף. מערכת שתומכת בחיפוש לפי שם מסמך, סוג, תאריך ומספר עוסק של מוציא החשבונית. מערכת שיכולה לייצא רשומות בפורמט שרשות המסים יכולה לקרוא. מערכת עם גיבויים שוטפים ושמירה על תקינות בעת מעבר בין טכנולוגיות.</p>
+<h2>מה קורה כשלא עומדים בדרישות?</h2>
+<p>זה לא סיכון תיאורטי. מנגנוני העונשים קבועים בחוק מע"מ ובפקודת מס הכנסה, ורשות המסים משתמשת בהם.</p>
+<p>אם רשומות הנהלת החשבונות שלכם נמצאות בסטייה מהותית מדרישות ניהול הספרים, פקיד השומה יכול לפסול את הספרים. פסילת ספרים. זה האופציה הגרעינית.</p>
+<p>כשהספרים נפסלים, כמה דברים קורים במקביל.</p>
+<p>קנס של עד 1% ממחיר העסקאות הכולל מכוח סעיף 95(א) לחוק מע"מ. עסק עם מחזור של 5 מיליון שקל, זה 50,000 שקל קנס. בנוסף, פקודת מס הכנסה מוסיפה תוספת שומה לפי סעיף 191ב, ובמקרים חמורים עבירות פליליות לפי סעיף 216.</p>
+<p>רשות המסים מוציאה שומה לפי מיטב השפיטה. כלומר, הם מעריכים את ההכנסה שלכם לפי החישובים שלהם, כמעט בניתוק מהדוחות שהגשתם. אתם מאבדים את הזכות לנכות פחת, ריבית, חובות אבודים, והעברת הפסדים. נטל ההוכחה מתהפך: במקום שרשות המסים תוכיח שאתם חייבים יותר, אתם צריכים להוכיח שההערכה שלהם לא סבירה.</p>
+<p>עכשיו חברו את זה לסריקה. אם עסק סרק מסמכים בלי לעמוד בהוראות, בלי חתימות מאושרות, בלי אימות כפול, בלי ארכיב תקני, הסריקות האלה עלולות לא להתקבל כרשומות תקפות. אם המקור כבר הושמד, לעסק אין רשומות תקפות בכלל. וזה בדיוק מה שמפעיל את מנגנון פסילת הספרים.</p>
+<h2>גורם החשבוניות האלקטרוניות</h2>
+<p>הבעיה הולכת ומחריפה. חובת הנפקת חשבוניות אלקטרוניות בעסקאות B2B נכנסה לתוקף במאי 2024 לחשבוניות מעל 25,000 שקל. הסף יורד בהתמדה: 20,000 שקל בינואר 2025, 10,000 שקל בינואר 2026, ו-5,000 שקל ביוני 2026.</p>
+<p>כל חשבונית דורשת מספר הקצאה מרשות המסים דרך מערכת שע"מ. בלי מספר הקצאה, העסק המקבל לא יכול לנכות מע"מ תשומות.</p>
+<p>אבל לא כל ספק עבר לדיגיטל. עסקים עדיין מקבלים חשבוניות פיזיות, קבלות פיזיות, תעודות משלוח מודפסות. מסמכי הנייר האלה עדיין צריכים להישמר שבע שנים, או להיסרק בהתאם להוראות. העולם הדיגיטלי זז קדימה. עולם הנייר לא נעלם. הפער בין השניים הוא בדיוק המקום שבו החשיפה המשפטית יושבת.</p>
+<h2>סריקה רגילה מול סריקה ממוחשבת</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>סריקה רגילה</th>
+<th>סריקה ממוחשבת תקנית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>פלט</td>
+<td>קובץ תמונה JPEG או PDF</td>
+<td>PDF/A עם מטאדאטה מוטמעת</td>
+</tr>
+<tr>
+<td>חתימה דיגיטלית</td>
+<td>אין</td>
+<td>שתי חתימות אלקטרוניות מאושרות</td>
+</tr>
+<tr>
+<td>ניתן לחיפוש טקסט</td>
+<td>רק אם מוסיפים OCR ידנית</td>
+<td>כן, מקוטלג וניתן לחיפוש</td>
+</tr>
+<tr>
+<td>תוקף משפטי</td>
+<td>אין, מכיוון שזה צילום</td>
+<td>תוקף משפטי מלא</td>
+</tr>
+<tr>
+<td>אפשר להשמיד מקור?</td>
+<td>לא</td>
+<td>כן, לאחר עמידה בתנאים</td>
+</tr>
+<tr>
+<td>מתקבל ברשות המסים?</td>
+<td>לא</td>
+<td>כן</td>
+</tr>
+<tr>
+<td>ארכיב עם חיפוש לפי ספק, תאריך, סוג?</td>
+<td>לא</td>
+<td>כן</td>
+</tr>
+<tr>
+<td>ייצוא לביקורת?</td>
+<td>עבודה ידנית</td>
+<td>יכולת ייצוא מובנית</td>
+</tr>
+</tbody>
+</table>
+<h2>עניין החתימה הדיגיטלית</h2>
+<p>החתימה האלקטרונית המאושרת היא עמוד השדרה של סריקה ממוחשבת. היא גם המחסום המרכזי לעסקים שמנסים לעשות את זה לבד.</p>
+<p>רק שתי חברות מורשות להנפיק תעודות כאלה: קומסיין ופרסונל איי.די. שתיהן מורשות על ידי משרד המשפטים מכוח חוק חתימה אלקטרונית, התשס"א-2001. התעודות אישיות, צמודות לאדם מסוים שעבר תהליך זיהוי, ודורשות כרטיס חכם, אסימון חומרה, או מערכת אימות מבוססת ענן.</p>
+<p>החוק מכיר בשלוש רמות של חתימה אלקטרונית. חתימה אלקטרונית פשוטה, כמו הקלדת שם באימייל, קבילה בבית משפט אבל בלי חזקות ראייתיות. חתימה אלקטרונית מאובטחת היא ייחודית לבעלים ומזהה שינויים, מה שנותן לה חזקת אותנטיות. חתימה אלקטרונית מאושרת, מהסוג שנדרש לסריקה ממוחשבת, היא הרמה הגבוהה ביותר. היא עומדת בכל הדרישות החקיקתיות ונושאת את המעמד המשפטי החזק ביותר.</p>
+<p>מערכת חתימה כמו DocuSign או כל פתרון "חתימה מקוונת" גנרי לא עונה על הדרישה הזו. גם סריקה של חתימה בכתב יד לא מספיקה. ההוראות דורשות במפורש חתימה אלקטרונית מאושרת מגוף הנפקה מורשה.</p>
+<h2>מי צריך לשים לב?</h2>
+<p>כל עסק שמנהל רשומות הנהלת חשבונות. רואי חשבון ומנהלי חשבונות שמטפלים במסמכי לקוחות. משרדי עורכי דין עם תיקי לקוחות ומסמכי בית משפט. מרפאות ומוסדות רפואיים ששומרים תיקי מטופלים לפי חוק הגנת הפרטיות. קבלני ממשלה. חברות נדל"ן. בעצם, כל ארגון שמטפל במסמכי נייר ורוצה לעבור לדיגיטל בלי ליצור חשיפה משפטית.</p>
+<h2>בדיקה עצמית מהירה</h2>
+<p>עברו על השאלות הבאות לגבי תהליך הסריקה הנוכחי שלכם:</p>
+<p>האם הסריקות שלכם חתומות בחתימות אלקטרוניות מאושרות מקומסיין או פרסונל איי.די? האם אדם מורשה נוסף מאמת כל סריקה מול המקור וחותם גם הוא בחתימה מאושרת? האם מערכת הארכיב שלכם תומכת בחיפוש לפי סוג מסמך, תאריך ומספר עוסק? האם תוכלו לייצא רשומות בפורמט שרשות המסים מקבלת? האם אתם מבצעים גיבויים שוטפים?</p>
+<p>אם התשובה לאחת מהשאלות האלה היא לא, הסריקות שלכם עלולות להיות חסרות תוקף משפטי. ואם כבר השמדתם את המקור, השעון מתקתק.</p>
+<p>ההוראות בתוקף מאז 2013. לרשות המסים היו יותר מעשר שנים לבנות יכולות אכיפה. עם חובת החשבוניות האלקטרוניות שדוחפת כל עסק לניהול רשומות דיגיטלי, הבקרה על ניהול מסמכים רק הולכת להתגבר.</p>
+<p>חוק שתי החתימות הוא לא חדש. הוא לא נסתר. פשוט התעלמו ממנו. וזה מתחיל להשתנות.</p>
+<hr />
+<h2>מקורות</h2>
+<p>[1] תיקון להוראות מס הכנסה (ניהול פנקסי חשבונות) (מס' 2), התשל"ג-1973. פורסם ברשומות, 31 בדצמבר 2012. נכנס לתוקף 1 בינואר 2013. הנוסח המלא באתר נבו: https://www.nevo.co.il/law_html/law01/255_179.htm</p>
+<p>[2] רשות המסים, חוזר 9/2013. הנחיות בנושא סריקה ממוחשבת של תיעוד חוץ בהתאם לתיקון להוראות ניהול ספרים.</p>
+<p>[3] קומסיין, "תקנות מס לסריקת מסמכים וארכיון דיגיטלי." https://www.comsign.co.il/tax-regulations-digital-archiving/</p>
+<p>[4] משרד רואי חשבון גולדפרו, "שינויים בהוראות ניהול ספרים: סריקת מסמכים וארכיונים דיגיטליים." https://www.goldpro.co.il/</p>
+<p>[5] חוק מס ערך מוסף, סעיף 95(א). קנס של עד 1% ממחיר העסקאות הכולל בשל סטייה מהותית מדרישות ניהול ספרים.</p>
+<p>[6] פקודת מס הכנסה, סעיף 191ב. תוספת שומה בעקבות פסילת ספרים. סעיף 216, אחריות פלילית בגין עבירות מס.</p>
+<p>[7] פקודת מס הכנסה, סעיף 130(ב). סמכות פקיד השומה לפסול ספרים כשהסטיות מהותיות לקביעת ההכנסה. סעיף 145(ב), אי רישום קבלה שנדרשה.</p>
+<p>[8] חוק חתימה אלקטרונית, התשס"א-2001. מגדיר את מסגרת הרישוי לגורמים מנפיקים ואת שלוש רמות החתימה האלקטרונית: פשוטה, מאובטחת ומאושרת. מסמך רקע ממשלתי: https://www.gov.il/BlobFolder/generalpage/electronic_signature_about/he/Electronic%20signature%20background%20document.pdf</p>
+<p>[9] DocuSign, "Electronic Signature Legality in Israel." סקירת שלוש רמות החתימה בדין הישראלי. https://www.docusign.com/products/electronic-signature/legality/israel</p>
+<p>[10] קומסיין ופרסונל איי.די, שני גורמים מנפיקים מורשים על ידי משרד המשפטים להנפקת חתימות אלקטרוניות מאושרות מכוח חוק חתימה אלקטרונית 2001. ראו גם: Documents.co.il, "מהי חתימה דיגיטלית?" https://documents.co.il/digital-signature/</p>
+<p>[11] Hanibaal, "What Is a Digital Signature?" תהליך סריקה ממוחשבת שלב אחר שלב כולל דרישת שתי החתימות. https://www.hanibaal-en.com/what-is-a-digital-signature/</p>
+<p>[12] KPMG, "Israel: Expansion of Mandatory E-Invoicing Model." https://kpmg.com/us/en/taxnewsflash/news/2025/12/tnf-israel-expansion-of-mandatory-e-invoicing-model.html</p>
+<p>[13] Avalara, "Israel Invoice Allocation Number Mandate," 2024. https://www.avalara.com/blog/en/europe/2024/04/israel-invoice-allocation-number-mandate.html (הערה: משקף את לוח הזמנים המקורי; לוח זמנים מואץ הוכרז בדצמבר 2025)</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div class="lang-content" data-lang="en">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← Back to articles</a>
+            <span class="small-label">Truth</span>
+          </div>
+          <h1>The Two-Signature Rule Nobody Knows About</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <h2>Why most businesses' scanned documents have zero legal standing?</h2>
+<p>You scanned your invoices. You saved them to a folder. Maybe you even shredded the originals to clear out the filing cabinet. You feel organized. Modern. Compliant.</p>
+<p>You're probably not.</p>
+<p>Since January 2013, Income Tax Directives have defined exactly what a legally valid scan looks like. The requirements are specific, technical, and strict. The gap between what most businesses do and what the law actually demands is enormous. The consequences of getting it wrong can be severe.</p>
+<h2>A scan is not a document. It's a photograph.</h2>
+<p>When you put an invoice on a flatbed scanner or feed it through a desktop unit, the output is an image file. A picture of a document. It carries no verification, no authentication, no proof that what you scanned matches what you received. In legal terms, that file is worth about as much as a photocopy. If the original is gone, you're holding nothing.</p>
+<p>The 2013 amendment to the Income Tax Directives (Management of Books of Accounts) changed the rules for how businesses can store external documentation digitally. External documentation means the paper that arrives from outside your organization: invoices, tax invoices, receipts, shipping documents, credit memos, purchase orders. The amendment created a legal pathway to scan these, archive them digitally, and eventually destroy the originals. But the pathway has six specific requirements, and skipping any one of them can invalidate the entire process.</p>
+<h2>The six requirements</h2>
+<p>The document must already be recorded in your accounting system before scanning. You can't scan first and book later.</p>
+<p>The scan must produce a readable result identical to the source. Blurry scans, cut-off edges, illegible text from poor resolution, all of these fail this standard.</p>
+<p>The scanned file must carry the label "scanned document" (in Hebrew: מסמך סרוק). This isn't optional metadata. It's a regulatory requirement.</p>
+<p>The scanned file must be signed with a certified electronic signature. Not a regular e-signature. Not typing your name. Not a DocuSign click-to-sign. A certified electronic signature, issued by one of only two providers licensed by the Ministry of Justice: Comsign or PersonalID. This is where most businesses fall off the map. The signature uses asymmetric encryption with public and private key pairs. It's tied to a specific individual and detects any post-signing alterations to the file.</p>
+<p>A second authorized person, someone different from the first signer, must independently verify that the scanned file matches the original document. Then that second person must apply their own certified electronic signature. Two people. Two signatures. Two separate certificates. (Some implementations allow one of the signatures to be applied automatically, but the requirement for two distinct authorized parties remains.)</p>
+<p>This is the requirement that virtually nobody knows about. It's not buried in footnotes. It's right there in the directives. But ask any business owner whether their scanning process includes dual certified signatures, and you'll get a blank stare.</p>
+<p>The signed, verified scan must be stored in a compliant digital archive. Not a folder on your desktop. Not a shared drive. A system that supports searching by document name, type, date, and the business registration number of the invoice issuer. A system that can export records in formats the tax authority can read. A system with regular backups and safeguards during technology migrations.</p>
+<h2>What happens when you don't comply?</h2>
+<p>This isn't a theoretical risk. The penalty structure spans both the VAT Law and the Income Tax Ordinance, and the tax authority uses it.</p>
+<p>If your accounting records are found to deviate materially from the bookkeeping requirements, the tax assessor can disqualify your books entirely. The Hebrew term is פסילת ספרים, and it's the nuclear option.</p>
+<p>When your books are disqualified, several things happen at once.</p>
+<p>You face a fine of up to 1% of the total price of transactions under VAT Law Section 95(a). For a business doing 5 million NIS a year, that's 50,000 NIS. Separately, the Income Tax Ordinance adds a surtax under Section 191b, and in serious cases criminal liability under Section 216.</p>
+<p>The tax authority issues a "best judgment assessment," estimating your income based on their own calculations, largely disconnected from what you reported. You lose the right to claim depreciation, interest deductions, bad debt write-offs, and loss carryforwards. The burden of proof flips: you must prove their estimate is unreasonable.</p>
+<p>Connect this to scanning. If a business scanned its documents without certified signatures, dual verification, or a compliant archive, those scans may not be accepted as valid records. If the originals were already destroyed, the business has no valid records at all. That's the trigger for disqualification.</p>
+<h2>The e-invoicing factor</h2>
+<p>This problem is getting more urgent. Mandatory B2B electronic invoicing launched in May 2024 for invoices above 25,000 NIS. The threshold keeps dropping: 20,000 NIS in January 2025, 10,000 NIS in January 2026, and 5,000 NIS by June 2026. Every invoice now requires an allocation number from the tax authority through the SHAAM platform. Without it, the receiving business cannot deduct input VAT.</p>
+<p>But not every supplier is digital yet. Businesses still receive physical invoices, receipts, shipping documents. Those paper documents still need to be stored for seven years, or scanned in compliance with the directives. The digital world is moving forward. The paper world hasn't disappeared. The gap between the two is where the legal exposure sits.</p>
+<h2>Regular scan vs. compliant scan</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Regular Scan</th>
+<th>Compliant Scan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>JPEG or PDF image</td>
+<td>PDF/A with embedded metadata</td>
+</tr>
+<tr>
+<td>Digital signature</td>
+<td>None</td>
+<td>Dual certified signatures</td>
+</tr>
+<tr>
+<td>Text searchable</td>
+<td>Only if OCR added manually</td>
+<td>Yes, indexed and searchable</td>
+</tr>
+<tr>
+<td>Legal standing</td>
+<td>None. It's a photo.</td>
+<td>Full legal validity</td>
+</tr>
+<tr>
+<td>Can you destroy the original?</td>
+<td>No</td>
+<td>Yes, after conditions are met</td>
+</tr>
+<tr>
+<td>Accepted by tax authority?</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Archive searchable by vendor, date, type?</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Exportable for audit?</td>
+<td>Requires manual work</td>
+<td>Built-in export capability</td>
+</tr>
+</tbody>
+</table>
+<h2>The digital signature piece</h2>
+<p>The certified electronic signature is the backbone of compliant scanning. It's also the single biggest barrier for businesses trying to do this on their own.</p>
+<p>Only two companies are authorized to issue these certificates: Comsign and PersonalID. Both are licensed by the Ministry of Justice under the Electronic Signature Law of 2001. The certificates are personal, tied to an individual through identity verification, and require a smart card, hardware token, or cloud-based authentication.</p>
+<p>The law recognizes three tiers of electronic signatures. Simple (typing your name), secure (unique to holder, detects alterations), and certified (highest tier, meets all statutory requirements). Only the certified level satisfies the scanning directives.</p>
+<p>A DocuSign or HelloSign workflow doesn't cut it. Neither does a scanned image of a handwritten signature. The directive requires a certified electronic signature from a licensed certificate authority. Period.</p>
+<h2>A quick self-audit</h2>
+<p>Ask yourself these questions:</p>
+<p>Do your scans carry certified electronic signatures from Comsign or PersonalID? Does a second person verify each scan and apply a second signature? Can your archive search by document type, date, and vendor registration number? Can you export records for a tax audit? Do you run regular backups?</p>
+<p>If the answer to any of these is no, your scanned documents may have no legal standing. If you've already destroyed the originals, the clock is ticking.</p>
+<p>The directives have been in effect since 2013. The tax authority has had over a decade to build enforcement capacity. With e-invoicing pushing every business toward digital records, scrutiny on document management is only going to increase.</p>
+<p>The two-signature rule isn't new. It isn't obscure. It's just been ignored. That's starting to change.</p>
+<hr />
+<h2>Sources</h2>
+<p>[1] Amendment to Income Tax Regulations (Management of Books of Accounts) (No. 2), 5733-1973. Published in Reshumot (official gazette), December 31, 2012. Effective January 1, 2013. Full text available on Nevo Legal Database: https://www.nevo.co.il/law_html/law01/255_179.htm</p>
+<p>[2] Israel Tax Authority, Circular 9/2013. Guidance on computerized scanning of external documentation under the amended bookkeeping regulations.</p>
+<p>[3] Comsign, "Tax Regulations for Document Scanning and Digital Archiving." https://www.comsign.co.il/tax-regulations-digital-archiving/</p>
+<p>[4] Goldpro CPA Firm, "Changes to Bookkeeping Regulations: Document Scanning &amp; Digital Archives." https://www.goldpro.co.il/</p>
+<p>[5] VAT Law, Section 95(a). Fine of up to 1% of the total price of transactions for material deviations from bookkeeping requirements.</p>
+<p>[6] Income Tax Ordinance, Section 191b. Surtax provisions following bookkeeping disqualification. Section 216, criminal liability for tax offenses.</p>
+<p>[7] Income Tax Ordinance, Section 130(b). Tax assessor authority to disqualify books when deviations are material to income determination. Section 145(b), failure to record required receipts.</p>
+<p>[8] Electronic Signature Law 5761-2001 (Israel). Establishes licensing framework for certificate authorities and defines three tiers of electronic signatures: simple, secure, and certified. Government background document: https://www.gov.il/BlobFolder/generalpage/electronic_signature_about/he/Electronic%20signature%20background%20document.pdf</p>
+<p>[9] DocuSign, "Electronic Signature Legality in Israel." Overview of the three signature tiers under the law. https://www.docusign.com/products/electronic-signature/legality/israel</p>
+<p>[10] Comsign and PersonalID, the two certificate authorities licensed by the Ministry of Justice to issue certified electronic signatures under the Electronic Signature Law 2001. See also: Documents.co.il, "What Is a Digital Signature?" https://documents.co.il/digital-signature/</p>
+<p>[11] Hanibaal, "What Is a Digital Signature?" Step-by-step compliant scanning workflow including dual-signature requirement. https://www.hanibaal-en.com/what-is-a-digital-signature/</p>
+<p>[12] KPMG, "Israel: Expansion of Mandatory E-Invoicing Model." https://kpmg.com/us/en/taxnewsflash/news/2025/12/tnf-israel-expansion-of-mandatory-e-invoicing-model.html</p>
+<p>[13] Avalara, "Israel Invoice Allocation Number Mandate," 2024. https://www.avalara.com/blog/en/europe/2024/04/israel-invoice-allocation-number-mandate.html (Note: reflects original schedule; accelerated timeline announced December 2025)</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="article-footer">
+      <div class="container">
+        <span class="small-label">
+          <span class="lang-he">רוצה להמשיך לקרוא?</span>
+          <span class="lang-en" style="display:none;">Want to keep reading?</span>
+        </span>
+        <h2>
+          <span class="lang-he">יש עוד מאמרים.</span>
+          <span class="lang-en" style="display:none;">There are more articles.</span>
+        </h2>
+        <p>
+          <span class="lang-he">כל מאמר בוחן היבט אחר של אותה בעיה — איך אנחנו מגנים על מידע, שומרים על אמת, ובונים מערכות צודקות.</span>
+          <span class="lang-en" style="display:none;">Each article explores a different angle of the same problem — how we protect information, preserve truth, and build just systems.</span>
+        </p>
+        <a href="index.html" class="cta-email">
+          <span class="lang-he">לכל המאמרים →</span>
+          <span class="lang-en" style="display:none;">See all articles →</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p class="lang-he">צדק. אמת. פרטיות.</p>
+        <p class="lang-en" style="display:none;">Justice. Truth. Privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">פרויקטים</h4>
+        <h4 class="lang-en" style="display:none;">Projects</h4>
+        <a href="../projects/redaction.html" class="lang-he">הסרת מידע אישי</a>
+        <a href="../projects/redaction.html" class="lang-en" style="display:none;">Redaction Tool</a>
+        <a href="../projects/scanning.html" class="lang-he">דיגיטציה של ארכיונים</a>
+        <a href="../projects/scanning.html" class="lang-en" style="display:none;">Archive Digitization</a>
+        <a href="../projects/charity.html" class="lang-he">שקיפות בעמותות</a>
+        <a href="../projects/charity.html" class="lang-en" style="display:none;">Charity Transparency</a>
+        <a href="../projects/social-card.html" class="lang-he">כרטיס חברתי חכם</a>
+        <a href="../projects/social-card.html" class="lang-en" style="display:none;">Smart Social Card</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">חוקי</h4>
+        <h4 class="lang-en" style="display:none;">Legal</h4>
+        <a href="../privacy-policy.html" class="lang-he">מדיניות פרטיות</a>
+        <a href="../privacy-policy.html" class="lang-en" style="display:none;">Privacy Policy</a>
+        <a href="../terms.html" class="lang-he">תנאי שימוש</a>
+        <a href="../terms.html" class="lang-en" style="display:none;">Terms of Use</a>
+        <a href="../compliance.html" class="lang-he">עמידה ברגולציה</a>
+        <a href="../compliance.html" class="lang-en" style="display:none;">Regulatory Compliance</a>
+        <a href="../accessibility.html" class="lang-he">נגישות</a>
+        <a href="../accessibility.html" class="lang-en" style="display:none;">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span class="lang-en" style="display:none;">© 2026 PlinerSpec. All rights reserved.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-he').forEach(el => {
+    el.style.display = lang === 'he' ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.title = lang === 'he' ? 'חוק שתי החתימות שאף אחד לא מכיר — PlinerSpec' : 'The Two-Signature Rule Nobody Knows About — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

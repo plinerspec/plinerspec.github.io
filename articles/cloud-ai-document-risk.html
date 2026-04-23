@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="93% מעובדי המשרד מעלים מידע חסוי לכלי AI מקוונים. ברוב המקרים, בלי לדעת מה באמת קורה למידע הזה." />
+  <meta property="og:title" content="המסמכים שלכם כבר נמצאים על שרת של מישהו אחר — PlinerSpec" />
+  <meta property="og:description" content="93% מעובדי המשרד מעלים מידע חסוי לכלי AI מקוונים. ברוב המקרים, בלי לדעת מה באמת קורה למידע הזה." />
+  <meta property="og:type" content="article" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/articles/cloud-ai-document-risk.html" />
+  <title>המסמכים שלכם כבר נמצאים על שרת של מישהו אחר — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c;
+      --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1;
+      --accent: #8b3a2f; --accent-soft: #b04a3d;
+      --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-body: 'Source Serif 4', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-heb: 'Heebo', sans-serif;
+      --max-width: 720px; --max-width-wide: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.75; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.38 0 0 0 0 0.33 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 1; opacity: 0.8; }
+    main, header, footer { position: relative; z-index: 2; }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 500; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 32px; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; font-weight: 600; }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); margin: 2em 0 0.8em; }
+    p { margin-bottom: 1.3em; color: var(--ink-soft); }
+    p strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    ul, ol { margin: 1.2em 0; padding-inline-start: 1.5em; color: var(--ink-soft); }
+    li { margin-bottom: 0.5em; }
+    blockquote { font-family: var(--font-serif-display); font-style: italic; font-size: 1.5rem; color: var(--accent); border-inline-start: 3px solid var(--accent); padding-inline-start: 24px; margin: 2em 0; line-height: 1.4; }
+    html[lang="he"] blockquote { font-family: var(--font-heb); font-style: normal; }
+    table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    th, td { padding: 12px; text-align: start; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg-elevated); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-header { padding: clamp(60px, 10vw, 100px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--border); }
+    .article-meta { margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .article-header h1 { max-width: 22ch; margin-top: 16px; }
+
+    .article-body { padding: clamp(48px, 8vw, 80px) 0; }
+    .article-body .container { max-width: 680px; }
+    .article-body p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.85; }
+    html[lang="he"] .article-body p { font-family: var(--font-heb); font-size: 1.0625rem; }
+
+    .article-body h2, .article-body h3 { scroll-margin-top: 80px; }
+
+    .article-footer { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-elevated); text-align: center; }
+    .article-footer .small-label { display: block; margin-bottom: 16px; }
+    .article-footer h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
+    .article-footer p { max-width: 32em; margin: 0 auto 32px; color: var(--ink-soft); }
+    .article-footer .cta-email { display: inline-block; font-family: var(--font-serif-display); font-size: 1.375rem; font-style: italic; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    html[lang="he"] .article-footer .cta-email { font-family: var(--font-heb); font-style: normal; }
+
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    html[lang="he"] .footer-brand p { font-family: var(--font-heb); font-style: normal; }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" class="nav-he">העקרונות</a><a href="../index.html#pillars" class="nav-en" style="display:none;">Principles</a></li>
+      <li><a href="../index.html#manifesto" class="nav-he">אודות</a><a href="../index.html#manifesto" class="nav-en" style="display:none;">About</a></li>
+      <li><a href="index.html" class="nav-he">מאמרים</a><a href="index.html" class="nav-en" style="display:none;">Articles</a></li>
+      <li><a href="../projects.html" class="nav-he">פרויקטים</a><a href="../projects.html" class="nav-en" style="display:none;">Projects</a></li>
+      <li><a href="../index.html#contact" class="nav-he">צור קשר</a><a href="../index.html#contact" class="nav-en" style="display:none;">Contact</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <!-- Hebrew -->
+    <div class="lang-content active" data-lang="he">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← חזרה למאמרים</a>
+            <span class="small-label">פרטיות</span>
+          </div>
+          <h1>המסמכים שלכם כבר נמצאים על שרת של מישהו אחר</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>בינואר 2026, מערכת אבטחת המידע של משרד הביטחון הפנים האמריקאי זיהתה פעילות חריגה. מישהו העלה מסמכים רגישים לפלטפורמה ציבורית ברשת. לא עובד זוטר. לא מתמחה. מדובר במנהל הזמני של CISA, הסוכנות הפדרלית שאחראית על הגנת הסייבר של כל ארצות הברית. האיש שהתפקיד שלו היה למנוע בדיוק את הדבר הזה, עשה את זה בעצמו.</p>
+<p>הוא אפילו ביקש אישור מיוחד להשתמש בכלי. ואז התעלם מהנהלים והשתמש בגרסה הציבורית, הפתוחה לכולם. ארבעה מסמכים שסומנו "לשימוש רשמי בלבד" הועלו בין יולי לאוגוסט 2025. נפתחה חקירה.</p>
+<p>אם ראש מערך הסייבר של ארצות הברית לא מסוגל לעמוד בכללים בסיסיים של טיפול במסמכים, שאלו את עצמכם: מה רואה החשבון שלכם עושה עם הדוחות הכספיים שלכם?</p>
+<h2>המספרים שאף אחד לא רוצה לשמוע</h2>
+<p>זה לא ניחוש. מחקר של ManageEngine (כפי שדווח על ידי Kiteworks) סקר 700 עובדי משרד בארצות הברית וקנדה ומצא ש-93% מהם שיתפו מידע חסוי עם כלים מקוונים לא מאושרים. לא 9 אחוז. תשעים ושלושה.</p>
+<p>32% מהם שיתפו ספציפית מידע חסוי של לקוחות. 37% חשפו מידע פנימי של החברה. והמגמה רק מחריפה. לפי מחקר של Cyberhaven, ב-2023 כ-11% מהמידע שהוזן לכלים מקוונים נחשב רגיש. עד תחילת 2025, המספר הזה קפץ פי שלושה ל-34.8%.</p>
+<p>בינתיים, ל-83% מהחברות אין שום טכנולוגיה שחוסמת או אפילו מזהה את ההעלאות האלה. הן מסתמכות על הדרכות, מיילים תזכורת, ותקווה. רק 9% מפעילות מערכות בקרה שבאמת עובדות.</p>
+<p>שליש מהמנהלים הבכירים משוכנעים שהארגון שלהם עוקב אחרי השימוש בכלים חיצוניים. האחוז האמיתי שבאמת עושה את זה? תשעה.</p>
+<h2>סמסונג: שלושה מהנדסים, עשרים יום, נזק בלתי הפיך</h2>
+<p>במרץ 2023, סמסונג גילתה ששלושה מהנדסים העלו מידע קנייני לפלטפורמה מקוונת תוך עשרים יום בלבד.</p>
+<p>הראשון הזין קוד מקור של סמסונג כדי לתקן באג. השני הקליט ישיבת צוות, תמלל אותה, ואז העלה את התמליל כדי לייצר סיכום. השלישי הכניס נתוני בדיקות שבבים לצורך אופטימיזציה.</p>
+<p>סמסונג כבר הזהירה את העובדים לא לעשות את זה. הם עשו בכל זאת. המקרים היו שגרתיים לחלוטין. תיקון באג. סיכום ישיבה. הרצת בדיקה. דברים שקורים בכל משרד, כל יום.</p>
+<p>ההערכה הפנימית של סמסונג הייתה חד-משמעית: המידע מאוחסן כעת לצמיתות על שרתים חיצוניים. במילים שלהם, "בלתי אפשרי לשחזר."</p>
+<p>התגובה הייתה קיצונית. סמסונג הגבילה כל קלט לכלי ל-1,024 בתים, בערך פסקה קצרה. החברה התחילה לפתח מערכת פנימית כדי להימנע מכל תלות בפלטפורמות חיצוניות.</p>
+<p>אבל הנזק נעשה. קוד מקור. פרוטוקולים של ישיבות פנימיות. נתוני ייצור שבבים. הכל יושב על שרתים שסמסונג לא שולטת בהם, לפי מדיניות שמירה שסמסונג לא כתבה, תחת תנאי שימוש שסמסונג לא יכולה לשנות.</p>
+<h2>מה באמת קורה כשאתם מעלים מסמך?</h2>
+<p>רוב האנשים חושבים שכשהם מעלים קובץ לאתר, משתמשים בו וסוגרים את הטאב, הקובץ נעלם. הוא לא נעלם.</p>
+<p>גרסאות צרכניות של כלים מקוונים שומרות את המידע שהועלה. התוכן עשוי לשמש לשיפור המוצרים המסחריים של הפלטפורמה. שאילתות, מסמכים, מידע שהועלה, הכל עלול לחזור למערכת. מחיקת החשבון לא מבטיחה מחיקת המידע. מדיניות השמירה מעורפלת בכוונה.</p>
+<p>תסתכלו על תנאי השימוש. אם אתם רואים "שיפור המוצר", זה אומר שהספק עשוי להשתמש בקלט שלכם. "מידע מצטבר ואנונימי" נשמע בטוח, אבל מידע מופשט עדיין יכול לחשוף דפוסים עסקיים. "רישיון בלתי חוזר" או "תמידי" אומר שלספק יש זכויות בלתי מוגבלות על התוכן שלכם. לנצח.</p>
+<p>ה-FTC האמריקאי הוציא אזהרה מפורשת בתחילת 2024: חברות שמבטיחות לא להשתמש במידע של לקוחות ואז עושות את זה בכל זאת, מפרות את החוק. "אין פטורים," כתב ה-FTC. אבל הפלטפורמות ממשיכות. Zoom שינתה את תנאי השימוש כדי לאפשר שימוש במידע לצרכי פיתוח. WeTransfer עשתה את אותו הדבר. שתיהן קיבלו ביקורת. אף אחת לא ספגה תוצאות של ממש.</p>
+<p>וזה החלק שצריך להדאיג אתכם באמת. ב-2024, חוקרי אבטחה מצאו מעל 225,000 פרטי התחברות גנובים של חשבונות בפלטפורמות מקוונות שנמכרו בדארקנט. הם נגנבו על ידי תוכנות זדוניות. ברגע שקונה מתחבר עם הפרטים הגנובים, הוא מקבל גישה מלאה להיסטוריה המלאה של החשבון. מסמכים, שאילתות, מידע. הכל.</p>
+<p>הדוח השנתי שלכם. הרשומה הרפואית של הלקוח. הדוחות הכספיים של החברה. הכל נמצא במרחק סיסמה גנובה אחת מחשיפה.</p>
+<h2>המציאות המשפטית בישראל</h2>
+<p>תיקון 13 לחוק הגנת הפרטיות נכנס לתוקף ב-14 באוגוסט 2025. הוא שינה את הכללים באופן משמעותי.</p>
+<p>אנשים פרטיים יכולים עכשיו להגיש תביעות אזרחיות על הפרת פרטיות בלי להוכיח שנגרם להם נזק בפועל. פיצויים סטטוטוריים של עד 100,000 שקל לאדם. קנסות מנהליים שיכולים לעבור את חצי מיליון הדולר. רשות הגנת הפרטיות יכולה להשעות מאגרי מידע ולפרסם את שמות המפרים בפומבי למשך עד ארבע שנים.</p>
+<p>זה חל על כל ארגון שמטפל במידע של תושבי ישראל, לא משנה איפה הארגון נמצא. ספקי ענן נדרשים לאותם תקני אבטחה ובדיקות חדירה כמו מערכות מקומיות. אם נותן השירות שלכם מעלה את המסמכים שלכם לפלטפורמה חיצונית בלי הרשאה מתאימה, אתם, בעלי העסק, עלולים להיות אלה שמתמודדים עם ההשלכות.</p>
+<p>לחוק לא אכפת שרואה החשבון רק ניסה לחסוך זמן. לחוק לא אכפת שהכלי המקוון היה חינמי ונוח. מה שמעניין את החוק זה לאן המידע הגיע ואם הייתה לכם שליטה עליו.</p>
+<h2>מלכודת הכלי החינמי</h2>
+<p>חשבו על הכלים שאנשי מקצוע משתמשים בהם כל יום. ממירי PDF מקוונים. שירותי OCR בענן. אתרים חינמיים לתרגום מסמכים. כולם דורשים מכם להעלות את הקובץ לשרת של מישהו אחר. לאף אחד מהם אין תנאי שימוש שקראתם אי פעם. וכולם שומרים חלק מהמידע שלכם, או את כולו, לתקופה שאף אחד לא ממש מפרט.</p>
+<p>דוח המועצה האירופית להגנה על מידע (EDPB) מ-2024 על טכנולוגיות OCR זיהה סיכונים משמעותיים בעיבוד מסמכים מבוסס ענן. המידע מועבר דרך API לשרתי הספק ויכול להישמר באופן זמני. ה-EDPB הדגיש את הצורך בהערכת סיכונים מקיפה לפני שימוש בשירותי צד שלישי למסמכים רגישים, בשל סיכוני גישה פנימית והפרת מידע. לגבי מידע בעל השלכות גבוהות, עיבוד מקומי מפחית את החשיפה באופן משמעותי.</p>
+<p>לפי דוח LayerX מ-2025, כמעט 40% מהקבצים שמועלים לכלים מקוונים מכילים מידע מזהה אישית או נתוני כרטיסי אשראי. ו-71.6% מהגישה מתרחשת דרך חשבונות אישיים, בלי שום פיקוח ארגוני או תיעוד.</p>
+<p>לפי תחזית Gartner, 99% מתקריות האבטחה בענן עד 2025 יהיו באשמת הלקוח. לא הספק. הלקוח. האדם שהעלה את המסמך.</p>
+<h2>השאלה שאתם צריכים לשאול</h2>
+<p>עלות ממוצעת של פריצת מידע בחברת שירותים מקצועיים היא 5.08 מיליון דולר, לפי מחקר של IBM מ-2024. פריצה שמבוססת על גניבת פרטי התחברות לוקחת בממוצע 328 ימים עד שמזהים ומכילים אותה. כמעט שנה שלמה לפני שבכלל יודעים שזה קרה.</p>
+<p>68% מכלל הפריצות נובעות מטעות אנוש, לפי דוח Verizon DBIR מ-2024. לא מתקפות מתוחכמות. לא האקרים מדינתיים. מישהו שהעלה משהו שלא היה צריך, לפלטפורמה שלא הבין עד הסוף, תחת תנאים שמעולם לא קרא.</p>
+<p>לפני שאתם מעלים את המסמך הבא, לפני שאתם מדביקים טקסט לשירות מקוון, לפני שאתם מוסרים קבצים לאיש מקצוע שאולי עושה את אותו הדבר, שאלו שלוש שאלות:</p>
+<p>לאן זה הולך? מי יכול לראות את זה? ואפשר לקבל את זה בחזרה?</p>
+<p>אם אתם לא יכולים לענות על כל השלוש, כבר יש לכם בעיה.</p>
+<hr />
+<h2>מקורות</h2>
+<p>[1] TechCrunch, "Trump's acting cybersecurity chief uploaded sensitive government docs to ChatGPT," ינואר 2026. https://techcrunch.com/2026/01/28/trumps-acting-cybersecurity-chief-uploaded-sensitive-government-docs-to-chatgpt/</p>
+<p>[2] Kiteworks, דוח תקשורת תוכן רגיש 2025 (מצטט מחקר ManageEngine), 2025. https://www.helpnetsecurity.com/2025/09/09/employees-ai-tools-sensitive-data/</p>
+<p>[3] Cyberhaven, "Shadow AI: How Employees Are Leading the Charge in AI Adoption and Putting Company Data at Risk," 2025. https://www.cyberhaven.com/blog/shadow-ai-how-employees-are-leading-the-charge-in-ai-adoption-and-putting-company-data-at-risk</p>
+<p>[4] DPEX Network, "Lessons Learned from Samsung's Confidential Data Leak to ChatGPT," 2023. https://www.dpexnetwork.org/articles/lessons-learned-samsungs-confidential-data-leak-to-chatgpt</p>
+<p>[5] Zero Day Law, "What You Need to Know Before Uploading Internal Documents to AI Tools," 2024. https://www.zerodaylaw.com/blog/what-to-know-before-you-upload-company-documents-to-ai-tools</p>
+<p>[6] US Federal Trade Commission, "AI Companies: Uphold Your Privacy and Confidentiality Commitments," ינואר 2024. https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/01/ai-companies-uphold-your-privacy-confidentiality-commitments</p>
+<p>[7] eSecurity Planet, "Shadow AI and ChatGPT DLP" (ממצאי פרטי התחברות גנובים בדארקנט), 2025. https://www.esecurityplanet.com/news/shadow-ai-chatgpt-dlp/</p>
+<p>[8] Safetica, "Israel's Amendment 13: What the New Data Protection Law Means for Your Business," 2025. https://www.safetica.com/resources/guides/israel-s-amendment-13-what-the-new-data-protection-law-means-for-your-business</p>
+<p>[9] European Data Protection Board, "AI Risks in Optical Character Recognition," 2024. https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-risks-optical-character-recognition_en</p>
+<p>[10] LayerX, דוח אבטחת מידע ארגוני בינה מלאכותית ו-SaaS, 2025.</p>
+<p>[11] IBM, דוח עלות פריצת מידע, 2024.</p>
+<p>[12] Verizon, דוח חקירות פריצות מידע (DBIR), 2024.</p>
+<p>[13] Gartner, תחזית תקריות אבטחת ענן (99% באשמת הלקוח), 2025.</p>
+<p>[14] LeanLaw, "AI Privacy Risks: Protecting Client Data in 2025," 2025. https://www.leanlaw.co/blog/what-are-the-data-privacy-implications-of-using-ai-tools-with-confidential-client-information/</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div class="lang-content" data-lang="en">
+      <section class="article-header">
+        <div class="container">
+          <div class="article-meta">
+            <a href="index.html" class="back-link">← Back to articles</a>
+            <span class="small-label">Privacy</span>
+          </div>
+          <h1>Your Documents Are Already on Someone Else's Server</h1>
+        </div>
+      </section>
+      <section class="article-body">
+        <div class="container">
+          <p>In January 2026, an investigation revealed that the acting director of CISA, the agency responsible for protecting America's entire digital infrastructure, had uploaded sensitive government documents to a public cloud platform between July and August 2025. Not a junior staffer. Not an intern. The top cybersecurity official in the country.</p>
+<p>He had even requested special permission to use the tool. Then he ignored the protocols and used the public consumer version anyway. Four documents marked "for official use only" went up. The uploads went undetected for months before cybersecurity sensors flagged the activity and an investigation was launched.</p>
+<p>If the top cybersecurity official in the United States can't follow basic document handling rules, ask yourself this: what is your accountant doing with your tax returns?</p>
+<h2>The Numbers Nobody Wants to Hear</h2>
+<p>This isn't speculation. A ManageEngine study (reported by Kiteworks) found that 93% of employees have shared confidential data with unapproved online tools. Not 9%. Ninety-three.</p>
+<p>That number includes client information. Thirty-two percent of those employees specifically shared confidential client data. Another 37% exposed private internal company records. And the trend is accelerating. According to Cyberhaven research, in 2023 about 11% of data entered into cloud-based tools was considered sensitive. By early 2025, that figure had tripled to 34.8%.</p>
+<p>Meanwhile, 83% of companies have no technology in place to block or even detect these uploads. They rely on training sessions, email reminders, and hope. Only 9% have governance systems that actually work.</p>
+<p>The gap between what companies think is happening and what is actually happening is enormous. One-third of executives believe their organization tracks all usage of external tools. The real number that do? Nine percent.</p>
+<h2>Samsung: Three Engineers, Twenty Days, Permanent Damage</h2>
+<p>In March 2023, Samsung discovered that three engineers had uploaded proprietary data to a cloud-based tool over a span of just twenty days.</p>
+<p>The first entered Samsung's source code to debug a problem. The second recorded a company meeting, transcribed it, then uploaded the transcript to generate meeting notes. The third submitted semiconductor test data for optimization.</p>
+<p>Samsung had already warned employees not to do this. They did it anyway. The use cases were mundane. Fixing a bug. Taking meeting notes. Running a test. Routine work that happens in every office, every day.</p>
+<p>Samsung's internal assessment was blunt: the data is now permanently stored on external servers. It is, in their words, "impossible to retrieve."</p>
+<p>Samsung restricted all inputs to 1,024 bytes per prompt, roughly a short paragraph. Then began building an internal system to avoid any reliance on external platforms. But the damage was done. Source code. Internal meetings. Chip manufacturing data. All sitting on servers Samsung does not control, subject to retention policies Samsung did not write.</p>
+<h2>What Actually Happens When You Upload a Document?</h2>
+<p>Most people assume that when they upload a file to an online platform, use it, and close the tab, the file is gone. It is not.</p>
+<p>Consumer versions of most cloud-based tools retain uploaded data. That content can be used to improve the platform's commercial products. Prompts, documents, uploaded files, all of it may be fed back into the system. Deleting your account does not guarantee deletion of your data.</p>
+<p>Look at the terms of service. If you see phrases like "improving the product," that means the vendor may use your inputs for training. "Aggregated and anonymized" sounds safe, but stripped data can still reveal proprietary patterns. "Perpetual" or "irrevocable" license means the vendor has unlimited rights to your content. Forever.</p>
+<p>The US Federal Trade Commission issued a warning in early 2024: companies that promise not to use customer data and then do so are breaking the law. "There is no exemption," the FTC wrote. Zoom changed its terms of service to enable data use for product training. WeTransfer did the same. Both faced backlash. Neither faced meaningful consequences.</p>
+<p>And here is the part that should concern you most. In 2024, security researchers found over 225,000 stolen login credentials for cloud tool accounts being sold on dark web markets. These were harvested by malware. Once a buyer logs in with stolen credentials, they get full access to the account's complete history. Documents, queries, shared data. Everything.</p>
+<p>Your uploaded tax return. Your client's medical record. Your company's financial statements. All of it, one stolen password away from exposure.</p>
+<h2>The Legal Reality</h2>
+<p>Regulators are catching up. Amendment 13 to the Privacy Protection Law came into force on August 14, 2025, and changed the rules significantly.</p>
+<p>Individuals can now file civil claims for privacy violations without proving they suffered actual harm. Statutory damages run up to NIS 100,000 per person. Administrative fines can exceed USD 500,000. The Privacy Protection Authority can suspend databases and publish violators' names publicly for up to four years.</p>
+<p>This applies to every organization handling residents' data under the law, regardless of where the organization is located. Cloud providers face the same security and penetration testing requirements as on-premises systems. If your service provider uploads your documents to an external cloud platform without proper authorization, you, the business owner, may be the one facing the consequences.</p>
+<p>The law doesn't care that your accountant was just trying to save time. It doesn't care that the online tool was free and convenient. It cares about where the data ended up and whether you had control over it.</p>
+<h2>The Free Tool Trap</h2>
+<p>Think about the tools professionals use every day. Online PDF converters. Cloud-based OCR services. Free document translation sites. All of them require you to upload your file to someone else's server. None of them come with terms of service you've actually read. And all of them retain some or all of your data for some period of time.</p>
+<p>The European Data Protection Board's 2024 report on OCR technologies identified significant risks with cloud-based document processing. Input data is transmitted via API to the vendor's cloud and can be temporarily stored. The EDPB emphasized the need for thorough risk assessment before using third-party services for sensitive documents, citing insider threat and vendor breach risks. For high-consequence data, on-device or self-hosted solutions reduce that exposure significantly.</p>
+<p>According to LayerX's 2025 enterprise report, nearly 40% of files uploaded to online tools contain personally identifiable information or payment card data. And 71.6% of that access happens through personal accounts with zero company oversight or audit trail.</p>
+<p>Gartner predicted that 99% of cloud security incidents through 2025 would be the customer's fault. Not the vendor. The customer. The person who uploaded the document.</p>
+<h2>The Question You Should Be Asking</h2>
+<p>The average data breach at a professional services firm costs $5.08 million, according to IBM's 2024 research. A credential-based breach takes an average of 328 days to identify and contain. Nearly a full year before you even know it happened.</p>
+<p>Sixty-eight percent of all breaches involve human error, according to Verizon's 2024 DBIR. Not sophisticated attacks. Not nation-state hackers. Someone uploading something they shouldn't have, to a platform they didn't fully understand, under terms they never read.</p>
+<p>Before you upload your next document, before you paste your next block of text into an online service, before you hand your files to a professional who might do the same, ask three questions:</p>
+<p>Where is this going? Who can see it? And can I get it back?</p>
+<p>If you can't answer all three, you already have a problem.</p>
+<hr />
+<h2>Sources</h2>
+<p>[1] TechCrunch, "Trump's acting cybersecurity chief uploaded sensitive government docs to ChatGPT," January 28, 2026. https://techcrunch.com/2026/01/28/trumps-acting-cybersecurity-chief-uploaded-sensitive-government-docs-to-chatgpt/</p>
+<p>[2] Kiteworks, "2025 Sensitive Content Communications Report" (citing ManageEngine study), 2025. https://www.helpnetsecurity.com/2025/09/09/employees-ai-tools-sensitive-data/</p>
+<p>[3] Cyberhaven, "Shadow AI: How Employees Are Leading the Charge in AI Adoption and Putting Company Data at Risk," 2025. https://www.cyberhaven.com/blog/shadow-ai-how-employees-are-leading-the-charge-in-ai-adoption-and-putting-company-data-at-risk</p>
+<p>[4] DPEX Network, "Lessons Learned from Samsung's Confidential Data Leak to ChatGPT," 2023. https://www.dpexnetwork.org/articles/lessons-learned-samsungs-confidential-data-leak-to-chatgpt</p>
+<p>[5] Zero Day Law, "What You Need to Know Before Uploading Internal Documents to AI Tools," 2024. https://www.zerodaylaw.com/blog/what-to-know-before-you-upload-company-documents-to-ai-tools</p>
+<p>[6] US Federal Trade Commission, "AI Companies: Uphold Your Privacy and Confidentiality Commitments," January 2024. https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/01/ai-companies-uphold-your-privacy-confidentiality-commitments</p>
+<p>[7] eSecurity Planet, "Shadow AI and ChatGPT DLP" (citing dark web credential findings), 2025. https://www.esecurityplanet.com/news/shadow-ai-chatgpt-dlp/</p>
+<p>[8] Safetica, "Israel's Amendment 13: What the New Data Protection Law Means for Your Business," 2025. https://www.safetica.com/resources/guides/israel-s-amendment-13-what-the-new-data-protection-law-means-for-your-business</p>
+<p>[9] European Data Protection Board, "AI Risks in Optical Character Recognition," 2024. https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-risks-optical-character-recognition_en</p>
+<p>[10] LayerX, "Enterprise AI and SaaS Data Security Report," 2025.</p>
+<p>[11] IBM, "Cost of a Data Breach Report," 2024.</p>
+<p>[12] Verizon, "2024 Data Breach Investigations Report (DBIR)," 2024.</p>
+<p>[13] Gartner, cloud security incident prediction (99% customer fault), 2025.</p>
+<p>[14] LeanLaw, "AI Privacy Risks: Protecting Client Data in 2025," 2025. https://www.leanlaw.co/blog/what-are-the-data-privacy-implications-of-using-ai-tools-with-confidential-client-information/</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="article-footer">
+      <div class="container">
+        <span class="small-label">
+          <span class="lang-he">רוצה להמשיך לקרוא?</span>
+          <span class="lang-en" style="display:none;">Want to keep reading?</span>
+        </span>
+        <h2>
+          <span class="lang-he">יש עוד מאמרים.</span>
+          <span class="lang-en" style="display:none;">There are more articles.</span>
+        </h2>
+        <p>
+          <span class="lang-he">כל מאמר בוחן היבט אחר של אותה בעיה — איך אנחנו מגנים על מידע, שומרים על אמת, ובונים מערכות צודקות.</span>
+          <span class="lang-en" style="display:none;">Each article explores a different angle of the same problem — how we protect information, preserve truth, and build just systems.</span>
+        </p>
+        <a href="index.html" class="cta-email">
+          <span class="lang-he">לכל המאמרים →</span>
+          <span class="lang-en" style="display:none;">See all articles →</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <p class="lang-he">צדק. אמת. פרטיות.</p>
+        <p class="lang-en" style="display:none;">Justice. Truth. Privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">פרויקטים</h4>
+        <h4 class="lang-en" style="display:none;">Projects</h4>
+        <a href="../projects/redaction.html" class="lang-he">הסרת מידע אישי</a>
+        <a href="../projects/redaction.html" class="lang-en" style="display:none;">Redaction Tool</a>
+        <a href="../projects/scanning.html" class="lang-he">דיגיטציה של ארכיונים</a>
+        <a href="../projects/scanning.html" class="lang-en" style="display:none;">Archive Digitization</a>
+        <a href="../projects/charity.html" class="lang-he">שקיפות בעמותות</a>
+        <a href="../projects/charity.html" class="lang-en" style="display:none;">Charity Transparency</a>
+        <a href="../projects/social-card.html" class="lang-he">כרטיס חברתי חכם</a>
+        <a href="../projects/social-card.html" class="lang-en" style="display:none;">Smart Social Card</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="lang-he">חוקי</h4>
+        <h4 class="lang-en" style="display:none;">Legal</h4>
+        <a href="../privacy-policy.html" class="lang-he">מדיניות פרטיות</a>
+        <a href="../privacy-policy.html" class="lang-en" style="display:none;">Privacy Policy</a>
+        <a href="../terms.html" class="lang-he">תנאי שימוש</a>
+        <a href="../terms.html" class="lang-en" style="display:none;">Terms of Use</a>
+        <a href="../compliance.html" class="lang-he">עמידה ברגולציה</a>
+        <a href="../compliance.html" class="lang-en" style="display:none;">Regulatory Compliance</a>
+        <a href="../accessibility.html" class="lang-he">נגישות</a>
+        <a href="../accessibility.html" class="lang-en" style="display:none;">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="lang-he">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span class="lang-en" style="display:none;">© 2026 PlinerSpec. All rights reserved.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-he').forEach(el => {
+    el.style.display = lang === 'he' ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.title = lang === 'he' ? 'המסמכים שלכם כבר נמצאים על שרת של מישהו אחר — PlinerSpec' : 'Your Documents Are Already on Someone Else's Server — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>

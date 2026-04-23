@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="דיגיטציה של ארכיונים — הפיכת מסמכים פיזיים לארכיון דיגיטלי שמיש, מאובטח, ועומד בדרישות החוק." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="canonical" href="https://plinerspec.com/projects/scanning.html" />
+  <title>דיגיטציה של ארכיונים — PlinerSpec</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='Georgia' font-weight='700' font-size='14' fill='%23f4f1ea' text-anchor='middle'>PS</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #f4f1ea; --bg-elevated: #ebe6db; --ink: #1a1a1a; --ink-soft: #2c2c2c; --muted: #6b6457; --muted-light: #9a9387; --border: #d6cfc1; --accent: #8b3a2f; --accent-soft: #b04a3d; --font-serif-display: 'Cormorant Garamond', Georgia, serif; --font-serif-body: 'Source Serif 4', Georgia, serif; --font-sans: 'Inter', sans-serif; --font-heb: 'Heebo', sans-serif; --max-width: 720px; --max-width-wide: 1100px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-heb); color: var(--ink); background: var(--bg); line-height: 1.7; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; }
+    html[lang="en"] body { font-family: var(--font-serif-body); }
+    h1, h2, h3 { font-family: var(--font-heb); color: var(--ink); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-serif-display); font-weight: 400; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 24px; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.5em 0 1em; }
+    p { margin-bottom: 1.2em; color: var(--ink-soft); }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+    a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+    .small-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    section { padding: clamp(60px, 10vw, 100px) 0; }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 18px clamp(20px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--font-serif-display); font-size: 1.5rem; font-weight: 500; color: var(--ink); border-bottom: none; display: flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif-display); font-weight: 600; font-size: 0.95rem; border-radius: 3px; }
+    .brand:hover { color: var(--ink); border-bottom: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; border-bottom: none; }
+    html[lang="he"] .nav-links a { font-family: var(--font-heb); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-toggle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+    .page-hero { padding: clamp(60px, 10vw, 100px) 0 clamp(40px, 6vw, 60px); border-bottom: 1px solid var(--border); }
+    .page-hero .small-label { display: block; margin-bottom: 16px; }
+    .page-hero h1 { max-width: 18ch; }
+    .page-hero .lead { font-size: 1.25rem; color: var(--ink-soft); max-width: 36em; margin-top: 16px; }
+    html[lang="en"] .page-hero .lead { font-family: var(--font-serif-body); font-style: italic; }
+    .content { padding-top: clamp(40px, 6vw, 60px); }
+    .content p { font-family: var(--font-serif-body); font-size: 1.125rem; line-height: 1.8; }
+    html[lang="he"] .content p { font-family: var(--font-heb); }
+    html[lang="en"] .content h2 { color: var(--accent); font-style: italic; }
+    .principles-list { list-style: none; padding: 0; margin: 1.5em 0; }
+    .principles-list li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 16px; }
+    .principles-list li:last-child { border-bottom: none; }
+    .principles-list li strong { color: var(--ink); font-weight: 600; min-width: 120px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); border-bottom: none; }
+    .back-link:hover { color: var(--accent); border-bottom: none; }
+    .cta-box { background: var(--bg-elevated); padding: clamp(32px, 5vw, 48px); border-inline-start: 3px solid var(--accent); margin: 3em 0; }
+    .cta-box h3 { font-family: var(--font-heb); font-weight: 500; color: var(--accent); margin-bottom: 12px; font-size: 1.5rem; }
+    html[lang="en"] .cta-box h3 { font-family: var(--font-serif-display); font-style: italic; }
+    .cta-box p { color: var(--ink-soft); margin-bottom: 16px; }
+    .cta-box a { font-family: var(--font-serif-display); font-style: italic; font-size: 1.125rem; }
+    .site-footer { background: var(--ink); color: var(--bg); padding: clamp(48px, 6vw, 72px) 0 32px; }
+    .footer-wrap { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(32px, 5vw, 64px); margin-bottom: 48px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 20px; }
+    .footer-col a { display: block; color: var(--bg-elevated); font-family: var(--font-sans); font-size: 0.9rem; padding: 4px 0; border-bottom: none; }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-brand p { font-family: var(--font-serif-display); font-size: 1.25rem; font-style: italic; color: var(--bg-elevated); }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted-light); font-family: var(--font-sans); font-size: 0.85rem; }
+    .footer-bottom a { color: var(--muted-light); border-bottom: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">PS</span><span>PlinerSpec</span></a>
+    <nav><ul class="nav-links">
+      <li><a href="../index.html#pillars" data-i18n="navPillars">העקרונות</a></li>
+      <li><a href="../articles/" data-i18n="navArticles">מאמרים</a></li>
+      <li><a href="../index.html#projects" data-i18n="navProjects">פרויקטים</a></li>
+      <li><a href="../index.html#manifesto" data-i18n="navAbout">אודות</a></li>
+      <li><a href="../index.html#contact" data-i18n="navContact">צור קשר</a></li>
+    </ul></nav>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link" data-i18n="backLink">← חזרה לפרויקטים</a>
+      <span class="small-label" data-i18n="pillar" style="margin-top: 24px;">אמת · פרויקט 02</span>
+      <h1 data-i18n="title">דיגיטציה של ארכיונים</h1>
+      <p class="lead" data-i18n="lead">הפיכת מסמכים פיזיים לארכיון דיגיטלי שמיש, מאובטח, ועומד בדרישות החוק. משרת עסקים, משפחות, וארגונים.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+
+      <h2 data-i18n="problemTitle">למה זה חשוב</h2>
+      <p data-i18n="problem1">נייר מתבלה. דהוי, נקרע, נפגע מלחות, מאש, מזמן. ארכיון פיזי הוא נכס שערכו רק יורד. כל יום שעובר, חלק ממנו נעלם.</p>
+      <p data-i18n="problem2">ובינתיים, כל עסק מחזיק שטח רצפה יקר, שעות עבודה, ואחסון חיצוני, רק כדי לשמור על מסמכים שאף אחד לא ניגש אליהם. אבל לא ניתן לזרוק אותם, כי החוק דורש לשמור.</p>
+      <p data-i18n="problem3">ולמשפחות — תיעוד אישי, תמונות, מכתבים, מסמכי בית. כל אלה הם זיכרון, היסטוריה, סיפור. שמירה על נייר היא הימור על הזמן.</p>
+
+      <h2 data-i18n="solutionTitle">הפתרון</h2>
+      <p data-i18n="solution1">דיגיטציה תקנית, מקצועית, ובטוחה. כל מסמך נסרק באיכות גבוהה, מעובד עם זיהוי תווים אוטומטי (OCR) בעברית ובאנגלית, ומסומן כמסמך סרוק לפי תקנות מס הכנסה.</p>
+      <p data-i18n="solution2">הקבצים נשמרים בפורמט PDF/A-2 — הסטנדרט הבינלאומי לארכוב לטווח ארוך. ניתנים לחיפוש, נגישים, ולא ייעלמו עם השנים.</p>
+      <p data-i18n="solution3">הכל מאורגן בקטלוג דיגיטלי — לפי תאריך, סוג מסמך, ספק, ומספר זיהוי. מצא כל מסמך תוך שניות, גם אחרי עשור.</p>
+
+      <h2 data-i18n="lawTitle">עמידה בחוק</h2>
+      <p data-i18n="law1">תיקון מס' 2 להוראות מס הכנסה (2013) קובע מתי מותר להשמיד תיעוד פיזי אחרי סריקה. הדרישות מחמירות — חתימות דיגיטליות מאושרות, אדם שני שמאמת, ארכיון דיגיטלי שעומד בנספח ז'.</p>
+      <p data-i18n="law2">סריקה רגילה לא מספיקה. אנחנו מבצעים את התהליך המלא — סריקה, תיוג, אימות, ושמירה — כך שניתן להשמיד את הנייר בלי להישאר חשוף לביקורת.</p>
+
+      <h2 data-i18n="whoTitle">למי זה מתאים</h2>
+      <ul class="principles-list">
+        <li><strong data-i18n="who1Title">עסקים</strong><span data-i18n="who1Body">משרדי עורכי דין, רואי חשבון, מרפאות, חברות שמחזיקות ארכיונים גדולים של מסמכים שצריך לשמור לפי חוק.</span></li>
+        <li><strong data-i18n="who2Title">משפחות</strong><span data-i18n="who2Body">אלבומי תמונות ישנים, מסמכים אישיים, מכתבים, תיעוד משפחתי שצריך לשמור לדורות הבאים.</span></li>
+        <li><strong data-i18n="who3Title">ארגונים</strong><span data-i18n="who3Body">עמותות, ארכיונים מוסדיים, ארגונים עם תיעוד היסטורי שצריך לשמר ולהפוך לנגיש.</span></li>
+      </ul>
+
+      <div class="cta-box">
+        <h3 data-i18n="ctaTitle">רוצה לדבר על פרויקט דיגיטציה?</h3>
+        <p data-i18n="ctaText">כל פרויקט שונה. נשמח לשמוע מה יש לך, להעריך את ההיקף, ולבנות הצעה מותאמת.</p>
+        <a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand"><p data-i18n="footerTagline">צדק. אמת. פרטיות.</p></div>
+      <div class="footer-col">
+        <h4 data-i18n="footerProjects">פרויקטים</h4>
+        <a href="redaction.html" data-i18n="footerProj1">הסרת מידע אישי</a>
+        <a href="scanning.html" data-i18n="footerProj2">דיגיטציה של ארכיונים</a>
+        <a href="charity.html" data-i18n="footerProj3">שקיפות בעמותות</a>
+        <a href="social-card.html" data-i18n="footerProj4">כרטיס חברתי חכם</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerLegal">חוקי</h4>
+        <a href="../privacy-policy.html" data-i18n="footerPrivacy">מדיניות פרטיות</a>
+        <a href="../terms.html" data-i18n="footerTerms">תנאי שימוש</a>
+        <a href="../compliance.html" data-i18n="footerCompliance">עמידה ברגולציה</a>
+        <a href="../accessibility.html" data-i18n="footerAccessibility">נגישות</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footerCopy">© 2026 PlinerSpec. כל הזכויות שמורות.</span>
+      <span><a href="mailto:contact@plinerspec.com">contact@plinerspec.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  he: {
+    navPillars: "העקרונות", navProjects: "פרויקטים", navAbout: "אודות", navArticles: "מאמרים", navContact: "צור קשר",
+    backLink: "← חזרה לפרויקטים", pillar: "אמת · פרויקט 02",
+    title: "דיגיטציה של ארכיונים",
+    lead: "הפיכת מסמכים פיזיים לארכיון דיגיטלי שמיש, מאובטח, ועומד בדרישות החוק. משרת עסקים, משפחות, וארגונים.",
+    problemTitle: "למה זה חשוב",
+    problem1: "נייר מתבלה. דהוי, נקרע, נפגע מלחות, מאש, מזמן. ארכיון פיזי הוא נכס שערכו רק יורד. כל יום שעובר, חלק ממנו נעלם.",
+    problem2: "ובינתיים, כל עסק מחזיק שטח רצפה יקר, שעות עבודה, ואחסון חיצוני, רק כדי לשמור על מסמכים שאף אחד לא ניגש אליהם. אבל לא ניתן לזרוק אותם, כי החוק דורש לשמור.",
+    problem3: "ולמשפחות — תיעוד אישי, תמונות, מכתבים, מסמכי בית. כל אלה הם זיכרון, היסטוריה, סיפור. שמירה על נייר היא הימור על הזמן.",
+    solutionTitle: "הפתרון",
+    solution1: "דיגיטציה תקנית, מקצועית, ובטוחה. כל מסמך נסרק באיכות גבוהה, מעובד עם זיהוי תווים אוטומטי (OCR) בעברית ובאנגלית, ומסומן כמסמך סרוק לפי תקנות מס הכנסה.",
+    solution2: "הקבצים נשמרים בפורמט PDF/A-2 — הסטנדרט הבינלאומי לארכוב לטווח ארוך. ניתנים לחיפוש, נגישים, ולא ייעלמו עם השנים.",
+    solution3: "הכל מאורגן בקטלוג דיגיטלי — לפי תאריך, סוג מסמך, ספק, ומספר זיהוי. מצא כל מסמך תוך שניות, גם אחרי עשור.",
+    lawTitle: "עמידה בחוק",
+    law1: "תיקון מס' 2 להוראות מס הכנסה (2013) קובע מתי מותר להשמיד תיעוד פיזי אחרי סריקה. הדרישות מחמירות — חתימות דיגיטליות מאושרות, אדם שני שמאמת, ארכיון דיגיטלי שעומד בנספח ז'.",
+    law2: "סריקה רגילה לא מספיקה. אנחנו מבצעים את התהליך המלא — סריקה, תיוג, אימות, ושמירה — כך שניתן להשמיד את הנייר בלי להישאר חשוף לביקורת.",
+    whoTitle: "למי זה מתאים",
+    who1Title: "עסקים", who1Body: "משרדי עורכי דין, רואי חשבון, מרפאות, חברות שמחזיקות ארכיונים גדולים של מסמכים שצריך לשמור לפי חוק.",
+    who2Title: "משפחות", who2Body: "אלבומי תמונות ישנים, מסמכים אישיים, מכתבים, תיעוד משפחתי שצריך לשמור לדורות הבאים.",
+    who3Title: "ארגונים", who3Body: "עמותות, ארכיונים מוסדיים, ארגונים עם תיעוד היסטורי שצריך לשמר ולהפוך לנגיש.",
+    ctaTitle: "רוצה לדבר על פרויקט דיגיטציה?",
+    ctaText: "כל פרויקט שונה. נשמח לשמוע מה יש לך, להעריך את ההיקף, ולבנות הצעה מותאמת.",
+    footerTagline: "צדק. אמת. פרטיות.", footerProjects: "פרויקטים",
+    footerProj1: "הסרת מידע אישי", footerProj2: "דיגיטציה של ארכיונים", footerProj3: "שקיפות בעמותות", footerProj4: "כרטיס חברתי חכם",
+    footerLegal: "חוקי", footerPrivacy: "מדיניות פרטיות", footerTerms: "תנאי שימוש", footerCompliance: "עמידה ברגולציה", footerAccessibility: "נגישות",
+    footerCopy: "© 2026 PlinerSpec. כל הזכויות שמורות."
+  },
+  en: {
+    navPillars: "Principles", navProjects: "Projects", navAbout: "About", navArticles: "Articles", navContact: "Contact",
+    backLink: "← Back to projects", pillar: "Truth · Project 02",
+    title: "Archive Digitization",
+    lead: "Turning physical documents into a usable, secure digital archive that meets legal requirements. Serves businesses, families, and organizations.",
+    problemTitle: "Why It Matters",
+    problem1: "Paper deteriorates. Faded, torn, damaged by humidity, fire, time. A physical archive is an asset whose value only decreases. Every day that passes, a piece of it disappears.",
+    problem2: "Meanwhile, every business holds expensive floor space, work hours, and external storage, just to preserve documents nobody accesses. But they can't be thrown away, because the law requires keeping them.",
+    problem3: "And for families — personal records, photos, letters, household documents. All of these are memory, history, story. Keeping them on paper is gambling against time.",
+    solutionTitle: "The Solution",
+    solution1: "Compliant, professional, secure digitization. Every document scanned at high quality, processed with automatic character recognition (OCR) in Hebrew and English, and marked as a scanned document per tax regulations.",
+    solution2: "Files saved in PDF/A-2 format — the international standard for long-term archiving. Searchable, accessible, and won't disappear with the years.",
+    solution3: "Everything organized in a digital catalog — by date, document type, vendor, and ID number. Find any document in seconds, even after a decade.",
+    lawTitle: "Legal Compliance",
+    law1: "Amendment 2 to the Income Tax Regulations (2013) sets when physical documentation may be destroyed after scanning. The requirements are strict — certified digital signatures, a second person verifying, a digital archive meeting Annex Z standards.",
+    law2: "Regular scanning isn't enough. We perform the full process — scanning, tagging, verification, and storage — so you can destroy the paper without remaining exposed to audit.",
+    whoTitle: "Who It's For",
+    who1Title: "Businesses", who1Body: "Law firms, accountants, clinics, companies holding large archives of documents required by law.",
+    who2Title: "Families", who2Body: "Old photo albums, personal documents, letters, family records that need to be preserved for future generations.",
+    who3Title: "Organizations", who3Body: "Nonprofits, institutional archives, organizations with historical records that need to be preserved and made accessible.",
+    ctaTitle: "Want to talk about a digitization project?",
+    ctaText: "Every project is different. We'd love to hear what you have, assess the scope, and build a tailored proposal.",
+    footerTagline: "Justice. Truth. Privacy.", footerProjects: "Projects",
+    footerProj1: "Redaction Tool", footerProj2: "Archive Digitization", footerProj3: "Charity Transparency", footerProj4: "Smart Social Card",
+    footerLegal: "Legal", footerPrivacy: "Privacy Policy", footerTerms: "Terms of Use", footerCompliance: "Regulatory Compliance", footerAccessibility: "Accessibility",
+    footerCopy: "© 2026 PlinerSpec. All rights reserved."
+  }
+};
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (T[lang] && T[lang][key]) el.textContent = T[lang][key]; });
+  document.title = lang === 'he' ? 'דיגיטציה של ארכיונים — PlinerSpec' : 'Archive Digitization — PlinerSpec';
+  document.getElementById('langToggle').textContent = lang === 'he' ? 'EN' : 'עב';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langToggle').addEventListener('click', () => setLang(document.documentElement.lang === 'he' ? 'en' : 'he'));
+setLang(localStorage.getItem('lang') || 'he');
+</script>
+
+</body>
+</html>
