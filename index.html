@@ -754,6 +754,46 @@
       pointer-events: none;
     }
 
+    /* Thank-you panel after form submission */
+    .contact-thanks {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+      padding: clamp(40px, 6vw, 64px);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .contact-thanks .small-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+
+    .contact-thanks h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin-bottom: 16px;
+    }
+
+    .thanks-links {
+      margin-top: 24px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+    }
+
+    .thanks-links a {
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+      padding: 2px 0;
+    }
+    .thanks-links a:hover { border-bottom-color: var(--accent); }
+
+    .thanks-dot {
+      color: var(--muted-light);
+      margin: 0 12px;
+    }
+
     /* ===== FOOTER ===== */
 
     .site-footer {
@@ -1139,12 +1179,22 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
-      <div class="contact-head">
+      <div class="contact-thanks" id="contactThanks" hidden>
+        <span class="small-label" data-i18n="thanksLabel">תודה</span>
+        <h2 data-i18n="thanksTitle">קיבלנו את ההודעה שלך.</h2>
+        <p class="contact-intro" data-i18n="thanksBody">נחזור אליך אישית, בדרך כלל בתוך יום או שניים. בינתיים, אפשר לעיין בפרויקטים או במאמרים.</p>
+        <p class="thanks-links">
+          <a href="projects.html" data-i18n="thanksLinkProjects">הפרויקטים שלנו</a>
+          <span class="thanks-dot">·</span>
+          <a href="articles/" data-i18n="thanksLinkArticles">מאמרים</a>
+        </p>
+      </div>
+      <div class="contact-head" id="contactHead">
         <span class="small-label reveal" data-i18n="contactLabel">צור קשר</span>
         <h2 class="reveal reveal-delay-1" data-i18n="contactTitle">בוא נדבר.</h2>
         <p class="contact-intro reveal reveal-delay-2" data-i18n="contactIntro">לכל שאלה, רעיון, שיתוף פעולה, או שירות — שלח/י הודעה. נחזור אישית.</p>
       </div>
-      <form class="contact-form reveal reveal-delay-3" action="https://formsubmit.co/contact@plinerspec.com" method="POST">
+      <form class="contact-form reveal reveal-delay-3" id="contactForm" action="https://formsubmit.co/contact@plinerspec.com" method="POST">
         <input type="hidden" name="_subject" value="New message from plinerspec.com">
         <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_template" value="table">
@@ -1270,6 +1320,11 @@
       formPrivacy: "קראתי ואני מאשר/ת את <a href=\"privacy-policy.html\">מדיניות הפרטיות</a>.",
       formSubmit: "שלח הודעה",
       formAlt: "או שלח/י מייל ישירות: <a href=\"mailto:contact@plinerspec.com\">contact@plinerspec.com</a>",
+      thanksLabel: "תודה",
+      thanksTitle: "קיבלנו את ההודעה שלך.",
+      thanksBody: "נחזור אליך אישית, בדרך כלל בתוך יום או שניים. בינתיים, אפשר לעיין בפרויקטים או במאמרים.",
+      thanksLinkProjects: "הפרויקטים שלנו",
+      thanksLinkArticles: "מאמרים",
       footerTagline: "צדק. אמת. פרטיות.",
       footerProjects: "פרויקטים",
       footerProj1: "הסרת מידע אישי",
@@ -1334,6 +1389,11 @@
       formPrivacy: "I've read and accept the <a href=\"privacy-policy.html\">privacy policy</a>.",
       formSubmit: "Send message",
       formAlt: "Or email directly: <a href=\"mailto:contact@plinerspec.com\">contact@plinerspec.com</a>",
+      thanksLabel: "Thank you",
+      thanksTitle: "We got your message.",
+      thanksBody: "We'll get back to you personally, usually within a day or two. In the meantime, feel free to explore the projects or read the articles.",
+      thanksLinkProjects: "Our projects",
+      thanksLinkArticles: "Articles",
       footerTagline: "Justice. Truth. Privacy.",
       footerProjects: "Projects",
       footerProj1: "Redaction Tool",
@@ -1374,6 +1434,24 @@
 
   const savedLang = localStorage.getItem('lang') || 'he';
   setLang(savedLang);
+
+  // Show thank-you panel after form submission (?sent=1)
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    const thanks = document.getElementById('contactThanks');
+    const head = document.getElementById('contactHead');
+    const form = document.getElementById('contactForm');
+    if (thanks) thanks.hidden = false;
+    if (head) head.style.display = 'none';
+    if (form) form.style.display = 'none';
+    // Scroll to thanks once page is settled
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 200);
+    // Clean URL so refresh doesn't keep showing it
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
 
   // Mobile nav
   const navToggle = document.getElementById('navToggle');
