@@ -425,6 +425,81 @@
       margin: 0 auto;
     }
 
+    /* ===== STATS / BY THE NUMBERS ===== */
+
+    .stats {
+      padding: clamp(100px, 14vw, 160px) 0;
+      background: var(--bg);
+      border-block: 1px solid var(--border);
+    }
+
+    .stats-intro {
+      text-align: center;
+      margin-bottom: clamp(64px, 10vw, 96px);
+    }
+
+    .stats-intro .small-label {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .stats-intro h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      max-width: 22ch;
+      margin: 0 auto;
+    }
+
+    .stats-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(48px, 7vw, 80px);
+    }
+
+    .stat {
+      text-align: center;
+      padding-block: clamp(12px, 2vw, 24px);
+    }
+
+    .stat-number {
+      font-family: var(--font-serif-display);
+      font-weight: 500;
+      font-size: clamp(3rem, 7vw, 5rem);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-text {
+      font-family: var(--font-heb);
+      font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+      color: var(--ink-soft);
+      line-height: 1.5;
+      max-width: 36ch;
+      margin: 0 auto 16px;
+    }
+
+    html[lang="en"] .stat-text {
+      font-family: var(--font-serif-body);
+    }
+
+    .stat-source {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: none;
+      transition: color 0.2s ease;
+    }
+
+    .stat-source:hover {
+      color: var(--accent);
+      border-bottom: none;
+    }
+
     /* ===== MANIFESTO ===== */
 
     .manifesto {
@@ -880,6 +955,43 @@
     </div>
   </section>
 
+  <!-- BY THE NUMBERS -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats-intro reveal">
+        <span class="small-label" data-i18n="statsLabel">במספרים</span>
+        <h2 data-i18n="statsTitle">למה זה חשוב</h2>
+      </div>
+      <div class="stats-list">
+        <div class="stat reveal reveal-delay-1">
+          <div class="stat-number">93%</div>
+          <p class="stat-text" data-i18n="stat1Text">מהעובדים משתפים מידע חסוי עם כלים מקוונים לא מאושרים.</p>
+          <a class="stat-source" href="https://www.helpnetsecurity.com/2025/09/09/employees-ai-tools-sensitive-data/" target="_blank" rel="noopener" data-i18n="stat1Source">ManageEngine via Kiteworks, 2025 →</a>
+        </div>
+        <div class="stat reveal reveal-delay-1">
+          <div class="stat-number" data-i18n="stat2Number">2 פטה-בייט</div>
+          <p class="stat-text" data-i18n="stat2Text">של מידע אזרחי נגנב מישראל בשנים האחרונות. בערך פי 100 מכלל האחסון הדיגיטלי של הספרייה הלאומית.</p>
+          <a class="stat-source" href="https://www.israeldefense.co.il/en/node/67966" target="_blank" rel="noopener" data-i18n="stat2Source">מערך הסייבר הלאומי, סיכום שנתי 2025 →</a>
+        </div>
+        <div class="stat reveal reveal-delay-1">
+          <div class="stat-number">40%</div>
+          <p class="stat-text" data-i18n="stat3Text">מהעסקים לא חוזרים לפעולה אחרי אסון שמסיר את הארכיון שלהם. עוד 25% נסגרים בתוך שנה.</p>
+          <a class="stat-source" href="https://www.accesscorp.com/press-coverage/study-40-percent-businesses-fail-reopen-disaster/" target="_blank" rel="noopener" data-i18n="stat3Source">FEMA →</a>
+        </div>
+        <div class="stat reveal reveal-delay-1">
+          <div class="stat-number">83%</div>
+          <p class="stat-text" data-i18n="stat4Text">מהעובדים נאלצים ליצור מחדש מסמכים שכבר קיימים בארגון, כי הם לא מצליחים למצוא אותם.</p>
+          <a class="stat-source" href="https://solutionsreview.com/content-management/research-from-m-files-shows-that-83-of-workers-struggle-with-document-management/" target="_blank" rel="noopener" data-i18n="stat4Source">M-Files Global Survey, 2019 →</a>
+        </div>
+        <div class="stat reveal reveal-delay-1">
+          <div class="stat-number">24%</div>
+          <p class="stat-text" data-i18n="stat5Text">מהאנשים מדרגים את אלבום התמונות המשפחתי בתור הפריט הכי חשוב שיש להם. יותר מתעודות לידה ודרכונים.</p>
+          <a class="stat-source" href="https://www.ricoh-usa.com" target="_blank" rel="noopener" data-i18n="stat5Source">Ricoh / Harris Interactive →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MANIFESTO -->
   <section class="manifesto" id="manifesto">
     <div class="manifesto-content">
@@ -981,6 +1093,19 @@
       pillar2Body: "שימור של מה שהיה. תיעוד אמיתי, היסטוריה מדויקת, מסמכים שלא נעלמים עם הזמן.",
       pillar3Title: "פרטיות",
       pillar3Body: "המידע שלך הוא שלך. עיבוד מקומי, ללא ענן, ללא צד שלישי, ללא פשרות.",
+      statsLabel: "במספרים",
+      statsTitle: "למה זה חשוב",
+      stat1Text: "מהעובדים משתפים מידע חסוי עם כלים מקוונים לא מאושרים.",
+      stat1Source: "ManageEngine via Kiteworks, 2025 →",
+      stat2Number: "2 פטה-בייט",
+      stat2Text: "של מידע אזרחי נגנב מישראל בשנים האחרונות. בערך פי 100 מכלל האחסון הדיגיטלי של הספרייה הלאומית.",
+      stat2Source: "מערך הסייבר הלאומי, סיכום שנתי 2025 →",
+      stat3Text: "מהעסקים לא חוזרים לפעולה אחרי אסון שמסיר את הארכיון שלהם. עוד 25% נסגרים בתוך שנה.",
+      stat3Source: "FEMA →",
+      stat4Text: "מהעובדים נאלצים ליצור מחדש מסמכים שכבר קיימים בארגון, כי הם לא מצליחים למצוא אותם.",
+      stat4Source: "M-Files Global Survey, 2019 →",
+      stat5Text: "מהאנשים מדרגים את אלבום התמונות המשפחתי בתור הפריט הכי חשוב שיש להם. יותר מתעודות לידה ודרכונים.",
+      stat5Source: "Ricoh / Harris Interactive →",
       manifestoLabel: "מה זה PlinerSpec",
       manifestoTitle: "לא עוד חברה. עוד מקום שמכיר במה שחשוב.",
       manifesto1: "העולם רץ. כולם בונים, מוכרים, מקדמים. הרוב כבר נשכח לפני שהוא מתחיל.",
@@ -1025,6 +1150,19 @@
       pillar2Body: "Preservation of what was. Real documentation, accurate history, records that don't vanish over time.",
       pillar3Title: "Privacy",
       pillar3Body: "Your data is yours. Local processing, no cloud, no third party, no compromise.",
+      statsLabel: "By the numbers",
+      statsTitle: "Why this matters",
+      stat1Text: "of employees share confidential data with unapproved online tools.",
+      stat1Source: "ManageEngine via Kiteworks, 2025 →",
+      stat2Number: "2 petabytes",
+      stat2Text: "of Israeli citizens' data stolen in recent years. About 100x the National Library's entire digital archive.",
+      stat2Source: "Israel National Cyber Directorate, 2025 →",
+      stat3Text: "of businesses don't reopen after a disaster destroys their archive. Another 25% close within a year.",
+      stat3Source: "FEMA →",
+      stat4Text: "of workers recreate documents that already exist in their organization, because they can't find them.",
+      stat4Source: "M-Files Global Survey, 2019 →",
+      stat5Text: "of people rank their family photo album as their single most valuable possession. Above birth certificates and passports.",
+      stat5Source: "Ricoh / Harris Interactive →",
       manifestoLabel: "What PlinerSpec is",
       manifestoTitle: "Not another company. A place that recognizes what matters.",
       manifesto1: "The world is racing. Everyone is building, selling, marketing. Most of it is forgotten before it begins.",
